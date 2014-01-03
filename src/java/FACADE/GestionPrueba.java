@@ -24,6 +24,10 @@ public class GestionPrueba {
         return (new Modulo().getListadoModulos());
     }
     
+    public String agregarModulo(){
+        return (new Modulo().agregarModulo());
+    }
+    
     public String insertarModulo(ModuloDTO modulo){
         return (new Modulo().insertarModulo(modulo));
     }

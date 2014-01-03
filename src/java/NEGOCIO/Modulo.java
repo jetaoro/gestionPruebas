@@ -63,6 +63,19 @@ public class Modulo {
         * */
     }
     
+    public String agregarModulo(){ 
+        String tabla = "<table border=1>";
+        tabla += "<table border=1>";
+        tabla += "<tr><td align='center'>Agregar M&oacute;dulo</td></tr></table>";
+        tabla += "<table border=1><tr align='center'><td>Nombre</td></tr>";
+        tabla += "<tr align='center'><td><input type='text' name='nombre' required></td></tr></table>";
+        tabla += "<table border=1><tr align='center'><td>Descripci&oacute;n</td></tr>";
+        tabla += "<tr align='center'><td><input type='text' name='descripcion' required></td></tr></table>";
+        tabla += "</table>";
+
+        return (tabla);
+    }
+    
     public String insertarModulo(ModuloDTO nuevo){
         String resultado = "La inserción falló";
         boolean insercion= new ModuloDAO().insertar(nuevo);
