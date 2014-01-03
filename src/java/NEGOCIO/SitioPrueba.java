@@ -54,6 +54,19 @@ public class SitioPrueba {
         return (tabla);        
     }
     
+    public String agregarSitioPrueba(){ 
+        String tabla = "<table border=1>";
+        tabla += "<table border=1>";
+        tabla += "<tr><td align='center'>Agregar Sitio de Prueba</td></tr></table>";
+        tabla += "<table border=1><tr align='center'><td>Número de Puerto</td></tr>";
+        tabla += "<tr align='center'><td><input type='text' name='numero_puerto' required></td></tr></table>";
+        tabla += "<table border=1><tr align='center'><td>Nombre</td></tr>";
+        tabla += "<tr align='center'><td><input type='text' name='nombre' required></td></tr></table>";
+        tabla += "</table>";
+
+        return (tabla);
+    }
+    
     public String insertarSitioPrueba(SitioPruebaDTO nuevo){
         String resultado = "La inserción falló";
         boolean insercion= new SitioPruebaDAO().insertar(nuevo);

@@ -13,55 +13,14 @@
         <title>Agregar Sitio Prueba</title>
     </head>
     <body>
-         <table width="500" border="0" cellpadding="0" cellspacing="1" class="fondo_celda_03">
-            <form id="frm" name="frm" action="insertarSitioPrueba.jsp" method="post">
-                <tr>
-                    <td>
-                        <table width="100%" border="0" cellpadding="0" cellspacing="1" class="marco_01">
-                            <tr>
-                                <td class="fondo_celda_03">
-                                    <table width="100%" border="0" cellpadding="1" cellspacing="1" class="text_negro">
-                                        <tr class="fondo_celda_01">
-                                            <td align="center">Agregar Sitio Prueba</td>
-                                        </tr>
-                                    </table>
-
-                                    <table width="100%" border="0" cellpadding="1" cellspacing="1">
-                                        <tr class="fondo_celda_04" align="center">
-                                            <td>Número de puerto</td>
-                                        </tr>
-                                        <tr class="fondo_celda_03" align="center">
-                                            <td>
-                                                <input type="text" class="campo_texto" name="numero_puerto" maxlength="30" size="40"  required>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table width="100%" border="0" cellpadding="1" cellspacing="1">
-                                        <tr class="fondo_celda_04" align="center">
-                                            <td>Nombre</td>
-                                        </tr>
-                                        <tr class="fondo_celda_03" align="center">
-                                            <td>
-                                                <input type="text" class="campo_texto" name="nombre" maxlength="30" size="40"  required>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                        <table width="100%" border="0" cellpadding="2" cellspacing="1" class="text_negro">
-                            <tr>
-                                <td align="left"><input type="submit" name="registrar" value="Registrar"></td>
-                            </form>
-                            <form name="volver" action="listadoSitiosPrueba.jsp">
-                                <td align="right"><input type="submit" name="volver" value="Volver"></td>
-                            </form>
-                            </tr>
-                        </table>   
-                    </td>
-                </tr>
-            </form>
-      
-        </table>
+         <form name="insertarSitio" action="insertarSitioPrueba.jsp">
+            <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
+            <%=gestion.agregarSitioPrueba()%>
+            <input type="submit" value="Registrar" name="registrar" />
+        </form>
+                         
+        <form name="volver" action="listadoSitiosPrueba.jsp">
+              <td align="right"><input type="submit" name="volver" value="Volver"></td>
+        </form> 
     </body>
 </html>

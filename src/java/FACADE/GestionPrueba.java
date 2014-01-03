@@ -55,6 +55,10 @@ public class GestionPrueba {
         return (new SitioPrueba().getListadoSitios());
     }
     
+    public String agregarSitioPrueba(){
+        return (new SitioPrueba().agregarSitioPrueba());
+    }
+    
     public String insertarSitioPrueba(SitioPruebaDTO sitio){
         return (new SitioPrueba().insertarSitioPrueba(sitio));
     }
