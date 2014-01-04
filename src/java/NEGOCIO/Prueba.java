@@ -77,16 +77,17 @@ public class Prueba {
                 "\n<th>Responsable</th>"+
                 "\n</tr>";
         
-        for (PruebaDTO prueba : pruebas) {
-            tabla+="\n<tr>";
-            tabla+="\n<td>"+"<input type = 'radio' name = 'modulo' value = '"+prueba.getIdentificador()+"' >" + "</td>";
-            tabla+="\n<td>"+prueba.getNumero_requerimiento()+"</td>";
-            tabla+="\n<td>"+ prueba.getNombre()+"</td>";
-            tabla+="\n<td>"+ prueba.getModulo().getNombre()+"</td>";
-            tabla+="\n<td>"+ prueba.getResponsable().getNombre()+"</td>";
-            tabla+="\n</tr>";
+        if (pruebas!=null){
+            for (PruebaDTO prueba : pruebas) {
+                tabla+="\n<tr>";
+                tabla+="\n<td>"+"<input type = 'radio' name = 'prueba' value = '"+prueba.getIdentificador()+"'>" + "</td>";
+                tabla+="\n<td>"+ prueba.getNumero_requerimiento()+"</td>";
+                tabla+="\n<td>"+ prueba.getNombre()+"</td>";
+                tabla+="\n<td>"+ prueba.getModulo().getNombre()+"</td>";
+                tabla+="\n<td>"+ prueba.getResponsable().getNombre()+"</td>";
+                tabla+="\n</tr>";
+            }
         }
-        
         tabla+="</table></br>";
         return (tabla);
     }
@@ -101,7 +102,7 @@ public class Prueba {
         tabla+="<tr><th><h4>Descripción de las pruebas</h4></th></tr>";        
         tabla+="<tr><th>Nombre de la prueba: </th>" + "<td><textarea rows='4' cols='40' name='nombre' required></textarea></td></tr>";
         tabla+="<tr><th>Número de requerimiento: </th>" + "<td><input type='text' size='30' maxlength='30' name='numero_requerimiento' required></td></tr>";
-        tabla+="<tr><th>Fecha de Ejecución: </th>" + "<td><input type='text' size='30' maxlength='30' name='fecha_ejecucucion' required></td></tr>";
+        tabla+="<tr><th>Fecha de Ejecución: </th>" + "<td><input type='text' size='30' maxlength='30' name='fecha_ejecucion' required></td></tr>";
         tabla+="<tr><th>Elemento a probar: </th>" + "<td><input type='text' size='30' maxlength='30' name='elemento_prueba' required></td></tr>";
         tabla+="<tr><th>Tipo de Prueba: </th>" + "<td>" + new TipoPrueba().listadoTiposPrueba() + "</td></tr>";
         tabla+="<tr><th>Modo de Ejecución: </th>" + "<td>" + new ModoEjecucion().listadoModosEjecucion() + "</td></tr>";
@@ -121,23 +122,11 @@ public class Prueba {
         return (resultado);
     }
     
-    public String insertarUnaPrueba(int idModulo, int idSitio, int idResponsable, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, int idTipoPrueba, String [] modosEjecucion, String descripcion, String casoExito, String casoFallo){
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
-        Date fechaInicio2 = new Date();
-        Date fechaFin2 = new Date();
-        Date fechaEjecucion2 = new Date();
-        try {
-            fechaInicio2 = formato.parse(fechaInicio);
-        }catch (ParseException ex) {
-        }
-        try {
-             fechaFin2 = formato.parse(fechaFin);
-        }catch (ParseException ex) {
-        }
-        try {
-            fechaEjecucion2 = formato.parse(fechaEjecucion);
-        }catch (ParseException ex) {
-        }
+    public String insertarUnaPrueba(int idModulo, int idSitio, int idResponsable, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, int idTipoPrueba, String [] modosEjecucion, String descripcion, String casoExito, String casoFallo) throws ParseException{
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaInicio2 = formato.parse(fechaInicio);
+        Date fechaFin2 = formato.parse(fechaFin); 
+        Date fechaEjecucion2 = formato.parse(fechaEjecucion);      
         
         int idModo2;
         ArrayList<ModoEjecucionDTO> modos = new ArrayList<>();
@@ -148,12 +137,12 @@ public class Prueba {
             }
         }
         PruebaDTO nueva = new PruebaDTO(nombre, numero_requerimiento, fechaInicio2, fechaFin2, fechaEjecucion2, elementoPrueba, descripcion, casoExito, casoFallo, idResponsable, idModulo, idSitio, idTipoPrueba);
-        nueva.setModosEjecucion(modos);
+        nueva.setModosEjecucion(modos);        
         String resultado = "La inserción falló";
         boolean insercion= new PruebaDAO().insertar(nueva);
         
-        if (insercion)
-            resultado = "La inserción fue exitosa";        
+        if (insercion)            
+            resultado = "La inserción fue exitosa";         
         return (resultado);
     }
     

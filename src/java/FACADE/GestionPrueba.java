@@ -5,6 +5,7 @@
 package FACADE;
 import NEGOCIO.*;
 import DTO.*;
+import java.text.ParseException;
 
 /**
  *
@@ -116,7 +117,7 @@ public class GestionPrueba {
         return new Prueba().insertarPrueba(nueva);
     }
     
-    public String insertarUnaPrueba(int idModulo2, int idSitio2, int idResponsable2, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, int idTipoPrueba, String [] modosEjecucion, String descripcion, String casoExito, String casoFallo){
+    public String insertarUnaPrueba(int idModulo2, int idSitio2, int idResponsable2, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, int idTipoPrueba, String [] modosEjecucion, String descripcion, String casoExito, String casoFallo) throws ParseException{
         return (new Prueba().insertarUnaPrueba(idModulo2, idSitio2, idResponsable2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, idTipoPrueba, modosEjecucion, descripcion, casoExito, casoFallo));
     }
     

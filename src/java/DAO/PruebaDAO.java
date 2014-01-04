@@ -53,12 +53,12 @@ public class PruebaDAO {
             String descripcion = vdatos[5];
             String caso_exito = vdatos[6];
             String caso_fallo = vdatos[7];
-            int id_prueba = Integer.parseInt(vdatos[8]);
-            int id_tipo = Integer.parseInt(vdatos[9]);
-            int id_modulo = Integer.parseInt(vdatos[10]);
-            int id_responsable = Integer.parseInt(vdatos [11]);
-            int id_sitio = Integer.parseInt(vdatos[12]);
-            String numeroRequerimiento = vdatos[13];
+            int id_prueba = Integer.parseInt(vdatos[13]);
+            int id_tipo = Integer.parseInt(vdatos[8]);
+            int id_modulo = Integer.parseInt(vdatos[9]);
+            int id_responsable = Integer.parseInt(vdatos [10]);
+            int id_sitio = Integer.parseInt(vdatos[11]);
+            String numeroRequerimiento = vdatos[12];
             PruebaDTO prueba = new PruebaDTO(id_prueba, nombre, numeroRequerimiento, fechaInicio, fechaFin, fechaEjecucion, elemento_prueba, descripcion, caso_exito, caso_fallo, id_responsable, id_modulo, id_sitio, id_tipo);
             pruebas.add(prueba);            
         }   
@@ -136,12 +136,12 @@ public class PruebaDAO {
             String descripcion = vdatos[5];
             String caso_exito = vdatos[6];
             String caso_fallo = vdatos[7];
-            int id_prueba = Integer.parseInt(vdatos[8]);
-            int id_tipo = Integer.parseInt(vdatos[9]);
-            int id_modulo = Integer.parseInt(vdatos[10]);
-            int id_responsable = Integer.parseInt(vdatos [11]);
-            int id_sitio = Integer.parseInt(vdatos[12]);
-            String numeroRequerimiento = vdatos[13];
+            int id_prueba = Integer.parseInt(vdatos[13]);
+            int id_tipo = Integer.parseInt(vdatos[8]);
+            int id_modulo = Integer.parseInt(vdatos[9]);
+            int id_responsable = Integer.parseInt(vdatos [10]);
+            int id_sitio = Integer.parseInt(vdatos[11]);
+            String numeroRequerimiento = vdatos[12];
             PruebaDTO prueba = new PruebaDTO(id_prueba, nombre2, numeroRequerimiento, fechaInicio, fechaFin, fechaEjecucion, elemento_prueba, descripcion, caso_exito, caso_fallo, id_responsable, id_modulo, id_sitio, id_tipo);
             pruebas.add(prueba);            
         }   
@@ -188,21 +188,20 @@ public class PruebaDAO {
     public boolean insertar(PruebaDTO nuevo){
         //insert into  responsable values('1','marco adarme','madarme','1235')
         DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
-        String sql="insert into prueba values ('@', '€', '%', '$', '#', 'ƒ', 'æ', 'Ø', µ, '¶', 'Ð', '¥', '©')";
+        String sql="insert into prueba values ('@', '€', '§', '«', '#', 'ƒ', 'æ', 'Ø', µ, ¶, ¥, ©, '¤')";
         sql=sql.replaceAll("@", nuevo.getNombre());
         sql=sql.replaceAll("€", df1.format(nuevo.getFecha_inicio()));
-        sql=sql.replaceAll("%", df1.format(nuevo.getFecha_fin()));
-        sql=sql.replaceAll("$", df1.format(nuevo.getFecha_ejecucion()));
+        sql=sql.replaceAll("§", df1.format(nuevo.getFecha_fin()));
+        sql=sql.replaceAll("«", df1.format(nuevo.getFecha_ejecucion()));
         sql=sql.replaceAll("#", nuevo.getElemento_prueba());
         sql=sql.replaceAll("ƒ", nuevo.getDescripcion());
         sql=sql.replaceAll("æ", nuevo.getCaso_exito());
         sql=sql.replaceAll("Ø", nuevo.getCaso_fallo());
         sql=sql.replaceAll("µ", Integer.toString(nuevo.getTipoPrueba().getIdentificador()));
-        sql=sql.replaceAll("¶", Integer.toString(nuevo.getModulo().getIdentificador()));
-        sql=sql.replaceAll("Ð", Integer.toString(nuevo.getModulo().getIdentificador()));
+        sql=sql.replaceAll("¶", Integer.toString(nuevo.getModulo().getIdentificador()));        
         sql=sql.replaceAll("¥", Integer.toString(nuevo.getResponsable().getIdentificador()));
         sql=sql.replaceAll("©", Integer.toString(nuevo.getSitioPrueba().getIdentificador()));
-        sql=sql.replaceAll("©", nuevo.getNumero_requerimiento());
+        sql=sql.replaceAll("¤", nuevo.getNumero_requerimiento());
         
         BaseDeDatos.conectar();
         return (BaseDeDatos.ejecutarActualizacionSQL(sql));
