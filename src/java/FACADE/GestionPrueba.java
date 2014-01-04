@@ -68,8 +68,8 @@ public class GestionPrueba {
         return (new SitioPrueba().modificarSitioPrueba(sitio));
     }
     
-    public String eliminarSitioPrueba(SitioPruebaDTO sitio){
-        return (new SitioPrueba().eliminarSitioPrueba(sitio));
+    public String eliminarSitioPrueba(int idSitio){
+        return (new SitioPrueba().eliminarSitioPrueba(new SitioPruebaDTO(idSitio)));
     }
     
     public String getUnSitioPrueba(int id_sitio){

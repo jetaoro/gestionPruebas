@@ -1,6 +1,6 @@
 <%-- 
-    Document   : listadoSitiosPrueba
-    Created on : 28/11/2013, 05:47:31 AM
+    Document   : listaSitioPrueba
+    Created on : 27/11/2013, 05:36:28 AM
     Author     : Jennifer
 --%>
 
@@ -9,17 +9,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" >
+            function envia(destino){
+                formulario.action=destino;
+                formulario.submit();
+            }           
+            
+        </script>
         <title>Listado de Sitios de Prueba</title>
     </head>
     <body>
         <h1>Sitios de Prueba</h1>
-        <form name="modificarModulo" action="modificarSitioPrueba.jsp">
+        <form name="formulario" method="post"> 
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.getListadoSitios()%>
-            <input type="submit" value="Modificar" name="modificar" />
-        </form>
-        <form name="agregarModulo" action="agregarSitioPrueba.jsp">
-            <input type="submit" value="Agregar" name="agregar" />
-        </form>
+            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarSitioPrueba.jsp')" />
+            <input type="button" value="Modificar" name="modificar" onClick="envia('modificarSitioPrueba.jsp')" />
+            <input type="button" value="Agregar" name="agregar" onClick="envia('agregarSitioPrueba.jsp')" />            
+        </form> 
     </body>
 </html>

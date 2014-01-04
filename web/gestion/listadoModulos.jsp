@@ -9,23 +9,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <script type="text/javascript" >
+            function envia(destino){
+                formulario.action=destino;
+                formulario.submit();
+            }           
+            
+        </script>
+
         <title>P&aacute;gina principal de M&oacute;dulos</title>
     </head>
     <body>
-        <h1>M&oacute;dulos</h1>
-                
-        <form name="modificarModulo" action="modificarModulo.jsp">
+        <h1>M&oacute;dulos</h1>              
+        <form name="formulario" method="post"> 
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.getListadoModulos()%>
-            <input type="submit" value="Modificar" name="modificar" />
-        </form>
-            
-        <form name="agregarModulo" action="agregarModulo.jsp">
-            <input type="submit" value="Agregar" name="agregar" />
-        </form>
-            
-        <form name="eliminarModulo" action="eliminarModulo.jsp">
-            <input type="submit" value="Eliminar" name="eliminar" />
-        </form>
+            <input type="button" value="Modificar" name="modificar" onClick="envia('modificarModulo.jsp')" />
+            <input type="button" value="Agregar" name="agregar" onClick="envia('agregarModulo.jsp')" />
+            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarModulo.jsp')" />
+        </form>      
     </body>
 </html>

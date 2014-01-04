@@ -1,6 +1,6 @@
 <%-- 
-    Document   : eliminarModulo
-    Created on : 30/11/2013, 11:39:25 AM
+    Document   : eliminarSitioPrueba
+    Created on : 4/01/2014, 04:38:32 PM
     Author     : Jennifer
 --%>
 
@@ -9,12 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Eliminar Módulo</title>
+        <title>Eliminar Sitio de Prueba</title>
     </head>
     <body>
-        <h1>Eliminación del Módulo</h1>
-        <% int idModulo=Integer.parseInt(request.getParameter("modulo")); %>       
+        <h1>Eliminación del Sitio Prueba</h1>
+        <% int idSitio=Integer.parseInt(request.getParameter("sitio_prueba")); %>       
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
-        <%=gestion.eliminarModulo(idModulo)%>
+        <%=gestion.eliminarSitioPrueba(idSitio)%>
     </body>
 </html>

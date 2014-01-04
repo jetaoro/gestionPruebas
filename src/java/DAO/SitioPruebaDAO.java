@@ -68,7 +68,7 @@ public class SitioPruebaDAO {
     public boolean eliminar(SitioPruebaDTO nuevo){
         //delete from responsable
         //where id_responsable = 1
-        String sql="delete from sitio_prueba"+ 
+        String sql="delete from sitio_prueba "+ 
                 "where id_sitio = " +nuevo.getIdentificador();
         BaseDeDatos.conectar();
         return (BaseDeDatos.ejecutarActualizacionSQL(sql));
