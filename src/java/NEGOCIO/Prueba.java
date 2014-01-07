@@ -45,7 +45,7 @@ public class Prueba {
             tabla+="\n<tr><th>Caso de Fallo</th>"+"\n<td>"+prueba.getCaso_fallo()+"</td>";
             tabla+="\n<tr><th>Casos de Prueba"+"</th></tr>";
             tabla+= new CasoPrueba().getCasosPrueba(prueba);
-            tabla+="\n</tr>";
+            tabla+="\n</tr></table></br>";
         }
         return (tabla);
     }
@@ -73,7 +73,7 @@ public class Prueba {
         tabla += "\n<tr><th>Caso de Fallo</th>" + "\n<td>" + "<input type='text' name='caso_fallo' readonly='readonly' value='" + prueba.getCaso_fallo() + "'></td>";        
         tabla+="\n<tr><th>Casos de Prueba"+"</th></tr>";
         tabla+= new CasoPrueba().getCasosPrueba(prueba);
-        tabla += "\n</tr>";
+        tabla += "\n</tr></table></br>";
         
         return (tabla);
     }

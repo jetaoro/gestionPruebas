@@ -1,6 +1,6 @@
 <%-- 
-    Document   : modificarModulo
-    Created on : 28/11/2013, 06:16:17 AM
+    Document   : modificarCasoPrueba
+    Created on : 7/01/2014, 11:10:10 AM
     Author     : Jennifer
 --%>
 
@@ -8,16 +8,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="estilo.css" rel="stylesheet" type="text/css" >
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Modificar M&oacute;dulo</title>
+        <title>Modificar Caso de Prueba</title>
     </head>
     <body>
-        <form name="modificar" action="actualizarModulo.jsp" method="post">
-            <% int idModulo=Integer.parseInt(request.getParameter("modulo")); %>         
-            <jsp:useBean id="modulo" scope="page" class="DTO.ModuloDTO" />
+        <h1>Modificar Caso de Prueba</h1>
+        <form name="modificar" action="actualizarCasoPrueba.jsp" method="post">
+            <% int idCasoPrueba=Integer.parseInt(request.getParameter("casoPrueba")); %>            
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
-            <%=gestion.getUnModulo(idModulo)%>                   
+            <%=gestion.getUnCasoPrueba(idCasoPrueba)%>                   
             <input type="submit" name="registrar" value="Registrar">
         </form>
         <form name="volver" action="listadoModulos.jsp">

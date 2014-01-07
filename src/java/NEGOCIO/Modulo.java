@@ -109,11 +109,10 @@ public class Modulo {
         ModuloDTO modulo = new ModuloDAO().getUnModulo(new ModuloDTO(id_modulo));
         String tabla = "No se ha encontrado el módulo buscado";
         if (modulo!=null){
-            tabla="<table border=1>";
-            tabla+="<table border=1>";
+            tabla="<table border=1>";            
             tabla+="<tr><td align='center'>Modificar M&oacute;dulo</td></tr></table>";
             tabla+="<table border=1><tr align='center'><td>Identificador</td></tr>";
-            tabla+="<tr align='center'><td><input type='text' name='identificador' required disabled value='"+modulo.getIdentificador()+"'></td></tr></table>";
+            tabla+="<tr align='center'><td><input type='text' name='identificador' readonly='readonly' value='"+modulo.getIdentificador()+"'></td></tr></table>";
             tabla+="<table border=1><tr align='center'><td>Nombre</td></tr>";
             tabla+="<tr align='center'><td><input type='text' name='nombre' required value='"+modulo.getNombre()+"'></td></tr></table>";
             tabla+="<table border=1><tr align='center'><td>Descripci&oacute;n</td></tr>";

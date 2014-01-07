@@ -45,7 +45,7 @@ public class CasoPruebaDAO {
         if(consulta.isEmpty())
             return null;
         String dd[]=consulta.get(0).split("-");
-        return (new CasoPruebaDTO(dd[0], dd[1], dd[2], dd[3], dd[4], dd[5]));
+        return (new CasoPruebaDTO(Integer.parseInt(dd[7]), dd[0], dd[1], dd[2], dd[3], dd[4], dd[5]));
     }
     
     public TreeSet<CasoPruebaDTO> getCasosPruebaDeUnaPrueba(PruebaDTO buscada){
@@ -54,11 +54,10 @@ public class CasoPruebaDAO {
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
         TreeSet<CasoPruebaDTO> rta=new TreeSet<>();
         BaseDeDatos.desconectar();
-        for(String dato:consulta)
-        {
+        for(String dato:consulta){
             String dd[]=dato.split("-");
             //String descripcion, String datos_entrada, String resultado_esperado, String resultado_obtenido, String tipo_resultado, String observacion
-            CasoPruebaDTO nuevo=new CasoPruebaDTO(dd[0], dd[1], dd[2], dd[3], dd[4], dd[5]);
+            CasoPruebaDTO nuevo=new CasoPruebaDTO(Integer.parseInt(dd[7]), dd[0], dd[1], dd[2], dd[3], dd[4], dd[5]);
             rta.add(nuevo);
 
         }
@@ -68,11 +67,11 @@ public class CasoPruebaDAO {
    
     public boolean insertar(CasoPruebaDTO nuevo, int idPrueba){
         //insert into  responsable values('1','marco adarme','madarme','1235')
-        String sql="insert into caso_prueba values ('@', '#', '$', '&', '~', '£', ¥)";
+        String sql="insert into caso_prueba values ('@', '#', '¢', 'æ', '~', '£', ¥)";
         sql=sql.replaceAll("@", nuevo.getDescripcion());
         sql=sql.replaceAll("#", nuevo.getDatos_entrada());
-        sql=sql.replaceAll("$", nuevo.getResultado_esperado());
-        sql=sql.replaceAll("&", nuevo.getResultado_obtenido());
+        sql=sql.replaceAll("¢", nuevo.getResultado_esperado());
+        sql=sql.replaceAll("æ", nuevo.getResultado_obtenido());
         sql=sql.replaceAll("~", nuevo.getTipo_resultado());
         sql=sql.replaceAll("£", nuevo.getObservacion());
         sql=sql.replaceAll("¥", Integer.toString(idPrueba));

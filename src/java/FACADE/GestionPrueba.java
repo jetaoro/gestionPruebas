@@ -82,8 +82,12 @@ public class GestionPrueba {
         return (new CasoPrueba().getCasosPrueba(prueba));
     }
     
-    public String agregarCasoPrueba(){
-        return (new CasoPrueba().agregarCasoPrueba());
+    public String getUnCasoPrueba(int id_caso){
+        return (new CasoPrueba().getUnCasoPrueba(id_caso));
+    }
+    
+    public String agregarCasoPrueba(int idPrueba){
+        return (new CasoPrueba().agregarCasoPrueba(idPrueba));
     }
     
     public String insertarCasoPrueba(CasoPruebaDTO caso, int idPrueba){

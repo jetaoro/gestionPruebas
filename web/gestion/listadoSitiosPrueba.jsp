@@ -23,9 +23,9 @@
         <form name="formulario" method="post"> 
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.getListadoSitios()%>
-            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarSitioPrueba.jsp')" />
+            <input type="button" value="Agregar" name="agregar" onClick="envia('agregarSitioPrueba.jsp')" />  
             <input type="button" value="Modificar" name="modificar" onClick="envia('modificarSitioPrueba.jsp')" />
-            <input type="button" value="Agregar" name="agregar" onClick="envia('agregarSitioPrueba.jsp')" />            
+            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarSitioPrueba.jsp')" />
         </form> 
     </body>
 </html>

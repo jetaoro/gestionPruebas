@@ -14,9 +14,9 @@
     <body>
         <h1>Agregar Caso de Prueba</h1>
         <form name="insertarCaso" action="insertarCasoPrueba.jsp">
-            <% int idPrueba=Integer.parseInt(request.getParameter("prueba")); %>
+            <% int idPrueba=Integer.parseInt(request.getParameter("idPrueba")); %>
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
-            <%=gestion.agregarCasoPrueba()%>            
+            <%=gestion.agregarCasoPrueba(idPrueba)%>            
             <input type="submit" value="Registrar" name="registrar" />            
         </form>
         <form name="listadoPruebas" action="listadoPruebas.jsp">

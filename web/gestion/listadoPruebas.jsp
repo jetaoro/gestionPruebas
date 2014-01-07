@@ -40,11 +40,10 @@
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.buscarPruebas(nombre_prueba, numero_requerimiento, idModulo2, idResponsable2, idSitio2)%>
 
-            <input type="button" value="Modificar" name="modificar" onClick="envia('modificarPrueba.jsp')" />
-            <input type="button" value="Agregar" name="agregar" onClick="envia('agregarPrueba.jsp')" />
-            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarPrueba.jsp')" />
             <input type="button" value="Ver" name="ver" onClick="envia('verPrueba.jsp')" />
-            <input type="button" value="Agregar Caso de Prueba" name="agregarCasoPrueba" onClick="envia('agregarCasoPrueba.jsp')" />
+            <input type="button" value="Agregar" name="agregar" onClick="envia('agregarPrueba.jsp')" />
+            <input type="button" value="Modificar" name="modificar" onClick="envia('modificarPrueba.jsp')" />            
+            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarPrueba.jsp')" />            
         </form> 
     </body>
 </html>

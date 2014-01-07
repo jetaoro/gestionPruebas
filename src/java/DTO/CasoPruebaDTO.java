@@ -20,6 +20,10 @@ public class CasoPruebaDTO implements Comparable{
     public CasoPruebaDTO() {
     }
 
+    public CasoPruebaDTO(int identificador) {
+        this.identificador = identificador;
+    }
+
     public CasoPruebaDTO(int identificador, String descripcion, String datos_entrada, String resultado_esperado, String resultado_obtenido, String tipo_resultado, String observacion) {
         this.identificador = identificador;
         this.descripcion = descripcion;

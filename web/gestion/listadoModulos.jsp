@@ -24,8 +24,8 @@
         <form name="formulario" method="post"> 
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.getListadoModulos()%>
-            <input type="button" value="Modificar" name="modificar" onClick="envia('modificarModulo.jsp')" />
             <input type="button" value="Agregar" name="agregar" onClick="envia('agregarModulo.jsp')" />
+            <input type="button" value="Modificar" name="modificar" onClick="envia('modificarModulo.jsp')" />            
             <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarModulo.jsp')" />
         </form>      
     </body>

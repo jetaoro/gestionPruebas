@@ -1,6 +1,6 @@
 <%-- 
-    Document   : insertarCasoPrueba
-    Created on : 5/01/2014, 01:55:47 PM
+    Document   : actualizarCasoPrueba
+    Created on : 7/01/2014, 11:29:15 AM
     Author     : Jennifer
 --%>
 
@@ -9,14 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Insertar Caso Prueba</title>
+        <title>Actualizar Caso de Prueba</title>
     </head>
     <body>
-        <h1>Insertar Caso de Prueba</h1>         
-        <% int idPrueba=Integer.parseInt(request.getParameter("idPrueba")); %>
+        <h1>Actualizar Caso de Prueba</h1>
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
         <jsp:useBean id="casoPrueba" scope="page" class="DTO.CasoPruebaDTO" />
         <jsp:setProperty name="casoPrueba" property="*" />
-        <%=gestion.insertarCasoPrueba(casoPrueba, idPrueba)%>
+        <%=gestion.modificarCasoPrueba(casoPrueba)%>
     </body>
 </html>

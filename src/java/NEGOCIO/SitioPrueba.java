@@ -99,9 +99,10 @@ public class SitioPrueba {
         SitioPruebaDTO sitio = new SitioPruebaDAO().getUnSitioPrueba(new SitioPruebaDTO(id_sitio));
         String tabla = "No se ha encontrado el módulo buscado";
         if (sitio!=null){
-            tabla="<table border=1>";
-            tabla+="<table border=1>";
+            tabla="<table border=1>";            
             tabla+="<tr><td align='center'>Modificar Sitio de Prueba</td></tr></table>";
+            tabla+="<table border=1><tr align='center'><td>Identificador</td></tr>";
+            tabla+="<tr align='center'><td><input type='text' name='identificador' readonly='readonly' value='"+sitio.getIdentificador()+"'></td></tr></table>";
             tabla+="<table border=1><tr align='center'><td>Número de Puerto</td></tr>";
             tabla+="<tr align='center'><td><input type='text' name='numero_puerto' required value='"+sitio.getNumero_puerto()+"'></td></tr></table>";
             tabla+="<table border=1><tr align='center'><td>Nombre</td></tr>";
