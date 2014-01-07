@@ -41,15 +41,17 @@ public class SitioPrueba {
                 "\n<th>Número de puerto</th>"+
                 "\n<th>Nombre</th>"+
                 "\n</tr>";
-        
-        for (SitioPruebaDTO sitio : sitios) {
-            tabla+="\n<tr>";
-            tabla+="\n<td>"+"<input type = 'radio' name = 'sitio_prueba' value = '"+sitio.getIdentificador()+"' >" + "</td>";
-            tabla+="\n<td>"+ sitio.getNumero_puerto()+"</td>";
-            tabla+="\n<td>"+ sitio.getNombre()+"</td>";
-            tabla+="\n</tr>";
+        if(!sitios.isEmpty()){
+            for (SitioPruebaDTO sitio : sitios) {
+                tabla+="\n<tr>";
+                tabla+="\n<td>"+"<input type = 'radio' name = 'sitio_prueba' value = '"+sitio.getIdentificador()+"' checked>" + "</td>";
+                tabla+="\n<td>"+ sitio.getNumero_puerto()+"</td>";
+                tabla+="\n<td>"+ sitio.getNombre()+"</td>";
+                tabla+="\n</tr>";
+            }
         }
-        
+        else
+            tabla+="\n<table border='1'><td>No se encontraron sitios de prueba registrados.</td></table>";
         tabla+="</table></br>";
         return (tabla);        
     }

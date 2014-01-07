@@ -1,6 +1,6 @@
 <%-- 
-    Document   : eliminarPrueba
-    Created on : 4/01/2014, 05:46:06 PM
+    Document   : eliminarCasoPrueba
+    Created on : 7/01/2014, 06:28:52 PM
     Author     : Jennifer
 --%>
 
@@ -9,12 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Eliminar Prueba</title>
+        <title>Eliminar Caso de Prueba</title>
     </head>
     <body>
-        <h1>Eliminación de la Prueba</h1>
-        <% int idPrueba=Integer.parseInt(request.getParameter("prueba")); %>       
+        <h1>Eliminación del Caso de Prueba</h1>
+        <% int idCaso=Integer.parseInt(request.getParameter("casoPrueba")); %>       
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
-        <%=gestion.eliminarPrueba(idPrueba)%>
+        <%=gestion.eliminarCasoPrueba(idCaso)%>
     </body>
 </html>

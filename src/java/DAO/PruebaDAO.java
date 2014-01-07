@@ -116,7 +116,7 @@ public class PruebaDAO {
         for(String datos:lista){
             String vdatos[]=datos.split("-");
             String nombre2 = vdatos[0];
-            SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
             Date fechaInicio = null;
             try {
                 fechaInicio = formato.parse(vdatos[1]);
@@ -173,7 +173,7 @@ public class PruebaDAO {
             return null;
         String vdatos[] = consulta.get(0).split("-");
         String nombre = vdatos[0];
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyyy");
         Date fechaInicio = null;
         try {
             fechaInicio = formato.parse(vdatos[1]);
@@ -242,6 +242,25 @@ public class PruebaDAO {
         return (BaseDeDatos.ejecutarActualizacionSQL(sql));
     }
     
+    public boolean modificar(PruebaDTO nuevo){
+        //update prueba set nombre ='Nombre de prueba cambiado', fecha_inicio = '20/04/2013',  fecha_fin = '21/04/2013', fecha_ejecucion = '20/04/2013', elemento_prueba = 'Otro elemento', descripcion = 'Otra descripción', caso_exito = 'Otro caso exito', caso_fallo = 'Otro caso fallo' where id_prueba = 31;
+        DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        String sql="update prueba set nombre ='@', fecha_inicio ='€',  fecha_fin ='§', fecha_ejecucion ='«', elemento_prueba ='#', descripcion ='ƒ', caso_exito = 'æ', caso_fallo = 'Ø', numero_requerimiento ='¤' where id_prueba = µ";        
+        sql=sql.replaceAll("@", nuevo.getNombre());
+        sql=sql.replaceAll("€", df1.format(nuevo.getFecha_inicio()));
+        sql=sql.replaceAll("§", df1.format(nuevo.getFecha_fin()));
+        sql=sql.replaceAll("«", df1.format(nuevo.getFecha_ejecucion()));
+        sql=sql.replaceAll("#", nuevo.getElemento_prueba());
+        sql=sql.replaceAll("ƒ", nuevo.getDescripcion());
+        sql=sql.replaceAll("æ", nuevo.getCaso_exito());
+        sql=sql.replaceAll("Ø", nuevo.getCaso_fallo());
+        sql=sql.replaceAll("¤", nuevo.getNumero_requerimiento());
+        sql=sql.replaceAll("µ", Integer.toString(nuevo.getIdentificador()));      
+        
+        BaseDeDatos.conectar();        
+        return (BaseDeDatos.ejecutarActualizacionSQL(sql));
+    }
+    
     //Metodo de ejemplo
     public String fechaInicio(){
         BaseDeDatos.conectar();
@@ -268,4 +287,11 @@ public class PruebaDAO {
         }
         return (modos);
     }
+    
+     public boolean eliminar(PruebaDTO nuevo){
+        //delete from responsable where id_responsable = 1
+        String sql="delete from prueba where id_prueba = " +nuevo.getIdentificador();
+        BaseDeDatos.conectar();
+        return (BaseDeDatos.ejecutarActualizacionSQL(sql));
+    } 
 }

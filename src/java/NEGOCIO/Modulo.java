@@ -42,14 +42,16 @@ public class Modulo {
                 "\n<th></th>"+
                 "\n<th>Nombre</th>"+
                 "\n</tr>";
-        
-        for (ModuloDTO modulo : modulos) {
-            tabla+="\n<tr>";
-            tabla+="\n<td>"+"<input type = 'radio' name = 'modulo' value = '"+modulo.getIdentificador()+"' >" + "</td>";
-            tabla+="\n<td>"+ modulo.getNombre()+"</td>";           
-            tabla+="\n</tr>";
+        if(!modulos.isEmpty()){
+            for (ModuloDTO modulo : modulos) {
+                tabla+="\n<tr>";
+                tabla+="\n<td>"+"<input type = 'radio' name = 'modulo' value = '"+modulo.getIdentificador()+"' checked>" + "</td>";
+                tabla+="\n<td>"+ modulo.getNombre()+"</td>";           
+                tabla+="\n</tr>";
+            }
         }
-        
+        else
+            tabla+="\n<table border='1'><td>No se encontraron módulos registrados.</td></table>";
         tabla+="</table></br>";
         return (tabla); 
         /*

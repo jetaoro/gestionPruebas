@@ -91,12 +91,18 @@ public class CasoPruebaDAO {
     }
     
     public boolean eliminar(CasoPruebaDTO nuevo){
-        //delete from responsable
-        //where id_responsable = 1
-        String sql="delete from caso_prueba"+ 
-                "where id_caso = " +nuevo.getIdentificador();
+        //delete from responsable where id_responsable = 1
+        String sql="delete from caso_prueba where id_caso = " +nuevo.getIdentificador();
         BaseDeDatos.conectar();
         return (BaseDeDatos.ejecutarActualizacionSQL(sql));
     }    
     
+    public boolean eliminarCasosUnaPrueba(int idPrueba){
+        //delete from responsable where id_responsable = 1
+        if(this.getCasosPruebaDeUnaPrueba(new PruebaDTO(idPrueba)).isEmpty())
+            return true;
+        String sql2="delete from caso_prueba where id_prueba = " +idPrueba;
+        BaseDeDatos.conectar();
+        return (BaseDeDatos.ejecutarActualizacionSQL(sql2));
+    }
 }

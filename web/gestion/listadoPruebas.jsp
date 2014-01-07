@@ -13,8 +13,7 @@
             function envia(destino){
                 formulario.action=destino;
                 formulario.submit();
-            }           
-            
+            }        
         </script>
         <title>Listado de Pruebas</title>
     </head>

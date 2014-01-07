@@ -63,6 +63,7 @@ public class Prueba {
         tabla += "\n<tr>"; 
         tabla += "\n<tr><th>Registro de Ejecución de Pruebas</th></tr>";
         tabla += "\n<tr><th>Identificador</th>" + "\n<td>" + "<input type='text' name='idPrueba' readonly='readonly' value='" + prueba.getIdentificador() + "'></td>";
+        tabla += "\n<tr><th>Número de requerimiento</th>" + "\n<td>" + "<input type='text' name='numero_requerimiento' readonly='readonly' value='" + prueba.getNumero_requerimiento() + "'></td>";
         tabla += "\n<tr><th>Nombre</th>" + "\n<td>" + "<input type='text' name='nombre' readonly='readonly' value='" + prueba.getNombre() + "'></td>";
         tabla += "\n<tr><th>Fecha Ejecuci&oacute;n</th>" + "\n<td>" + "<input type='text' name='fecha_ejecucion' readonly='readonly' value='" + df1.format(prueba.getFecha_ejecucion()) + "'></td>";
         tabla += "\n<tr><th>Elemento a probar</th>" + "\n<td>" + "<input type='text' name='elemento_prueba' readonly='readonly' value='" + prueba.getElemento_prueba() + "'></td>";
@@ -73,6 +74,32 @@ public class Prueba {
         tabla += "\n<tr><th>Caso de Fallo</th>" + "\n<td>" + "<input type='text' name='caso_fallo' readonly='readonly' value='" + prueba.getCaso_fallo() + "'></td>";        
         tabla+="\n<tr><th>Casos de Prueba"+"</th></tr>";
         tabla+= new CasoPrueba().getCasosPrueba(prueba);
+        tabla += "\n</tr></table></br>";
+        
+        return (tabla);
+    }
+    
+    public String getUnaPrueba(int idPrueba){
+        PruebaDTO prueba = new PruebaDAO().getUnaPrueba(new PruebaDTO(idPrueba));
+        DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        String tabla = "Evidencia de las pruebas realizadas sobre el Módulo "+ prueba.getModulo().getNombre();
+        tabla += ", en el puerto "+ prueba.getSitioPrueba().getNumero_puerto() + "</br>";
+        tabla+= "Fecha de Inicio: "+ "<input type='text' name='fecha_inicio' value='" + df1.format(prueba.getFecha_inicio()) + "' required>";
+        tabla+= "</br>Fecha de Terminación: "+ "<input type='text' name='fecha_fin' value='" + df1.format(prueba.getFecha_inicio()) + "' required>";
+        tabla+= "</br>Pruebas realizadas por: "+ prueba.getResponsable().getNombre() + "</br>";
+        tabla += "</br><table border='1'>";           
+        tabla += "\n<tr>"; 
+        tabla += "\n<tr><th>Registro de Ejecución de Pruebas</th></tr>";
+        tabla += "\n<tr><th>Identificador</th>" + "\n<td>" + "<input type='text' name='identificador' readonly='readonly' value='" + prueba.getIdentificador() + "'></td>";
+        tabla += "\n<tr><th>Nombre</th>" + "\n<td>" + "<input type='text' name='nombre' value='" + prueba.getNombre() + "' required></td>";
+         tabla += "\n<tr><th>Número de requerimiento</th>" + "\n<td>" + "<input type='text' name='numero_requerimiento' value='" + prueba.getNumero_requerimiento() + "' required></td>";
+        tabla += "\n<tr><th>Fecha Ejecuci&oacute;n</th>" + "\n<td>" + "<input type='text' name='fecha_ejecucion' value='" + df1.format(prueba.getFecha_ejecucion()) + "' required></td>";
+        tabla += "\n<tr><th>Elemento a probar</th>" + "\n<td>" + "<input type='text' name='elemento_prueba' value='" + prueba.getElemento_prueba() + "' required></td>";
+        tabla += "\n<tr><th>Tipo de Prueba</th>" + "\n<td>" + "<input type='text' name='tipo_prueba' readonly='readonly' value='" + prueba.getTipoPrueba().getDescripcion() + "' required></td>";
+        tabla += "\n<tr><th>Modos de Ejecución</th>" + "\n<td>" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getModosEjecucion().toString() + "'></td>";
+        tabla += "\n<tr><th>Descripción de la Prueba</th>" + "\n<td>" + "<input type='text' name='descripcion' value='" + prueba.getDescripcion() + "' required></td>";
+        tabla += "\n<tr><th>Caso de éxito</th>" + "\n<td>" + "<input type='text' name='caso_exito' value='" + prueba.getCaso_exito() + "' required></td>";
+        tabla += "\n<tr><th>Caso de Fallo</th>" + "\n<td>" + "<input type='text' name='caso_fallo' value='" + prueba.getCaso_fallo() + "' required></td>";
         tabla += "\n</tr></table></br>";
         
         return (tabla);
@@ -105,10 +132,10 @@ public class Prueba {
                 "\n<th>Responsable</th>"+
                 "\n</tr>";
         
-        if (pruebas!=null){
+        if (!pruebas.isEmpty()){
             for (PruebaDTO prueba : pruebas) {
                 tabla+="\n<tr>";
-                tabla+="\n<td>"+"<input type = 'radio' name = 'prueba' value = '"+prueba.getIdentificador()+"'>" + "</td>";
+                tabla+="\n<td>"+"<input type = 'radio' name = 'prueba' value = '"+prueba.getIdentificador()+"' checked>" + "</td>";
                 tabla+="\n<td>"+ prueba.getNumero_requerimiento()+"</td>";
                 tabla+="\n<td>"+ prueba.getNombre()+"</td>";
                 tabla+="\n<td>"+ prueba.getModulo().getNombre()+"</td>";
@@ -116,6 +143,8 @@ public class Prueba {
                 tabla+="\n</tr>";
             }
         }
+        else 
+            tabla+="\n<table border='1'><td>No se encontraron pruebas registradas.</td></table>";
         tabla+="</table></br>";
         return (tabla);
     }
@@ -175,7 +204,40 @@ public class Prueba {
         if (insercion)            
             resultado = "La inserción fue exitosa";         
         return (resultado);
-    }   
+    } 
+    
+    public String modificarPrueba(int idPrueba, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, String descripcion, String casoExito, String casoFallo) throws ParseException{
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaInicio2 = formato.parse(fechaInicio);
+        Date fechaFin2 = formato.parse(fechaFin); 
+        Date fechaEjecucion2 = formato.parse(fechaEjecucion);
+        PruebaDTO prueba = new PruebaDTO(idPrueba, nombre, numero_requerimiento, fechaInicio2, fechaFin2, fechaEjecucion2, elementoPrueba, descripcion, casoExito, casoFallo);
+        String resultado = "La actualización falló";
+        boolean actualizacion= new PruebaDAO().modificar(prueba);
+        
+        if (actualizacion)
+            resultado = "La actualización fue exitosa";        
+        return (resultado);
+    }
+    
+    public String eliminarPrueba(PruebaDTO eliminada){
+        String resultado = "La eliminación de la prueba falló";
+        boolean casosPruebaBorrados = new CasoPruebaDAO().eliminarCasosUnaPrueba(eliminada.getIdentificador());
+        if(!casosPruebaBorrados){
+            resultado = "La eliminación de los casos de prueba de la prueba seleccionada, falló";
+            return (resultado);
+        }
+        boolean modosEjecucionBorrados = new ModoEjecucionDAO().eliminarModosUnaPrueba(eliminada.getIdentificador());
+        if(!modosEjecucionBorrados){
+            resultado = "La eliminación de los modos de ejecución de la prueba seleccionada, falló";
+            return (resultado);
+        }
+        boolean pruebaBorrada= new PruebaDAO().eliminar(eliminada);
+        
+        if (pruebaBorrada)
+            resultado = "La eliminación de la prueba fue exitosa";        
+        return (resultado);
+    }
     
     public String obtenerPruebaEjemplo(){
         String result = new PruebaDAO().fechaInicio();

@@ -12,6 +12,15 @@
         <title>Modificar Prueba</title>
     </head>
     <body>
-        <h1>En construcción...</h1>
+        <form name="modificar" action="actualizarPrueba.jsp" method="post">
+            <% int idPrueba=Integer.parseInt(request.getParameter("prueba")); %>         
+            <jsp:useBean id="prueba" scope="page" class="DTO.PruebaDTO" />
+            <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
+            <%=gestion.getUnaPrueba(idPrueba)%>                   
+            <input type="submit" name="registrar" value="Registrar">
+        </form>
+        <form name="volver" action="listadoModulos.jsp">
+            <input type="submit" name="volver" value="Volver">
+        </form>
     </body>
 </html>

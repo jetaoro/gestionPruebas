@@ -14,7 +14,6 @@
                 formulario.action=destino;
                 formulario.submit();
             }           
-            
         </script>
         <title>Ver contenido de prueba</title>
     </head>
@@ -26,6 +25,7 @@
             <%=gestion.getPrueba(idPrueba)%>
             <input type="button" value="Agregar" name="agregar" onClick="envia('agregarCasoPrueba.jsp')" />
             <input type="button" value="Modificar" name="modificar" onClick="envia('modificarCasoPrueba.jsp')" />            
+            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarCasoPrueba.jsp')" />            
         </form>
                 
     </body>

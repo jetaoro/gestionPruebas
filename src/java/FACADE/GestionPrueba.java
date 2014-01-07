@@ -98,8 +98,8 @@ public class GestionPrueba {
         return (new CasoPrueba().modificarCasoPrueba(caso));
     }
     
-    public String eliminarCasoPrueba (CasoPruebaDTO caso){
-        return (new CasoPrueba().eliminarCasoPrueba(caso));
+    public String eliminarCasoPrueba (int idCaso){
+        return (new CasoPrueba().eliminarCasoPrueba(new CasoPruebaDTO(idCaso)));
     }
     
     
@@ -136,6 +136,18 @@ public class GestionPrueba {
     public String getPrueba(int idPrueba){
         return (new Prueba().getPrueba(idPrueba));
     }
+    
+    public String getUnaPrueba(int id_prueba){
+        return (new Prueba().getUnaPrueba(id_prueba));
+    }
+    
+    public String modificarPrueba(int idPrueba, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, String descripcion, String casoExito, String casoFallo) throws ParseException{
+        return (new Prueba().modificarPrueba(idPrueba, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, descripcion, casoExito, casoFallo));
+    }
+    
+    public String eliminarPrueba(int idPrueba){
+        return (new Prueba().eliminarPrueba(new PruebaDTO(idPrueba)));
+    } 
    
     //Prueba comprobacion
     public String getFechaInicio(){

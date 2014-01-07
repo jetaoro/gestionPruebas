@@ -30,18 +30,22 @@ public class CasoPrueba {
                 "\n<th>Tipo de Resultado</th>"+
                 "\n<th>Observación</th>"+
                 "\n</tr>";
-                       
-        for (CasoPruebaDTO caso : casosPruebas) {
-            tabla+="\n<tr>";
-            tabla+="\n<td>"+"<input type = 'radio' name = 'casoPrueba' value = '"+caso.getIdentificador()+"' >" + "</td>";
-            tabla+="\n<td>"+caso.getDescripcion()+"</td>";
-            tabla+="\n<td>"+caso.getDatos_entrada()+"</td>";
-            tabla+="\n<td>"+caso.getResultado_esperado()+"</td>";
-            tabla+="\n<td>"+caso.getResultado_obtenido()+"</td>";
-            tabla+="\n<td>"+caso.getTipo_resultado()+"</td>";
-            tabla+="\n<td>"+caso.getObservacion()+"</td>";
-            tabla+="\n</tr>";
-        }
+        
+         if(!casosPruebas.isEmpty()){              
+            for (CasoPruebaDTO caso : casosPruebas) {
+                tabla+="\n<tr>";
+                tabla+="\n<td>"+"<input type = 'radio' name = 'casoPrueba' value = '"+caso.getIdentificador()+"' checked></td>";
+                tabla+="\n<td>"+caso.getDescripcion()+"</td>";
+                tabla+="\n<td>"+caso.getDatos_entrada()+"</td>";
+                tabla+="\n<td>"+caso.getResultado_esperado()+"</td>";
+                tabla+="\n<td>"+caso.getResultado_obtenido()+"</td>";
+                tabla+="\n<td>"+caso.getTipo_resultado()+"</td>";
+                tabla+="\n<td>"+caso.getObservacion()+"</td>";
+                tabla+="\n</tr>";
+            }
+         }
+         else
+             tabla+="\n<table border='1'><td>No se encontraron casos de prueba registrados, para la prueba seleccionada.</td></table>";
         return (tabla);
     }
     

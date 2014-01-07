@@ -56,4 +56,11 @@ public class ModoEjecucionDAO {
         BaseDeDatos.conectar();
         return (BaseDeDatos.ejecutarActualizacionSQL(sql));
     }
+    
+    public boolean eliminarModosUnaPrueba(int idPrueba){
+        //delete from responsable where id_responsable = 1
+        String sql="delete from prueba_modo_ejecucion where id_prueba = " +idPrueba;
+        BaseDeDatos.conectar();
+        return (BaseDeDatos.ejecutarActualizacionSQL(sql));
+    }
 }
