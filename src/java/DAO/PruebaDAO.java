@@ -150,8 +150,19 @@ public class PruebaDAO {
     
         }
     
-    public PruebaDTO getUnaPrueba(PruebaDTO buscado){
+    public int buscarIdentificadorPrueba (PruebaDTO prueba){
+        int identificador = 0;
+        BaseDeDatos.conectar();
+        String sql="select * from prueba where nombre ='"+prueba.getNombre()+"'";
+        ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
+        if (consulta.isEmpty())
+            return identificador;
+        String vdatos[] = consulta.get(0).split("-");
+        String idPrueba = vdatos[13];
+        return(Integer.parseInt(idPrueba));
+    }
     
+    public PruebaDTO getUnaPrueba(PruebaDTO buscado){    
         BaseDeDatos.conectar();
         //select * from responsable where nombre in ('Jennifer Orejuela')
         String sql="select * from prueba where id_prueba ="+buscado.getIdentificador();
@@ -162,27 +173,33 @@ public class PruebaDAO {
             return null;
         String vdatos[] = consulta.get(0).split("-");
         String nombre = vdatos[0];
-        String fechaInicio[] = vdatos[1].split("/");
-        Date fecha_inicio = new Date();
-        //este armado debe hacerse en el DTO
-        fecha_inicio.setYear(Integer.parseInt(fechaInicio[0]));
-        fecha_inicio.setMonth(Integer.parseInt(fechaInicio[1]));
-        fecha_inicio.setDate(Integer.parseInt(fechaInicio[2]));
-        String fechaFin[] = vdatos[2].split("/");
-        Date fecha_fin = new Date(Integer.parseInt(fechaFin[0]), Integer.parseInt(fechaFin[1]), Integer.parseInt(fechaFin[2]));
-        String fechaEjecucion[] = vdatos[3].split("/");
-        Date fecha_ejecucion = new Date(Integer.parseInt(fechaEjecucion[0]), Integer.parseInt(fechaEjecucion[1]), Integer.parseInt(fechaEjecucion[2]));
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+        Date fechaInicio = null;
+        try {
+            fechaInicio = formato.parse(vdatos[1]);
+        } catch (ParseException ex) {
+        }
+        Date fechaFin = null;
+        try {
+            fechaFin = formato.parse(vdatos[2]);
+        } catch (ParseException ex) {
+        }
+        Date fechaEjecucion = null;
+        try {
+            fechaEjecucion = formato.parse(vdatos[3]);
+        } catch (ParseException ex) {
+        }
         String elemento_prueba = vdatos[4];
         String descripcion = vdatos[5];
         String caso_exito = vdatos[6];
         String caso_fallo = vdatos[7];
-        int id_prueba = Integer.parseInt(vdatos[8]);
-        int id_tipo = Integer.parseInt(vdatos[9]);
-        int id_modulo = Integer.parseInt(vdatos[10]);
-        int id_responsable = Integer.parseInt(vdatos[11]);
-        int id_sitio = Integer.parseInt(vdatos[12]);
-        String numeroRequerimiento = vdatos[13];
-        return (new PruebaDTO(id_prueba, nombre, numeroRequerimiento, fecha_inicio, fecha_fin, fecha_ejecucion, elemento_prueba, descripcion, caso_exito, caso_fallo, id_responsable, id_modulo, id_sitio, id_tipo));
+        int id_prueba = Integer.parseInt(vdatos[13]);
+        int id_tipo = Integer.parseInt(vdatos[8]);
+        int id_modulo = Integer.parseInt(vdatos[9]);
+        int id_responsable = Integer.parseInt(vdatos[10]);
+        int id_sitio = Integer.parseInt(vdatos[11]);
+        String numeroRequerimiento = vdatos[12];
+        return (new PruebaDTO(id_prueba, nombre, numeroRequerimiento, fechaInicio, fechaFin, fechaEjecucion, elemento_prueba, descripcion, caso_exito, caso_fallo, id_responsable, id_modulo, id_sitio, id_tipo));
     }
     
     public boolean insertar(PruebaDTO nuevo){
@@ -203,6 +220,24 @@ public class PruebaDAO {
         sql=sql.replaceAll("©", Integer.toString(nuevo.getSitioPrueba().getIdentificador()));
         sql=sql.replaceAll("¤", nuevo.getNumero_requerimiento());
         
+        BaseDeDatos.conectar();
+        if(BaseDeDatos.ejecutarActualizacionSQL(sql)){
+            int idPrueba = this.buscarIdentificadorPrueba(nuevo);
+            ArrayList<ModoEjecucionDTO> modos = nuevo.getModosEjecucion();
+            //insert into prueba_modo_ejecucion values (9, 1)            
+            boolean exito=false;
+            if(modos!=null){
+                for (ModoEjecucionDTO modo : modos) {
+                    exito = this.insertarModosPrueba(idPrueba, modo.getIdentificador());                    
+                }
+            }
+            return exito;
+        }
+        return (BaseDeDatos.ejecutarActualizacionSQL(sql));
+    }
+    
+    private boolean insertarModosPrueba (int idPrueba, int idModo){
+        String sql = "insert into prueba_modo_ejecucion values ("+idPrueba+", "+idModo+")";
         BaseDeDatos.conectar();
         return (BaseDeDatos.ejecutarActualizacionSQL(sql));
     }

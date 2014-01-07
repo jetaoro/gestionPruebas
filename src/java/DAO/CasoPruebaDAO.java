@@ -66,15 +66,16 @@ public class CasoPruebaDAO {
     }
     
    
-    public boolean insertar(CasoPruebaDTO nuevo){
+    public boolean insertar(CasoPruebaDTO nuevo, int idPrueba){
         //insert into  responsable values('1','marco adarme','madarme','1235')
-        String sql="insert into caso_prueba values ('@', '#', '$', '&', '~', '£')";
+        String sql="insert into caso_prueba values ('@', '#', '$', '&', '~', '£', ¥)";
         sql=sql.replaceAll("@", nuevo.getDescripcion());
         sql=sql.replaceAll("#", nuevo.getDatos_entrada());
         sql=sql.replaceAll("$", nuevo.getResultado_esperado());
         sql=sql.replaceAll("&", nuevo.getResultado_obtenido());
         sql=sql.replaceAll("~", nuevo.getTipo_resultado());
         sql=sql.replaceAll("£", nuevo.getObservacion());
+        sql=sql.replaceAll("¥", Integer.toString(idPrueba));
         BaseDeDatos.conectar();
         return (BaseDeDatos.ejecutarActualizacionSQL(sql));
     }

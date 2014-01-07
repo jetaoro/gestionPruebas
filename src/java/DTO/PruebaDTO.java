@@ -31,6 +31,10 @@ public class PruebaDTO implements Comparable{
     public PruebaDTO() {
     }
 
+    public PruebaDTO(int identificador) {
+        this.identificador = identificador;
+    }
+
     public PruebaDTO(int identificador, String nombre, String numero_requerimiento, Date fecha_inicio, Date fecha_fin, Date fecha_ejecucion, String elemento_prueba, String descripcion, String caso_exito, String caso_fallo) {
         this.identificador = identificador;
         this.nombre = nombre;

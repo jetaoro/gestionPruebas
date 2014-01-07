@@ -21,7 +21,7 @@ public class ModoEjecucion {
         TreeSet<ModoEjecucionDTO> modosEjecucion = new ModoEjecucionDAO().getModoEjecucion();
         String listado = "";
         for (ModoEjecucionDTO modo : modosEjecucion) {
-            listado+="<input type='checkbox' name='modoEjecucion' value='>"+modo.getIdentificador()+"'>" + modo.getDescripcion() + " ";
+            listado+="<input type='checkbox' name='modoEjecucion' value='"+modo.getIdentificador()+"'>" + modo.getDescripcion() + " ";
         }       
         return listado;
     }

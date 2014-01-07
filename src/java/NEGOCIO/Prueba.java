@@ -20,7 +20,7 @@ public class Prueba {
     public Prueba() {
     }
     
-    public String getPrueba(){
+    public String getPruebas(){
         TreeSet<PruebaDTO> pruebas = new PruebaDAO().getPruebas();
         String tabla = "<table border='1'>";
                        
@@ -47,6 +47,34 @@ public class Prueba {
             tabla+= new CasoPrueba().getCasosPrueba(prueba);
             tabla+="\n</tr>";
         }
+        return (tabla);
+    }
+    
+    //PENDIENTE POR TERMINAR
+    public String getPrueba(int idPrueba){
+        PruebaDTO prueba = new PruebaDAO().getUnaPrueba(new PruebaDTO(idPrueba));
+        DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        String tabla = "Evidencia de las pruebas realizadas sobre el Módulo "+ prueba.getModulo().getNombre();
+        tabla += ", en el puerto "+ prueba.getSitioPrueba().getNumero_puerto() + "</br>";
+        tabla+= "Fecha de Inicio: "+ df1.format(prueba.getFecha_inicio());
+        tabla+= "</br>Fecha de Terminación: "+ df1.format(prueba.getFecha_fin());
+        tabla+= "</br>Pruebas realizadas por: "+ prueba.getResponsable().getNombre() + "</br>";
+        tabla += "</br><table border='1'>";           
+        tabla += "\n<tr>"; 
+        tabla += "\n<tr><th>Registro de Ejecución de Pruebas</th></tr>";
+        tabla += "\n<tr><th>Identificador</th>" + "\n<td>" + "<input type='text' name='idPrueba' readonly='readonly' value='" + prueba.getIdentificador() + "'></td>";
+        tabla += "\n<tr><th>Nombre</th>" + "\n<td>" + "<input type='text' name='nombre' readonly='readonly' value='" + prueba.getNombre() + "'></td>";
+        tabla += "\n<tr><th>Fecha Ejecuci&oacute;n</th>" + "\n<td>" + "<input type='text' name='fecha_ejecucion' readonly='readonly' value='" + df1.format(prueba.getFecha_ejecucion()) + "'></td>";
+        tabla += "\n<tr><th>Elemento a probar</th>" + "\n<td>" + "<input type='text' name='elemento_prueba' readonly='readonly' value='" + prueba.getElemento_prueba() + "'></td>";
+        tabla += "\n<tr><th>Tipo de Prueba</th>" + "\n<td>" + "<input type='text' name='tipo_prueba' readonly='readonly' value='" + prueba.getTipoPrueba().getDescripcion() + "'></td>";
+        tabla += "\n<tr><th>Modos de Ejecución</th>" + "\n<td>" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getModosEjecucion().toString() + "'></td>";
+        tabla += "\n<tr><th>Descripción de la Prueba</th>" + "\n<td>" + "<input type='text' name='descripcion' readonly='readonly' value='" + prueba.getDescripcion() + "'></td>";
+        tabla += "\n<tr><th>Caso de éxito</th>" + "\n<td>" + "<input type='text' name='caso_exito' readonly='readonly' value='" + prueba.getCaso_exito() + "'></td>";
+        tabla += "\n<tr><th>Caso de Fallo</th>" + "\n<td>" + "<input type='text' name='caso_fallo' readonly='readonly' value='" + prueba.getCaso_fallo() + "'></td>";        
+        tabla+="\n<tr><th>Casos de Prueba"+"</th></tr>";
+        tabla+= new CasoPrueba().getCasosPrueba(prueba);
+        tabla += "\n</tr>";
+        
         return (tabla);
     }
     
@@ -136,15 +164,18 @@ public class Prueba {
                 modos.add(new ModoEjecucionDTO(idModo2));
             }
         }
-        PruebaDTO nueva = new PruebaDTO(nombre, numero_requerimiento, fechaInicio2, fechaFin2, fechaEjecucion2, elementoPrueba, descripcion, casoExito, casoFallo, idResponsable, idModulo, idSitio, idTipoPrueba);
-        nueva.setModosEjecucion(modos);        
         String resultado = "La inserción falló";
+        PruebaDTO nueva = new PruebaDTO(nombre, numero_requerimiento, fechaInicio2, fechaFin2, fechaEjecucion2, elementoPrueba, descripcion, casoExito, casoFallo, idResponsable, idModulo, idSitio, idTipoPrueba);
+        for (ModoEjecucionDTO modo : modos) {
+            nueva.getModosEjecucion().add(modo);            
+        }        
+        
         boolean insercion= new PruebaDAO().insertar(nueva);
         
         if (insercion)            
             resultado = "La inserción fue exitosa";         
         return (resultado);
-    }
+    }   
     
     public String obtenerPruebaEjemplo(){
         String result = new PruebaDAO().fechaInicio();

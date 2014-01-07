@@ -26,7 +26,7 @@
             String fechaEjecucion = request.getParameter("fecha_ejecucion");
             String elementoPrueba = request.getParameter("elemento_prueba");
             String idTipoPrueba = request.getParameter("tipoPrueba");
-            String [] modosEjecucion = request.getParameterValues("ModoEjecucion");
+            String [] modosEjecucion = request.getParameterValues("modoEjecucion");
             String descripcion = request.getParameter("descripcion");
             String casoExito = request.getParameter("caso_exito");
             String casoFallo = request.getParameter("caso_fallo");

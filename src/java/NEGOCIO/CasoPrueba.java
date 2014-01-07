@@ -45,9 +45,28 @@ public class CasoPrueba {
         return (tabla);
     }
     
-    public String insertarCasoPrueba(CasoPruebaDTO nuevo){
+    public String agregarCasoPrueba(){ 
+        String tabla = "<table border=1>";
+        tabla += "<table border=1>";
+        tabla += "<tr><td align='center'>Agregar Caso de Prueba</td></tr></table>";
+        tabla += "<table border=1><tr align='center'><td>Descripción</td></tr>";
+        tabla += "<tr align='center'><td><input type='text' name='descripcion' required></td></tr></table>";
+        tabla += "<table border=1><tr align='center'><td>Datos de entrada</td></tr>";
+        tabla += "<tr align='center'><td><input type='text' name='datos_entrada' required></td></tr></table>";
+        tabla += "<table border=1><tr align='center'><td>Resultado Esperado</td></tr>";
+        tabla += "<tr align='center'><td><input type='text' name='resultado_esperado' required></td></tr></table>";
+        tabla += "<table border=1><tr align='center'><td>Resultado Obtenido</td></tr>";
+        tabla += "<tr align='center'><td><input type='text' name='resultado_obtenido' required></td></tr></table>";
+        tabla += "<table border=1><tr align='center'><td>Observación</td></tr>";
+        tabla += "<tr align='center'><td><input type='text' name='observacion' ></td></tr></table>";
+        tabla += "</table></br>";
+
+        return (tabla);
+    }
+    
+    public String insertarCasoPrueba(CasoPruebaDTO nuevo, int idPrueba){
         String resultado = "La inserción falló";
-        boolean insercion= new CasoPruebaDAO().insertar(nuevo);
+        boolean insercion= new CasoPruebaDAO().insertar(nuevo, idPrueba);
         
         if (insercion)
             resultado = "La inserción fue exitosa";        

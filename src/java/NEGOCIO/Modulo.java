@@ -71,7 +71,7 @@ public class Modulo {
         tabla += "<tr align='center'><td><input type='text' name='nombre' required></td></tr></table>";
         tabla += "<table border=1><tr align='center'><td>Descripci&oacute;n</td></tr>";
         tabla += "<tr align='center'><td><input type='text' name='descripcion' required></td></tr></table>";
-        tabla += "</table>";
+        tabla += "</table></br>";
 
         return (tabla);
     }
@@ -118,7 +118,7 @@ public class Modulo {
             tabla+="<tr align='center'><td><input type='text' name='nombre' required value='"+modulo.getNombre()+"'></td></tr></table>";
             tabla+="<table border=1><tr align='center'><td>Descripci&oacute;n</td></tr>";
             tabla+="<tr align='center'><td><input type='text' name='descripcion' required value='"+modulo.getDescripcion()+"'></td></tr></table>";
-            tabla+="</table>";
+            tabla+="</table></br>";
         }
         return (tabla);
     }

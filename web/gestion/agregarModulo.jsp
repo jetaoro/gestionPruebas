@@ -9,19 +9,19 @@
 <html>
     <head>
         <link href="estilo.css" rel="stylesheet" type="text/css" >
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
         <title>Agregar M&oacute;dulo</title>
     </head>
     <body>
-        <form name="insertarModulo" action="insertarModulo.jsp">
+        <form name="formulario" method="post" action="insertarModulo.jsp">
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.agregarModulo()%>
-            <input type="submit" value="Registrar" name="registrar" />
+            <input type="submit" value="Agregar" name="agregar" />
+            
         </form>
-                         
-        <form name="volver" action="listadoModulos.jsp">
-              <td align="right"><input type="submit" name="volver" value="Volver"></td>
-        </form>                            
+        <form name="listado" action="listadoModulos.jsp">
+            <input type="submit" value="Volver" name="volver" />
+        </form>
     </body>
 </html>
 

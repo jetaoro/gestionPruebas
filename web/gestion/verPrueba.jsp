@@ -1,6 +1,6 @@
 <%-- 
-    Document   : listaModulo
-    Created on : 26/11/2013, 06:11:44 AM
+    Document   : verPrueba
+    Created on : 7/01/2014, 09:31:02 AM
     Author     : Jennifer
 --%>
 
@@ -9,11 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listado de Módulos</title>
+        <title>Ver contenido de prueba</title>
     </head>
     <body>
-        <h1>Listado de Módulos</h1>
+        <h1>Contenido de la Prueba</h1>
+        <%int idPrueba = Integer.parseInt(request.getParameter("prueba")); %>
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
-        <%=gestion.getModulos()%>
+        <%=gestion.getPrueba(idPrueba)%>
+                
     </body>
 </html>

@@ -82,8 +82,12 @@ public class GestionPrueba {
         return (new CasoPrueba().getCasosPrueba(prueba));
     }
     
-    public String insertarCasoPrueba(CasoPruebaDTO caso){
-        return (new CasoPrueba().insertarCasoPrueba(caso));
+    public String agregarCasoPrueba(){
+        return (new CasoPrueba().agregarCasoPrueba());
+    }
+    
+    public String insertarCasoPrueba(CasoPruebaDTO caso, int idPrueba){
+        return (new CasoPrueba().insertarCasoPrueba(caso, idPrueba));
     }
     
     public String modificarCasoPrueba(CasoPruebaDTO caso){
@@ -97,7 +101,7 @@ public class GestionPrueba {
     
     //Sección de pruebas
     public String getPruebas(){
-        return (new Prueba().getPrueba());
+        return (new Prueba().getPruebas());
     }
     
     public String paginaBuscarPruebas(){
@@ -118,11 +122,15 @@ public class GestionPrueba {
     }
     
     public String insertarUnaPrueba(int idModulo2, int idSitio2, int idResponsable2, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, int idTipoPrueba, String [] modosEjecucion, String descripcion, String casoExito, String casoFallo) throws ParseException{
-        return (new Prueba().insertarUnaPrueba(idModulo2, idSitio2, idResponsable2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, idTipoPrueba, modosEjecucion, descripcion, casoExito, casoFallo));
+        return (new Prueba().insertarUnaPrueba(idModulo2, idSitio2, idResponsable2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, idTipoPrueba, modosEjecucion, descripcion, casoExito, casoFallo));        
     }
     
     public String insertarPrueba(PruebaDTO prueba){
         return (new Prueba().insertarPrueba(prueba));
+    }
+    
+    public String getPrueba(int idPrueba){
+        return (new Prueba().getPrueba(idPrueba));
     }
    
     //Prueba comprobacion

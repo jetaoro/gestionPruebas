@@ -28,23 +28,30 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="/images/icons/favicon.ico">
+    <link rel="shortcut icon" href="/images/favicon.png">
     
   </head>
     <body>
         <div id="wrapper">
          <div id="login" class="animate form position">
             <form action="gestion/paginaBuscarPrueba.jsp" method="post">
+                <img src="images/logoindex.png">
                  <div class="content-login">
-                  <div class="header">Logueate con tu cuenta</div>
+                  <div class="header">Inicio de Sesión</div>
                     <div class="inputs">
-                        <input name="user" type="text" placeholder="Usuario" />
-                        <input name="pass" type="password"  placeholder="Contraseña" />
+                        <input name="user" required type="text" placeholder="Usuario" />
+                        <input name="pass" required type="password"  placeholder="Contraseña" />
                     </div>
                     <div class="button-login"><input type="submit" name="ingresar" value="Ingresar"/></div>
                  </div>   
             </form>
          </div>
         </div> 
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
     </body>
 </html>

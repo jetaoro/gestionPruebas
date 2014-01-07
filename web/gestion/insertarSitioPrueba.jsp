@@ -16,6 +16,7 @@
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
         <jsp:useBean id="sitio_prueba" scope="page" class="DTO.SitioPruebaDTO" />
         <jsp:setProperty name="sitio_prueba" property="*" />
+        <%if (sitio_prueba!=null)%>
         <%=gestion.insertarSitioPrueba(sitio_prueba)%>
     </body>
 </html>
