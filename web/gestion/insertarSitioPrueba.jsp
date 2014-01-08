@@ -18,5 +18,8 @@
         <jsp:setProperty name="sitio_prueba" property="*" />
         <%if (sitio_prueba!=null)%>
         <%=gestion.insertarSitioPrueba(sitio_prueba)%>
+        <form name="listadoPruebas" action="listadoSitiosPrueba.jsp">
+            <input type="submit" value="Volver" name="volver" />
+        </form>
     </body>
 </html>

@@ -16,5 +16,8 @@
         <jsp:useBean id="modulo" scope="page" class="DTO.ModuloDTO" />
         <jsp:setProperty name="modulo" property="*" />
         <%=gestion.insertarModulo(modulo)%>
+        <form name="listado" action="listadoModulos.jsp">
+            <input type="submit" value="Volver" name="volver" />
+        </form>
     </body>
 </html>

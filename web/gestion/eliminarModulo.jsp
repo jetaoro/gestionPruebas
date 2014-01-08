@@ -15,6 +15,9 @@
         <h1>Eliminación del Módulo</h1>
         <% int idModulo=Integer.parseInt(request.getParameter("modulo")); %>       
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
-        <%=gestion.eliminarModulo(idModulo)%>
+        <%=gestion.eliminarModulo(idModulo)%>        
+        <form name="listado" action="listadoModulos.jsp">
+            <input type="submit" value="Volver" name="volver" />
+        </form>
     </body>
 </html>

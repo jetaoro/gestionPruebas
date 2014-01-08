@@ -16,5 +16,8 @@
         <jsp:useBean id="sitio" scope="page" class="DTO.SitioPruebaDTO" />
         <jsp:setProperty name="sitio" property="*" />        
         <%=gestion.modificarSitioPrueba(sitio)%>
+        <form name="listadoPruebas" action="listadoSitiosPrueba.jsp">
+            <input type="submit" value="Volver" name="volver" />
+        </form>
     </body>
 </html>

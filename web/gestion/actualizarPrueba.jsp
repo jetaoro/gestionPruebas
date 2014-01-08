@@ -31,5 +31,8 @@
                 idPrueba2 = Integer.parseInt(idPrueba);
         %>        
         <%=gestion.modificarPrueba(idPrueba2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, descripcion, casoExito, casoFallo)%>
+        <form name="listadoPruebas" action="listadoSitiosPrueba.jsp">
+            <input type="submit" value="Volver" name="volver" />
+        </form>
     </body>
 </html>

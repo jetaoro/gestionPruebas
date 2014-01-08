@@ -19,8 +19,10 @@
             <%=gestion.agregarCasoPrueba(idPrueba)%>            
             <input type="submit" value="Registrar" name="registrar" />            
         </form>
+            <%--
         <form name="listadoPruebas" action="listadoPruebas.jsp">
             <input type="submit" value="Volver" name="volver" />
-        </form>        
+        </form>  
+            --%>
     </body>
 </html>

@@ -42,7 +42,8 @@
             <input type="button" value="Ver" name="ver" onClick="envia('verPrueba.jsp')" />
             <input type="button" value="Agregar" name="agregar" onClick="envia('agregarPrueba.jsp')" />
             <input type="button" value="Modificar" name="modificar" onClick="envia('modificarPrueba.jsp')" />            
-            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarPrueba.jsp')" />            
+            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarPrueba.jsp')" />
+            <input type="button" value="Volver" name="volver" onClick="envia('paginaBuscarPrueba.jsp')" />            
         </form> 
     </body>
 </html>
