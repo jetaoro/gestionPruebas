@@ -9,7 +9,7 @@
 <html class="body-error">
 <head>
     <meta charset="utf-8">
-    <title>Sistema de Gestión de Pruebas - .::Login</title>
+    <title>Sistema de Gestión de Pruebas - Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -28,7 +28,7 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="shortcut icon" href="../images/favicon.ico">
     
   </head>
     <body>
