@@ -120,8 +120,8 @@
               
               <div class="grid-title">
                <div class="pull-left">
-                  <div class="icon-title"><i class="icon-eye-open"></i></div>
-                  <span>Example Table</span> 
+                  <div class="icon-title"><i class="icon-search"></i></div>
+                  <span>Términos de búsqueda</span> 
                   <div class="clearfix"></div>
                </div>
                <div class="pull-right"> 
