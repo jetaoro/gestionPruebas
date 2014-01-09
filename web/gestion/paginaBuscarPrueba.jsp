@@ -134,7 +134,7 @@
                     <form name="buscarPrueba" action="listadoPruebas.jsp">
                      <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
                         <%=gestion.paginaBuscarPruebas()%>
-                        <input  class="btn btn-success"  type="submit" value="Buscar" name="buscar" />
+                        <input  class="btn"  type="submit" value="Buscar" name="buscar" />
                     </form>    
                 </div>  
              </div>
