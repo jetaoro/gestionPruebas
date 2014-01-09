@@ -94,8 +94,14 @@
         </div> 
         <!-- fin del header -->
         <div id="wrap">
-            <form name="buscarPrueba" action="listadoPruebas.jsp">
+        <form name="buscarPrueba" action="listadoPruebas.jsp">
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
+            <%session.removeAttribute("modulo");
+              session.removeAttribute("sitio");
+              session.removeAttribute("responsable");
+              session.removeAttribute("numero_requerimiento");
+              session.removeAttribute("nombre_prueba");
+            %>
             <%=gestion.paginaBuscarPruebas()%>
             <input type="submit" value="Buscar" name="buscar" />
         </form>  

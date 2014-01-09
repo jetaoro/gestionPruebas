@@ -20,9 +20,10 @@
     <body>
         <h1>Listado de Pruebas</h1>
         <form name="formulario" method="post">
-            <% String idModulo=request.getParameter("modulo");
-               String idSitio=request.getParameter("sitio");
-               String idResponsable=request.getParameter("responsable");
+            <% 
+               String idModulo=request.getParameter("modulo")==null?(String)session.getAttribute("modulo"):request.getParameter("modulo");
+               String idSitio=request.getParameter("sitio")==null?(String)session.getAttribute("sitio"):request.getParameter("sitio");
+               String idResponsable=request.getParameter("responsable")==null?(String)session.getAttribute("responsable"):request.getParameter("responsable");
                int idModulo2=0;
                int idSitio2=0;                  
                int idResponsable2=0;
@@ -33,8 +34,14 @@
                if (idResponsable!="")         
                    idResponsable2=Integer.parseInt(idResponsable);        
 
-               String numero_requerimiento = request.getParameter("numero_requerimiento");
-               String nombre_prueba = request.getParameter("nombre_prueba");
+               String numero_requerimiento = request.getParameter("numero_requerimiento")==null?(String)session.getAttribute("numero_requerimiento"):request.getParameter("numero_requerimiento");
+               String nombre_prueba = request.getParameter("nombre_prueba")==null?(String)session.getAttribute("nombre_prueba"):request.getParameter("nombre_prueba");
+               
+               session.setAttribute("modulo", idModulo);
+               session.setAttribute("sitio", idSitio);
+               session.setAttribute("responsable", idResponsable);
+               session.setAttribute("numero_requerimiento", numero_requerimiento);
+               session.setAttribute("nombre_prueba", nombre_prueba);
             %>
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.buscarPruebas(nombre_prueba, numero_requerimiento, idModulo2, idResponsable2, idSitio2)%>

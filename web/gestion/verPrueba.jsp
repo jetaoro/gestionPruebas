@@ -8,26 +8,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+        <script type="text/javascript" src="../js/validar.js"></script>
         <script type="text/javascript" >
             function envia(destino){
+                alert("hhhhh");
                 formulario.action=destino;
                 formulario.submit();
-            }           
+            }
+            
+            function modifica(destino) {                
+                if (!validarRadio('formulario', 'casoPrueba')) {
+                    alert("Debe seleccionar el rol a modificar");
+                    return;
+                }
+
+                formulario.action = destino;
+                formulario.submit();
+            }
         </script>
         <title>Ver contenido de prueba</title>
     </head>
     <body>
         <h1>Contenido de la Prueba</h1>
         <form name="formulario" method="post">
-            <%int idPrueba = Integer.parseInt(request.getParameter("prueba")); %>
+            <%  int idPrueba = 0;
+                if(request.getParameter("prueba")!=null)
+                    idPrueba = Integer.parseInt(request.getParameter("prueba")); %>
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.getPrueba(idPrueba)%>
             <input type="button" value="Agregar" name="agregar" onClick="envia('agregarCasoPrueba.jsp')" />
-            <input type="button" value="Modificar" name="modificar" onClick="envia('modificarCasoPrueba.jsp')" />            
+            <input type="button" value="Modificar" name="modificar" onClick="modifica('modificarCasoPrueba.jsp')" />            
             <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarCasoPrueba.jsp')" />
-            <input type="button" value="Volver" name="volver" />
+            <input type="button" value="Volver" name="volver" onClick="envia('listadoPruebas.jsp')"/>
         </form>
-                
+        
+        
     </body>
 </html>
