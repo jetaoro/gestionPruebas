@@ -106,7 +106,7 @@ public class Prueba {
     }
     
     public String buscarPrueba(){
-        String tabla = "<table border='1'>";
+        String tabla = "<table class=\"table table-bordered table-mod-2\">";
         tabla+="\n<tr><th>Nombre prueba: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='nombre_prueba'></td>";
         tabla+="\n<tr><th>Número de requerimiento: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='numero_requerimiento'></td>";
         tabla+="\n<tr><th>Módulo: </th>"+"\n<td>"+ new Modulo().listadoModulos() +"</td>";

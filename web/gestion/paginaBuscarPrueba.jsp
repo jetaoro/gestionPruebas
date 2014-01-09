@@ -94,12 +94,113 @@
         </div> 
         <!-- fin del header -->
         <div id="wrap">
-            <form name="buscarPrueba" action="listadoPruebas.jsp">
-            <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
-            <%=gestion.paginaBuscarPruebas()%>
-            <input type="submit" value="Buscar" name="buscar" />
-        </form>  
-        </div>
+            <!--BEGIN SIDEBAR-->
+            <div id="menu" role="navigation">  
+                <ul class="main-menu">
+                     <li class="active"><a href="#"><i class="components"></i> Pruebas</a></li>
+                     <li><a href="ui.html"><i class="modules"></i> Módulos</a></li>
+                     <li><a href="forms.html"><i class="general"></i> Sitio Prueba</a></li>
+                </ul>
+                <ul class="additional-menu">
+                    <li class="active"><a href="#"><i class="icon-search"></i> Buscar</a></li>
+                    <li ><a href="#"><i class="icon-list"></i> Listar</a></li>
+		    <li><a href="#"><i class="icon-remove"></i> Eliminar</a></li>
+                    <li><a href="#"><i class="icon-edit"></i> Editar</a></li>
+                </ul>
+          
+            </div>  
+         <!-- inicio del contenido principal -->
+         <div id="main" role="main">
+          <div class="block">
+   		  <div class="clearfix"></div>
+               <div class="pagetitle">
+                <h1>Buscar Pruebas</h1>
+               </div>
+               <div class="grid">
               
+              <div class="grid-title">
+               <div class="pull-left">
+                  <div class="icon-title"><i class="icon-eye-open"></i></div>
+                  <span>Example Table</span> 
+                  <div class="clearfix"></div>
+               </div>
+               <div class="pull-right"> 
+               	  <div class="icon-title"><a href="#"><i class="icon-refresh"></i></a></div>
+                  <div class="icon-title"><a href="#"><i class="icon-cog"></i></a></div>
+               </div>
+              <div class="clearfix"></div>   
+              </div>
+                 <div class="grid-content overflow">   
+                    <form name="buscarPrueba" action="listadoPruebas.jsp">
+                     <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
+                        <%=gestion.paginaBuscarPruebas()%>
+                        <input  class="btn btn-success"  type="submit" value="Buscar" name="buscar" />
+                    </form>    
+                </div>  
+             </div>
+             <!-- fin grid -->     
+            
+              
+         </div>   
+         <!--fin block -->               
+         
+           
+           
+        </div>
+      <!-- fin wrap -->          
+      
+                
+                
+      <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+   
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../js/google-code-prettify/prettify.js"></script>
+   
+    <script src="../js/jquery.flot.js"></script>
+    <script src="../js/jquery.flot.pie.js"></script>
+    <script src="../js/jquery.flot.orderBars.js"></script>
+    <script src="../js/jquery.flot.resize.js"></script>
+    <script src="../js/jquery.flot.categories.js"></script>
+    <script src="../js/graphtable.js"></script>
+    <script src="../js/fullcalendar.min.js"></script>
+    <script src="../js/chosen.jquery.min.js"></script>
+    <script src="../js/autoresize.jquery.min.js"></script>
+    <script src="../js/jquery.autotab.js"></script>
+    <script src="../js/jquery.jgrowl_minimized.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/jquery.stepy.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/raphael.2.1.0.min.js"></script>
+    <script src="../js/justgage.1.0.1.min.js"></script>
+	<script src="../js/glisse.js"></script>
+	<script src="../js/styleswitcher.js"></script>
+	<script src="../js/moderniz.js"></script>
+    <script src="../js/jquery.sparkline.min.js"></script>
+    <script src="../js/slidernav-min.js"></script>
+    <script type="text/javascript" src="../js/jquery.fancybox.js?v=2.1.4"></script>
+    
+	<script>
+    Modernizr.load([
+        {
+         load: [
+                '../js/main.js'
+            ],
+            complete: function()
+            {
+                $.fn.ready(function()
+                {
+                    window.App.init();
+                });
+            }
+        }
+    ]);
+    </script>
+	<script src="../js/application.js"></script>
+
+            
     </body>
 </html>
