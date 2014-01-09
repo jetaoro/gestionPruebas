@@ -106,12 +106,12 @@ public class Prueba {
     }
     
     public String buscarPrueba(){
-        String tabla = "<table border='1'>";
-        tabla+="\n<tr><th align='left'>Nombre prueba: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='nombre_prueba'></td>";
-        tabla+="\n<tr><th align='left'>Número de requerimiento: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='numero_requerimiento'></td>";
-        tabla+="\n<tr><th align='left'>Módulo: </th>"+"\n<td>"+ new Modulo().listadoModulos() +"</td>";
-        tabla+="\n<tr><th align='left'>Responsable: </th>"+"\n<td>"+new Responsable().listadoResponsables() +"</td>";
-        tabla+="\n<tr><th align='left'>Sitio Prueba: </th>"+"\n<td>"+new SitioPrueba().listadoSitiosPrueba()+"</td>";
+        String tabla = "<table class=\"table table-bordered table-mod-2\">";
+        tabla+="\n<tr><th>Nombre prueba: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='nombre_prueba'></td>";
+        tabla+="\n<tr><th>Número de requerimiento: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='numero_requerimiento'></td>";
+        tabla+="\n<tr><th>Módulo: </th>"+"\n<td>"+ new Modulo().listadoModulos() +"</td>";
+        tabla+="\n<tr><th>Responsable: </th>"+"\n<td>"+new Responsable().listadoResponsables() +"</td>";
+        tabla+="\n<tr><th>Sitio Prueba: </th>"+"\n<td>"+new SitioPrueba().listadoSitiosPrueba()+"</td>";
         tabla+="</table>";
         return tabla;
     }

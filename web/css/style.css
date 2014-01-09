@@ -478,6 +478,15 @@ div.profile-box {
 .main-menu li a:hover i.general, .main-menu li.active a i.general{
 	background-position:0px 25px;
 }
+.main-menu li a i.modules{
+	background:url(../images/icon/modules.png);
+	background-size: 34px 50px;
+	width:34px;
+	height:25px;
+}
+.main-menu li a:hover i.modules, .main-menu li.active a i.general{
+	background-position:0px 25px;
+}
 .main-menu li a i.components {
 	background:url(../images/icon/components.png);
 	background-size:26px 62px;
