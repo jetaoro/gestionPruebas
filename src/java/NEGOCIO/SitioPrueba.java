@@ -44,7 +44,7 @@ public class SitioPrueba {
         if(!sitios.isEmpty()){
             for (SitioPruebaDTO sitio : sitios) {
                 tabla+="\n<tr>";
-                tabla+="\n<td>"+"<input type = 'radio' name = 'sitio_prueba' value = '"+sitio.getIdentificador()+"' checked>" + "</td>";
+                tabla+="\n<td>"+"<input type = 'radio' name = 'sitio_prueba' value = '"+sitio.getIdentificador()+"' >" + "</td>";
                 tabla+="\n<td>"+ sitio.getNumero_puerto()+"</td>";
                 tabla+="\n<td>"+ sitio.getNombre()+"</td>";
                 tabla+="\n</tr>";

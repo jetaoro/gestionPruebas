@@ -9,12 +9,32 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../js/validar.js"></script>
         <script type="text/javascript" >
             function envia(destino){
                 formulario.action=destino;
                 formulario.submit();
             }           
             
+            function modifica(destino) {                
+                if (!validarRadio('formulario', 'sitio_prueba')) {
+                    alert("Debe seleccionar un Sitio de Prueba a modificar");
+                    return;
+                }
+
+                formulario.action = destino;
+                formulario.submit();
+            }
+            
+            function elimina(destino) {                
+                if (!validarRadio('formulario', 'sitio_prueba')) {
+                    alert("Debe seleccionar un Sitio de Prueba a eliminar");
+                    return;
+                }
+
+                formulario.action = destino;
+                formulario.submit();
+            }
         </script>
         <title>Listado de Sitios de Prueba</title>
     </head>
@@ -24,8 +44,8 @@
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.getListadoSitios()%>
             <input type="button" value="Agregar" name="agregar" onClick="envia('agregarSitioPrueba.jsp')" />  
-            <input type="button" value="Modificar" name="modificar" onClick="envia('modificarSitioPrueba.jsp')" />
-            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarSitioPrueba.jsp')" />
+            <input type="button" value="Modificar" name="modificar" onClick="modifica('modificarSitioPrueba.jsp')" />
+            <input type="button" value="Eliminar" name="eliminar" onClick="elimina('eliminarSitioPrueba.jsp')" />
         </form> 
     </body>
 </html>
