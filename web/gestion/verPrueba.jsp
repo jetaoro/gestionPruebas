@@ -11,15 +11,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <script type="text/javascript" src="../js/validar.js"></script>
         <script type="text/javascript" >
-            function envia(destino){
-                alert("hhhhh");
+            function envia(destino){                
                 formulario.action=destino;
                 formulario.submit();
             }
             
             function modifica(destino) {                
                 if (!validarRadio('formulario', 'casoPrueba')) {
-                    alert("Debe seleccionar el rol a modificar");
+                    alert("Debe seleccionar un Caso de Prueba a modificar");
+                    return;
+                }
+
+                formulario.action = destino;
+                formulario.submit();
+            }
+            
+            function elimina(destino) {                
+                if (!validarRadio('formulario', 'casoPrueba')) {
+                    alert("Debe seleccionar un Caso de Prueba a eliminar");
                     return;
                 }
 
@@ -39,7 +48,7 @@
             <%=gestion.getPrueba(idPrueba)%>
             <input type="button" value="Agregar" name="agregar" onClick="envia('agregarCasoPrueba.jsp')" />
             <input type="button" value="Modificar" name="modificar" onClick="modifica('modificarCasoPrueba.jsp')" />            
-            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarCasoPrueba.jsp')" />
+            <input type="button" value="Eliminar" name="eliminar" onClick="elimina('eliminarCasoPrueba.jsp')" />
             <input type="button" value="Volver" name="volver" onClick="envia('listadoPruebas.jsp')"/>
         </form>
         

@@ -34,7 +34,7 @@ public class CasoPrueba {
          if(!casosPruebas.isEmpty()){              
             for (CasoPruebaDTO caso : casosPruebas) {
                 tabla+="\n<tr>";
-                tabla+="\n<td>"+"<input type = 'radio' name = 'casoPrueba' value = '"+caso.getIdentificador()+"' checked></td>";
+                tabla+="\n<td>"+"<input type = 'radio' name = 'casoPrueba' value = '"+caso.getIdentificador()+"' ></td>";
                 tabla+="\n<td>"+caso.getDescripcion()+"</td>";
                 tabla+="\n<td>"+caso.getDatos_entrada()+"</td>";
                 tabla+="\n<td>"+caso.getResultado_esperado()+"</td>";

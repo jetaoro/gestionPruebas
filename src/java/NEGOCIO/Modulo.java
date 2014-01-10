@@ -45,7 +45,7 @@ public class Modulo {
         if(!modulos.isEmpty()){
             for (ModuloDTO modulo : modulos) {
                 tabla+="\n<tr>";
-                tabla+="\n<td>"+"<input type = 'radio' name = 'modulo' value = '"+modulo.getIdentificador()+"' checked>" + "</td>";
+                tabla+="\n<td>"+"<input type = 'radio' name = 'modulo' value = '"+modulo.getIdentificador()+"' >" + "</td>";
                 tabla+="\n<td>"+ modulo.getNombre()+"</td>";           
                 tabla+="\n</tr>";
             }
