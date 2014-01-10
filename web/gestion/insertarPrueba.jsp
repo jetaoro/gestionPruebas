@@ -44,5 +44,8 @@
                 idTipoPrueba2 = Integer.parseInt(idTipoPrueba);
         %>        
         <%=gestion.insertarUnaPrueba(idModulo2, idSitio2, idResponsable2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, idTipoPrueba2, modosEjecucion, descripcion, casoExito, casoFallo)%>
+        <form name="listadoPruebas" action="listadoPruebas.jsp">
+            <input type="submit" value="Volver" name="volver" />
+        </form>
     </body>
 </html>

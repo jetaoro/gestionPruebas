@@ -41,9 +41,12 @@
     <body>
         <h1>Contenido de la Prueba</h1>
         <form name="formulario" method="post">
-            <%  int idPrueba = 0;
-                if(request.getParameter("prueba")!=null)
-                    idPrueba = Integer.parseInt(request.getParameter("prueba")); %>
+            <%  String prueba=request.getParameter("prueba")==null?(String)session.getAttribute("prueba"):request.getParameter("prueba");
+                int idPrueba = 0;
+                if (prueba!="")
+                   idPrueba=Integer.parseInt(prueba); 
+                session.setAttribute("prueba", prueba);
+            %>
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.getPrueba(idPrueba)%>
             <input type="button" value="Agregar" name="agregar" onClick="envia('agregarCasoPrueba.jsp')" />

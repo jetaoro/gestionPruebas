@@ -19,8 +19,8 @@
             <%=gestion.getUnCasoPrueba(idCasoPrueba)%>                   
             <input type="submit" name="registrar" value="Registrar">
         </form>
-        <form name="volver" action="listadoModulos.jsp">
-            <input type="submit" name="volver" value="Volver">
+        <form name="verPrueba" action="verPrueba.jsp">
+            <input type="submit" value="Volver" name="volver" />
         </form>
     </body>
 </html>

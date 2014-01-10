@@ -14,14 +14,14 @@
     <body>
         <h1>Agregar Prueba</h1>
         <form name="insertarPrueba" action="insertarPrueba.jsp">
-        <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
-        <%=gestion.agregarPruebaFormulario()%>        
+            <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
+            <%=gestion.agregarPruebaFormulario()%>        
             <input type="submit" value="Registrar" name="registrar" />
         </form>
-            <%--
-        <form name="volver" action="listadoPruebas.jsp">
+            
+        <form name="formulario" action="listadoPruebas.jsp">
             <input type="submit" value="Volver" name="volver" />
         </form> 
-            --%>          
+                     
     </body>    
 </html>

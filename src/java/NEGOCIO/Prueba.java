@@ -135,7 +135,7 @@ public class Prueba {
         if (!pruebas.isEmpty()){
             for (PruebaDTO prueba : pruebas) {
                 tabla+="\n<tr>";
-                tabla+="\n<td>"+"<input type = 'radio' name = 'prueba' value = '"+prueba.getIdentificador()+"' checked>" + "</td>";
+                tabla+="\n<td>"+"<input type = 'radio' name = 'prueba' value = '"+prueba.getIdentificador()+"' >" + "</td>";
                 tabla+="\n<td>"+ prueba.getNumero_requerimiento()+"</td>";
                 tabla+="\n<td>"+ prueba.getNombre()+"</td>";
                 tabla+="\n<td>"+ prueba.getModulo().getNombre()+"</td>";

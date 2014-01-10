@@ -19,7 +19,7 @@
             <%=gestion.getUnaPrueba(idPrueba)%>                   
             <input type="submit" name="registrar" value="Registrar">
         </form>
-        <form name="volver" action="listadoModulos.jsp">
+        <form name="formulario" action="listadoPruebas.jsp">
             <input type="submit" name="volver" value="Volver">
         </form>
     </body>

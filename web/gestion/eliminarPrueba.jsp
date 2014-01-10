@@ -16,5 +16,8 @@
         <% int idPrueba=Integer.parseInt(request.getParameter("prueba")); %>       
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
         <%=gestion.eliminarPrueba(idPrueba)%>
+        <form name="listadoPruebas" action="listadoPruebas.jsp">
+            <input type="submit" value="Volver" name="volver" />
+        </form>
     </body>
 </html>

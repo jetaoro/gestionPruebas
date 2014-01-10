@@ -9,11 +9,42 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../js/validar.js"></script>
         <script type="text/javascript" >
             function envia(destino){
                 formulario.action=destino;
                 formulario.submit();
-            }        
+            } 
+            
+            function modifica(destino) {                
+                if (!validarRadio('formulario', 'prueba')) {
+                    alert("Debe seleccionar una Prueba a modificar");
+                    return;
+                }
+
+                formulario.action = destino;
+                formulario.submit();
+            }
+            
+            function elimina(destino) {                
+                if (!validarRadio('formulario', 'prueba')) {
+                    alert("Debe seleccionar una Prueba a eliminar");
+                    return;
+                }
+
+                formulario.action = destino;
+                formulario.submit();
+            }
+            
+            function ve(destino) {                
+                if (!validarRadio('formulario', 'prueba')) {
+                    alert("Debe seleccionar una Prueba para consultar");
+                    return;
+                }
+
+                formulario.action = destino;
+                formulario.submit();
+            }
         </script>
         <title>Listado de Pruebas</title>
     </head>
@@ -44,12 +75,13 @@
                session.setAttribute("nombre_prueba", nombre_prueba);
             %>
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
+            <% session.removeAttribute("prueba"); %>
             <%=gestion.buscarPruebas(nombre_prueba, numero_requerimiento, idModulo2, idResponsable2, idSitio2)%>
 
-            <input type="button" value="Ver" name="ver" onClick="envia('verPrueba.jsp')" />
+            <input type="button" value="Ver" name="ver" onClick="ve('verPrueba.jsp')" />
             <input type="button" value="Agregar" name="agregar" onClick="envia('agregarPrueba.jsp')" />
-            <input type="button" value="Modificar" name="modificar" onClick="envia('modificarPrueba.jsp')" />            
-            <input type="button" value="Eliminar" name="eliminar" onClick="envia('eliminarPrueba.jsp')" />
+            <input type="button" value="Modificar" name="modificar" onClick="modifica('modificarPrueba.jsp')" />            
+            <input type="button" value="Eliminar" name="eliminar" onClick="elimina('eliminarPrueba.jsp')" />
             <input type="button" value="Volver" name="volver" onClick="envia('paginaBuscarPrueba.jsp')" />            
         </form> 
     </body>

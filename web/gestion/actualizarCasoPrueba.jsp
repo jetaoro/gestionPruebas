@@ -17,5 +17,8 @@
         <jsp:useBean id="casoPrueba" scope="page" class="DTO.CasoPruebaDTO" />
         <jsp:setProperty name="casoPrueba" property="*" />
         <%=gestion.modificarCasoPrueba(casoPrueba)%>
+        <form name="verPrueba" action="verPrueba.jsp">
+            <input type="submit" value="Volver" name="volver" />
+        </form>
     </body>
 </html>
