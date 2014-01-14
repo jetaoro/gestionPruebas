@@ -52,44 +52,28 @@
             <!--Logo--><a href="#" class="logo"><h1></h1></a><!--Logo END-->
             
             <div class="right">
-               <!--config box-->
-                 <div class="dropdown left">
-                  <a class="dropdown-toggle head-button-link config" data-toggle="dropdown" href="#"></a>
-                  <div class="dropdown-menu pull-right settings-box">
-                  <div class="triangle-2"></div>
-
-                    <a href="javascript:chooseStyle('none', 30)" class="settings-link"></a>
-                    <a href="javascript:chooseStyle('blue-theme', 30)" class="settings-link blue"></a>
-                    <a href="javascript:chooseStyle('green-theme', 30)" class="settings-link green"></a>
-                    <a href="javascript:chooseStyle('purple-theme', 30)" class="settings-link purple"></a>
-                    <a href="javascript:chooseStyle('orange-theme', 30)" class="settings-link yellow"></a>
-                    <a href="javascript:chooseStyle('red-theme', 30)" class="settings-link red"></a>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-               <!-- fin config box--> 
-               <!--profile box-->
-                 <div class="dropdown left profile">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <span class="double-spacer"></span>
-                    <div class="profile-avatar"><img src="../images/avatar.png" alt=""></div>
-                    <div class="profile-username"><span>Bienvenido,</span> Usuario</div>
-                    <div class="profile-caret"> <span class="caret"></span></div>
-                    <span class="double-spacer"></span>
-                  </a>
-                  <div class="dropdown-menu pull-right profile-box">
-                  <div class="triangle-3"></div>
-
-                    <ul class="profile-navigation">
-                      <li><a href="#"><i class="icon-user"></i> Mi perfil</a></li>
-                      <li><a href="#"><i class="icon-cog"></i> Configuración</a></li>
-                      <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
-                      <li><a href="../index.jsp"><i class="icon-off"></i> Salir</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-              <!--profile box end-->
+                <!--profile box-->
+         <div class="dropdown left profile">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="double-spacer"></span>
+            <div class="profile-avatar"><img src="../images/avatar.png" alt=""></div>
+            <div class="profile-username"><span>Bienvenido,</span> Usuario</div>
+            <div class="profile-caret"> <span class="caret"></span></div>
+            <span class="double-spacer"></span>
+          </a>
+          <div class="dropdown-menu pull-right profile-box">
+          <div class="triangle-3"></div>
+          
+            <ul class="profile-navigation">
+              <li><a href="#"><i class="icon-user"></i> Mi perfil </a></li>
+              <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
+              <li><a href="../"><i class="icon-off"></i> Salir</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+       <!--profile box end-->
+              
             </div>
         </div> 
         <!-- fin del header -->
@@ -98,14 +82,14 @@
             <div id="menu" role="navigation">  
                 <ul class="main-menu">
                      <li class="active"><a href="#"><i class="components"></i> Pruebas</a></li>
-                     <li><a href="ui.html"><i class="modules"></i> Módulos</a></li>
-                     <li><a href="forms.html"><i class="general"></i> Sitio Prueba</a></li>
+                     <li><a href="listadoModulos.jsp"><i class="modules"></i> Módulos</a></li>
+                     <li><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
                 <ul class="additional-menu">
-                    <li class="active"><a href="#"><i class="icon-search"></i> Buscar</a></li>
-                    <li ><a href="#"><i class="icon-list"></i> Listar</a></li>
-		    <li><a href="#"><i class="icon-remove"></i> Eliminar</a></li>
-                    <li><a href="#"><i class="icon-edit"></i> Editar</a></li>
+                    <li class="active"><a href="#"><i class="icon-search"></i> Busqueda</a></li>
+             <li><i class="icon-list"></i> Listado</li>
+             <li><i class="icon-edit"></i> Edición </li>
+             <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
           
             </div>  
@@ -125,8 +109,10 @@
                   <div class="clearfix"></div>
                </div>
                <div class="pull-right"> 
-               	  <div class="icon-title"><a href="#"><i class="icon-refresh"></i></a></div>
-                  <div class="icon-title"><a href="#"><i class="icon-cog"></i></a></div>
+                   <div class="icon-title"><a class="popover-left"  
+                       title="Ayuda Buscar" data-content="Puede Buscar por Cualquiera 
+                       de los términos o puede dejarlos en blanco y dar clic en buscar para listar todas las pruebas">
+                           <i class="icon-question-sign"></i></a></div>
                </div>
               <div class="clearfix"></div>   
               </div>
@@ -140,7 +126,7 @@
                           session.removeAttribute("nombre_prueba");
                         %>                        
                         <%=gestion.paginaBuscarPruebas()%>
-                        <input  class="btn"  type="submit" value="Buscar" name="buscar" />
+                        <input  class="btn btn-warning  metro"  type="submit" value="Buscar" name="buscar" />
                     </form>    
                 </div>  
              </div>
@@ -161,14 +147,12 @@
       <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
    
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script src="../js/google-code-prettify/prettify.js"></script>
-   
-    <script src="../js/jquery.flot.js"></script>
-    <script src="../js/jquery.flot.pie.js"></script>
+ 
     <script src="../js/jquery.flot.orderBars.js"></script>
     <script src="../js/jquery.flot.resize.js"></script>
     <script src="../js/jquery.flot.categories.js"></script>

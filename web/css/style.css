@@ -545,7 +545,7 @@ div.profile-box {
 	list-style:none;
 	width:209px;
 }
-.additional-menu li a{
+.additional-menu li {
 	display:block;
 	height:20px;
 	padding:10px 15px 10px 15px;
@@ -572,10 +572,10 @@ div.profile-box {
 	background: linear-gradient(to bottom, #ffffff 0%,#e9e9e9 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e9e9e9',GradientType=0 );
 }
-.additional-menu li a i{
+.additional-menu li  i{
 	padding-right:8px;
 }
-.additional-menu li.active a, .additional-menu li.active a:hover {
+.additional-menu li.active {
 	-webkit-box-shadow: inset 0px 2px 5px 0px #bfbfbf;
 	box-shadow: inset 0px 2px 5px 0px #bfbfbf;
 	background: #e5e5e5;
