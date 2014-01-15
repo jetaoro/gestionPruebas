@@ -140,7 +140,7 @@
               <div class="grid-title">
                <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  
+                  <span>Example Table</span>
                   <div class="clearfix"></div>
                </div>
                <div class="pull-right"> 
@@ -151,7 +151,7 @@
                </div>
               <div class="clearfix"></div>   
               </div>
-                 <div class="grid-content overflow">   
+             <div class="grid-content overflow">   
                    
                       <form name="formulario" method="post">
             <% 
@@ -194,18 +194,20 @@
              </div>
              <!-- fin grid -->  
             
-
+              
+            
              
          </div>   
-         <!--fin block -->               
+           <!--fin block -->             
          
            
            
         </div>
-      <!-- fin wrap -->          
+        <!-- fin contenido principal-->     
       
-                
-                
+      </div>        
+      <!-- fin wrap -->   
+      
       <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
