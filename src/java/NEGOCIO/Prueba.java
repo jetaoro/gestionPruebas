@@ -123,9 +123,9 @@ public class Prueba {
             pruebas = pruebaDAO.getPruebas();
         else
             pruebas = pruebaDAO.getPruebas(nombre, numero_requerimiento, modulo, responsable, sitio_prueba);
-        String tabla = "<table border = '1'>"+
+        String tabla = "<table class=\"table table-bordered table-mod-2\">"+
                 "\n<tr>"+
-                "\n<th></th>"+
+                "\n<th class=\"t_center\"></th>"+
                 "\n<th>Número de requerimiento</th>"+
                 "\n<th>Nombre</th>"+
                 "\n<th>Módulo</th>"+
@@ -135,7 +135,7 @@ public class Prueba {
         if (!pruebas.isEmpty()){
             for (PruebaDTO prueba : pruebas) {
                 tabla+="\n<tr>";
-                tabla+="\n<td>"+"<input type = 'radio' name = 'prueba' value = '"+prueba.getIdentificador()+"' >" + "</td>";
+                tabla+="\n<td><input  type = 'radio' name = 'prueba' id = '"+prueba.getIdentificador()+"' value = '"+prueba.getIdentificador()+"' >" + "<label for='"+prueba.getIdentificador()+"'><span></span></label></td>";
                 tabla+="\n<td>"+ prueba.getNumero_requerimiento()+"</td>";
                 tabla+="\n<td>"+ prueba.getNombre()+"</td>";
                 tabla+="\n<td>"+ prueba.getModulo().getNombre()+"</td>";
@@ -144,7 +144,7 @@ public class Prueba {
             }
         }
         else 
-            tabla+="\n<table border='1'><td>No se encontraron pruebas registradas.</td></table>";
+            tabla+="\n<table  class=\"table table-bordered table-mod-2\"><td>No se encontraron pruebas registradas.</td></table>";
         tabla+="</table></br>";
         return (tabla);
     }
