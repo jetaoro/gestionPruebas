@@ -106,12 +106,13 @@ public class Prueba {
     }
     
     public String buscarPrueba(){
-        String tabla = "<table class=\"table table-bordered table-mod-2\">";
-        tabla+="\n<tr><th>Nombre prueba: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='nombre_prueba'></td>";
-        tabla+="\n<tr><th>Número de requerimiento: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='numero_requerimiento'></td>";
-        tabla+="\n<tr><th>Módulo: </th>"+"\n<td>"+ new Modulo().listadoModulos() +"</td>";
-        tabla+="\n<tr><th>Responsable: </th>"+"\n<td>"+new Responsable().listadoResponsables() +"</td>";
-        tabla+="\n<tr><th>Sitio Prueba: </th>"+"\n<td>"+new SitioPrueba().listadoSitiosPrueba()+"</td>";
+        String tabla = "<table class=\"table table-bordered table-mod-2\" id=\"datatable_3\">";
+        
+        tabla+="<tr><th>Nombre prueba: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='nombre_prueba'></td>";
+        tabla+="<tr><th>Número de requerimiento: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='numero_requerimiento'></td>";
+        tabla+="<tr><th>Módulo: </th>"+"\n<td>"+ new Modulo().listadoModulos() +"</td>";
+        tabla+="<tr><th>Responsable: </th>"+"\n<td>"+new Responsable().listadoResponsables() +"</td>";
+        tabla+="<tr><th>Sitio Prueba: </th>"+"\n<td>"+new SitioPrueba().listadoSitiosPrueba()+"</td>";
         tabla+="</table>";
         return tabla;
     }
@@ -124,28 +125,32 @@ public class Prueba {
         else
             pruebas = pruebaDAO.getPruebas(nombre, numero_requerimiento, modulo, responsable, sitio_prueba);
         String tabla = "<table class=\"table table-bordered table-mod-2\" id=\"datatable_3\">"+
-                "\n<tr>"+
-                "\n<th></th>"+
-                "\n<th>Número de requerimiento</th>"+
-                "\n<th>Nombre</th>"+
-                "\n<th>Módulo</th>"+
-                "\n<th>Responsable</th>"+
-                "\n</tr>";
+                "<thead>"+
+                "<tr>"+
+                "<th></th>"+
+                "<th>Número de requerimiento</th>"+
+                "<th>Nombre</th>"+
+                "<th>Módulo</th>"+
+                "<th>Responsable</th>"+
+                "</tr>"+
+                "</thead>"+
+                "<tbody>";
         
         if (!pruebas.isEmpty()){
             for (PruebaDTO prueba : pruebas) {
-                tabla+="\n<tr>";
-                tabla+="\n<td class=\"t_center\"><input  type = 'radio' name = 'prueba' id = '"+prueba.getIdentificador()+"' value = '"+prueba.getIdentificador()+"' >" + "<label for='"+prueba.getIdentificador()+"'><span></span></label></td>";
-                tabla+="\n<td>"+ prueba.getNumero_requerimiento()+"</td>";
-                tabla+="\n<td>"+ prueba.getNombre()+"</td>";
-                tabla+="\n<td>"+ prueba.getModulo().getNombre()+"</td>";
-                tabla+="\n<td>"+ prueba.getResponsable().getNombre()+"</td>";
-                tabla+="\n</tr>";
+                tabla+="<tr>";
+                tabla+="<td class=\"t_center\"><input  type = 'radio' name = 'prueba' id = '"+prueba.getIdentificador()+"' value = '"+prueba.getIdentificador()+"' >" + "<label for='"+prueba.getIdentificador()+"'><span></span></label></td>";
+                tabla+="<td>"+ prueba.getNumero_requerimiento()+"</td>";
+                tabla+="<td>"+ prueba.getNombre()+"</td>";
+                tabla+="<td>"+ prueba.getModulo().getNombre()+"</td>";
+                tabla+="<td>"+ prueba.getResponsable().getNombre()+"</td>";
+                tabla+="</tr>";
+               
             }
         }
         else 
             tabla+="\n<table  class=\"table table-bordered table-mod-2\"><td>No se encontraron pruebas registradas.</td></table>";
-        tabla+="</table></br>";
+        tabla+="</tbody></table></br>";
         return (tabla);
     }
     

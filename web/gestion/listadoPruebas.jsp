@@ -5,7 +5,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listado de Pruebas</title>
@@ -116,7 +116,7 @@
                 </ul>
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Busqueda</li>
-                     <li class="active" ><i class="icon-list"></i> Listado</li>
+                     <li class="active" ><a href="#"><i class="icon-list"></i> Listado</a></li>
                      <li><i class="icon-edit"></i> Edición </li>
                      <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
@@ -151,7 +151,7 @@
               <div class="clearfix"></div>   
               </div>
               <!-- Comienzo grid-content overflow"-->    
-             |<div class="grid-content overflow">   
+             <div class="grid-content overflow">   
                    
               <form name="formulario" method="post">
                <% 
