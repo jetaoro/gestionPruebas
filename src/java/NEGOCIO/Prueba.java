@@ -117,7 +117,7 @@ public class Prueba {
     }
     
     public String buscarPrueba(String nombre, String numero_requerimiento, int modulo, int responsable, int sitio_prueba){
-        TreeSet<PruebaDTO> pruebas = new TreeSet<>();
+        TreeSet<PruebaDTO> pruebas = new TreeSet<PruebaDTO>();
         PruebaDAO pruebaDAO = new PruebaDAO();
         if(nombre==null && numero_requerimiento==null && responsable==0 && sitio_prueba==0 && modulo==0)
             pruebas = pruebaDAO.getPruebas();
@@ -191,7 +191,7 @@ public class Prueba {
         Date fechaEjecucion2 = formato.parse(fechaEjecucion);      
         
         int idModo2;
-        ArrayList<ModoEjecucionDTO> modos = new ArrayList<>();
+        ArrayList<ModoEjecucionDTO> modos = new ArrayList<ModoEjecucionDTO>();
         if (modosEjecucion!=null){
             for (String idModo : modosEjecucion) {
                 idModo2 = Integer.parseInt(idModo);

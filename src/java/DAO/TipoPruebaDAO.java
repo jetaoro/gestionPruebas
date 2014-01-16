@@ -22,7 +22,7 @@ public class TipoPruebaDAO {
         BaseDeDatos.conectar();
         String sql="select * from tipo_prueba";
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
-        TreeSet<TipoPruebaDTO> rta=new TreeSet<>();
+        TreeSet<TipoPruebaDTO> rta=new TreeSet<TipoPruebaDTO>();
         BaseDeDatos.desconectar();
         for(String dato:consulta)
         {

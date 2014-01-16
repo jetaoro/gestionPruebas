@@ -21,7 +21,7 @@ public class ModoEjecucionDAO {
         BaseDeDatos.conectar();
         String sql="select * from modo_ejecucion";
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
-        TreeSet<ModoEjecucionDTO> rta=new TreeSet<>();
+        TreeSet<ModoEjecucionDTO> rta=new TreeSet<ModoEjecucionDTO>();
         BaseDeDatos.desconectar();
         for(String dato:consulta)
         {

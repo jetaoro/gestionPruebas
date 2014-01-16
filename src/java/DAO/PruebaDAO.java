@@ -24,7 +24,7 @@ public class PruebaDAO {
     //Date fecha_ejecucion, String elemento_prueba, String descripcion, String caso_exito, String caso_fallo, 
     //int id_responsable, int id_modulo, int id_sitio, int id_tipo, int id_modo
     public TreeSet<PruebaDTO> getPruebas(){
-        TreeSet<PruebaDTO> pruebas=new TreeSet<>();
+        TreeSet<PruebaDTO> pruebas=new TreeSet<PruebaDTO>();
         BaseDeDatos.conectar();
         String sql="select * from prueba";
         ArrayList<String> lista=BaseDeDatos.getConsultaSQL(sql);
@@ -68,7 +68,7 @@ public class PruebaDAO {
         }
     
     public TreeSet<PruebaDTO> getPruebas(String nombre, String numero_requerimiento, int modulo, int responsable, int sitio_prueba){
-        TreeSet<PruebaDTO> pruebas=new TreeSet<>();
+        TreeSet<PruebaDTO> pruebas=new TreeSet<PruebaDTO>();
         BaseDeDatos.conectar();
         boolean primero = false;
         String sql="select * from prueba where ";
@@ -274,7 +274,7 @@ public class PruebaDAO {
     }
     
     public ArrayList<ModoEjecucionDTO> getModosEjecucion(PruebaDTO prueba){
-        ArrayList<ModoEjecucionDTO> modos = new ArrayList<>();
+        ArrayList<ModoEjecucionDTO> modos = new ArrayList<ModoEjecucionDTO>();
         BaseDeDatos.conectar();
         String sql = "select descripcion from modo_ejecucion join prueba_modo_ejecucion ON modo_ejecucion.id_modo = prueba_modo_ejecucion.id_modo and prueba_modo_ejecucion.id_prueba="+prueba.getIdentificador();
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);

@@ -21,7 +21,7 @@ public class ResponsableDAO {
         BaseDeDatos.conectar();
         String sql="select * from responsable";
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
-        TreeSet<ResponsableDTO> rta=new TreeSet<>();
+        TreeSet<ResponsableDTO> rta=new TreeSet<ResponsableDTO>();
         BaseDeDatos.desconectar();
         for(String dato:consulta)
         {

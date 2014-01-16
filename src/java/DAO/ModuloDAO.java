@@ -21,7 +21,7 @@ public class ModuloDAO {
         BaseDeDatos.conectar();
         String sql="select * from modulo";
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
-        TreeSet<ModuloDTO> rta=new TreeSet<>();
+        TreeSet<ModuloDTO> rta=new TreeSet<ModuloDTO>();
         BaseDeDatos.desconectar();
         for(String dato:consulta)
         {

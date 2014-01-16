@@ -21,7 +21,7 @@ public class SitioPruebaDAO {
         BaseDeDatos.conectar();
         String sql="select * from sitio_prueba";
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
-        TreeSet<SitioPruebaDTO> rta=new TreeSet<>();
+        TreeSet<SitioPruebaDTO> rta=new TreeSet<SitioPruebaDTO>();
         BaseDeDatos.desconectar();
         for(String dato:consulta)
         {

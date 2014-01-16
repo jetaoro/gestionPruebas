@@ -21,7 +21,7 @@ public class CasoPruebaDAO {
         BaseDeDatos.conectar();
         String sql="select * from caso_prueba";
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
-        ArrayList<CasoPruebaDTO> rta=new ArrayList<>();
+        ArrayList<CasoPruebaDTO> rta=new ArrayList<CasoPruebaDTO>();
         BaseDeDatos.desconectar();
         for(String dato:consulta)
         {
@@ -52,7 +52,7 @@ public class CasoPruebaDAO {
         BaseDeDatos.conectar();
         String sql="select * from caso_prueba where id_prueba = " + buscada.getIdentificador();
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
-        TreeSet<CasoPruebaDTO> rta=new TreeSet<>();
+        TreeSet<CasoPruebaDTO> rta=new TreeSet<CasoPruebaDTO>();
         BaseDeDatos.desconectar();
         for(String dato:consulta){
             String dd[]=dato.split("-");

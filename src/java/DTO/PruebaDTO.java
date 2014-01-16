@@ -25,8 +25,8 @@ public class PruebaDTO implements Comparable{
     private ResponsableDTO responsable = new ResponsableDTO();
     private SitioPruebaDTO sitioPrueba = new SitioPruebaDTO();
     private TipoPruebaDTO tipoPrueba = new TipoPruebaDTO();
-    private ArrayList<ModoEjecucionDTO> modosEjecucion = new ArrayList<>();
-    private TreeSet<CasoPruebaDTO> casosPrueba = new TreeSet<>();
+    private ArrayList<ModoEjecucionDTO> modosEjecucion = new ArrayList<ModoEjecucionDTO>();
+    private TreeSet<CasoPruebaDTO> casosPrueba = new TreeSet<CasoPruebaDTO>();
 
     public PruebaDTO() {
     }
