@@ -180,6 +180,11 @@ public class Prueba {
     }
     
     public String insertarUnaPrueba(int idModulo, int idSitio, int idResponsable, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, int idTipoPrueba, String [] modosEjecucion, String descripcion, String casoExito, String casoFallo) throws ParseException{
+        String resultado = "La inserción falló";
+        if(idModulo==0){
+            resultado= "Debe seleccionar un Módulo";
+            return resultado;
+        }
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaInicio2 = formato.parse(fechaInicio);
         Date fechaFin2 = formato.parse(fechaFin); 
@@ -193,7 +198,7 @@ public class Prueba {
                 modos.add(new ModoEjecucionDTO(idModo2));
             }
         }
-        String resultado = "La inserción falló";
+        
         PruebaDTO nueva = new PruebaDTO(nombre, numero_requerimiento, fechaInicio2, fechaFin2, fechaEjecucion2, elementoPrueba, descripcion, casoExito, casoFallo, idResponsable, idModulo, idSitio, idTipoPrueba);
         for (ModoEjecucionDTO modo : modos) {
             nueva.getModosEjecucion().add(modo);            
