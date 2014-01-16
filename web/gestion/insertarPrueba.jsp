@@ -34,13 +34,13 @@
             int idSitio2 = 0;
             int idResponsable2 = 0;
             int idTipoPrueba2 = 0;
-            if (idModulo!=null)
+            if (idModulo!="")
                 idModulo2 = Integer.parseInt(idModulo);
-            if (idSitio!=null)
+            if (idSitio!="")
                 idSitio2 = Integer.parseInt(idSitio);
-            if (idResponsable!=null)
+            if (idResponsable!="")
                 idResponsable2 = Integer.parseInt(idResponsable);
-            if (idTipoPrueba!=null)
+            if (idTipoPrueba!="")
                 idTipoPrueba2 = Integer.parseInt(idTipoPrueba);
         %>        
         <%=gestion.insertarUnaPrueba(idModulo2, idSitio2, idResponsable2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, idTipoPrueba2, modosEjecucion, descripcion, casoExito, casoFallo)%>

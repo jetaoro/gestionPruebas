@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Agregar Prueba</h1>
-        <form name="insertarPrueba" action="insertarPrueba.jsp">
+        <form name="insertarPrueba" action="insertarPrueba.jsp" >
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
             <%=gestion.agregarPruebaFormulario()%>        
             <input type="submit" value="Registrar" name="registrar" />
