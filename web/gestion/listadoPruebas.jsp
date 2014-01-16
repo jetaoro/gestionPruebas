@@ -9,11 +9,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listado de Pruebas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Le styles -->
         <link href="../css/style.css" rel="stylesheet">
         <link href="../css/bootstrap.css" rel="stylesheet">
-
-
         <link rel="stylesheet" href="../css/jquery-ui-1.8.16.custom.css" media="screen"  />
         <link rel="stylesheet" href="../css/fullcalendar.css" media="screen"  />
         <link rel="stylesheet" href="../css/chosen.css" media="screen"  />
@@ -25,11 +24,6 @@
             <link rel="stylesheet" href="../css/icon/font-awesome.css">    
         <link rel="stylesheet" href="../css/bootstrap-responsive.css">
 
-        <link rel="alternate stylesheet" type="text/css" media="screen" title="green-theme" href="../css/color/green.css" />
-            <link rel="alternate stylesheet" type="text/css" media="screen" title="red-theme" href="../css/color/red.css" />
-            <link rel="alternate stylesheet" type="text/css" media="screen" title="blue-theme" href="../css/color/blue.css" />
-        <link rel="alternate stylesheet" type="text/css" media="screen" title="orange-theme" href="../css/color/orange.css" />
-        <link rel="alternate stylesheet" type="text/css" media="screen" title="purple-theme" href="../css/color/purple.css" />
          <script type="text/javascript" src="../js/validar.js"></script>
         <script type="text/javascript" >
             function envia(destino){
@@ -121,10 +115,10 @@
                      <li><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
                 <ul class="additional-menu">
-                    <li><i class="icon-search"></i> Busqueda</li>
-             <li class="active" ><i class="icon-list"></i> Listado</li>
-             <li><i class="icon-edit"></i> Edición </li>
-             <li><i class="icon-remove"></i> Eliminar</li>
+                     <li><i class="icon-search"></i> Busqueda</li>
+                     <li class="active" ><i class="icon-list"></i> Listado</li>
+                     <li><i class="icon-edit"></i> Edición </li>
+                     <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
           
             </div>  
@@ -132,61 +126,67 @@
          <div id="main" role="main">
           <div class="block">
    		  <div class="clearfix"></div>
-               <div class="pagetitle">
+              
+              <!--comienzo del titulo-->    
+              <div class="pagetitle">
                 <h1>Listado de Pruebas</h1>
-               </div>
-               <div class="grid">
-                   
-              <div class="grid-title">
-               <div class="pull-left">
+              </div>
+              
+              
+              <!-- Comienzo de la tabla -->
+              <div class="grid">
+                  
+               <div class="grid-title">
+                <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  <span>Example Table</span>
+                  <span>Pruebas registradas</span>
                   <div class="clearfix"></div>
-               </div>
-               <div class="pull-right"> 
+                </div>
+                <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
                        title="Ayuda Listar Pruebas" data-content="Se debe seleccionar 
                        la prueba para poder realizar alguna de las acciones correspondientes">
                            <i class="icon-question-sign"></i></a></div>
-               </div>
+                </div>
               <div class="clearfix"></div>   
               </div>
-             <div class="grid-content overflow">   
+              <!-- Comienzo grid-content overflow"-->    
+             |<div class="grid-content overflow">   
                    
-                      <form name="formulario" method="post">
-            <% 
-               String idModulo=request.getParameter("modulo")==null?(String)session.getAttribute("modulo"):request.getParameter("modulo");
-               String idSitio=request.getParameter("sitio")==null?(String)session.getAttribute("sitio"):request.getParameter("sitio");
-               String idResponsable=request.getParameter("responsable")==null?(String)session.getAttribute("responsable"):request.getParameter("responsable");
-               int idModulo2=0;
-               int idSitio2=0;                  
-               int idResponsable2=0;
-               if (idModulo!="")
-                   idModulo2=Integer.parseInt(idModulo);               
-               if (idSitio!="")
-                   idSitio2=Integer.parseInt(idSitio);
-               if (idResponsable!="")         
-                   idResponsable2=Integer.parseInt(idResponsable);        
+              <form name="formulario" method="post">
+               <% 
+                   String idModulo=request.getParameter("modulo")==null?(String)session.getAttribute("modulo"):request.getParameter("modulo");
+                   String idSitio=request.getParameter("sitio")==null?(String)session.getAttribute("sitio"):request.getParameter("sitio");
+                   String idResponsable=request.getParameter("responsable")==null?(String)session.getAttribute("responsable"):request.getParameter("responsable");
+                   int idModulo2=0;
+                   int idSitio2=0;                  
+                   int idResponsable2=0;
+                   if (idModulo!="")
+                       idModulo2=Integer.parseInt(idModulo);               
+                   if (idSitio!="")
+                       idSitio2=Integer.parseInt(idSitio);
+                   if (idResponsable!="")         
+                       idResponsable2=Integer.parseInt(idResponsable);        
 
-               String numero_requerimiento = request.getParameter("numero_requerimiento")==null?(String)session.getAttribute("numero_requerimiento"):request.getParameter("numero_requerimiento");
-               String nombre_prueba = request.getParameter("nombre_prueba")==null?(String)session.getAttribute("nombre_prueba"):request.getParameter("nombre_prueba");
-               
-               session.setAttribute("modulo", idModulo);
-               session.setAttribute("sitio", idSitio);
-               session.setAttribute("responsable", idResponsable);
-               session.setAttribute("numero_requerimiento", numero_requerimiento);
-               session.setAttribute("nombre_prueba", nombre_prueba);
-            %>
-            <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
-            <% session.removeAttribute("prueba"); %>
-            <%=gestion.buscarPruebas(nombre_prueba, numero_requerimiento, idModulo2, idResponsable2, idSitio2)%>
+                   String numero_requerimiento = request.getParameter("numero_requerimiento")==null?(String)session.getAttribute("numero_requerimiento"):request.getParameter("numero_requerimiento");
+                   String nombre_prueba = request.getParameter("nombre_prueba")==null?(String)session.getAttribute("nombre_prueba"):request.getParameter("nombre_prueba");
 
-            <input class="btn btn-warning"type="button" value="Ver" name="ver" onClick="ve('verPrueba.jsp')" />
-            <input class="btn btn-warning "type="button" value="Agregar" name="agregar" onClick="envia('agregarPrueba.jsp')" />
-            <input class="btn btn-warning  "type="button" value="Modificar" name="modificar" onClick="modifica('modificarPrueba.jsp')" />            
-            <input class="btn btn-warning " type="button" value="Eliminar" name="eliminar" onClick="elimina('eliminarPrueba.jsp')" />
-            <input class="btn btn-warning  "type="button" value="Volver" name="volver" onClick="envia('paginaBuscarPrueba.jsp')" />            
-        </form> 
+                   session.setAttribute("modulo", idModulo);
+                   session.setAttribute("sitio", idSitio);
+                   session.setAttribute("responsable", idResponsable);
+                   session.setAttribute("numero_requerimiento", numero_requerimiento);
+                   session.setAttribute("nombre_prueba", nombre_prueba);
+               %>
+                <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
+                <% session.removeAttribute("prueba"); %>
+                <%=gestion.buscarPruebas(nombre_prueba, numero_requerimiento, idModulo2, idResponsable2, idSitio2)%>
+
+                <input class="btn btn-warning"type="button" value="Ver" name="ver" onClick="ve('verPrueba.jsp')" />
+                <input class="btn btn-warning "type="button" value="Agregar" name="agregar" onClick="envia('agregarPrueba.jsp')" />
+                <input class="btn btn-warning  "type="button" value="Modificar" name="modificar" onClick="modifica('modificarPrueba.jsp')" />            
+                <input class="btn btn-warning " type="button" value="Eliminar" name="eliminar" onClick="elimina('eliminarPrueba.jsp')" />
+                <input class="btn btn-warning  "type="button" value="Volver" name="volver" onClick="envia('paginaBuscarPrueba.jsp')" />            
+            </form> 
                      
                      
                 </div>  
@@ -259,4 +259,3 @@
             
     </body>
 </html>
-
