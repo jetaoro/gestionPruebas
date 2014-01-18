@@ -115,9 +115,9 @@
                      <li><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
                 <ul class="additional-menu">
-                     <li><i class="icon-search"></i> Busqueda</li>
-                     <li class="active" ><a href="#"><i class="icon-list"></i> Listado</a></li>
-                     <li><i class="icon-edit"></i> Edición </li>
+                     <li><i class="icon-search"></i> Buscar</li>
+                     <li class="active" ><a href="#"><i class="icon-list"></i> Listar</a></li>
+                     <li><i class="icon-edit"></i> Modificar </li>
                      <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
           

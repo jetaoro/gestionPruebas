@@ -82,12 +82,13 @@ public class Prueba {
     public String getUnaPrueba(int idPrueba){
         PruebaDTO prueba = new PruebaDAO().getUnaPrueba(new PruebaDTO(idPrueba));
         DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
-        String tabla = "Evidencia de las pruebas realizadas sobre el Módulo "+ prueba.getModulo().getNombre();
-        tabla += ", en el puerto "+ prueba.getSitioPrueba().getNumero_puerto() + "</br>";
-        tabla+= "Fecha de Inicio: "+ "<input type='text' name='fecha_inicio' value='" + df1.format(prueba.getFecha_inicio()) + "' required>";
-        tabla+= "</br>Fecha de Terminación: "+ "<input type='text' name='fecha_fin' value='" + df1.format(prueba.getFecha_inicio()) + "' required>";
+        String tabla = "<strong>Evidencia de las pruebas realizadas sobre el Módulo "+ prueba.getModulo().getNombre();
+        tabla += ", en el puerto "+ prueba.getSitioPrueba().getNumero_puerto() + "</strong></br>";
+        tabla+= "Fecha de Inicio: "+ "<input type='date' name='fecha_inicio' value='" + df1.format(prueba.getFecha_inicio()) + "' required>";
+        tabla+= "</br>Fecha de Terminación: "+ "<input type='date' name='fecha_fin' value='" + df1.format(prueba.getFecha_inicio()) + "' required>";
         tabla+= "</br>Pruebas realizadas por: "+ prueba.getResponsable().getNombre() + "</br>";
-        tabla += "</br><table border='1'>";           
+        tabla+="<input type=\"date\" id=\"birthday\" name=\"birthday\" size=\"20\" value='28/06/1989'/>";
+        tabla += "</br><table class=\"table table-bordered table-mod-2\">";           
         tabla += "\n<tr>"; 
         tabla += "\n<tr><th>Registro de Ejecución de Pruebas</th></tr>";
         tabla += "\n<tr><th>Identificador</th>" + "\n<td>" + "<input type='text' name='identificador' readonly='readonly' value='" + prueba.getIdentificador() + "'></td>";
