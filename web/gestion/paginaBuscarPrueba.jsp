@@ -131,8 +131,7 @@
                                session.removeAttribute("numero_requerimiento");
                                session.removeAttribute("nombre_prueba");
                            %>                        
-                           <%=gestion.paginaBuscarPruebas()%> 
-
+                           <%=gestion.paginaBuscarPruebas()%>
                            <input  class="btn btn-warning  metro"  type="submit" value="Buscar" name="buscar" />
                         </form>    
                 </div>  
