@@ -34,13 +34,13 @@
     <body>
         <div id="wrapper">
          <div id="login" class="animate form position">
-            <form action="gestion/paginaBuscarPrueba.jsp" method="post">
+            <form action="validar.jsp" method="post">
                 <img src="images/logoindex.png">
                  <div class="content-login">
                   <div class="header">Inicio de Sesión</div>
                     <div class="inputs">
-                        <input name="user" required type="text" placeholder="Usuario" />
-                        <input name="pass" required type="password"  placeholder="Contraseña" />
+                        <input name="usuario" required type="text" placeholder="Usuario" />
+                        <input name="contrasena" required type="password"  placeholder="Contraseña" />
                     </div>
                     <div class="button-login"><input type="submit" name="ingresar" value="Ingresar"/></div>
                  </div>   

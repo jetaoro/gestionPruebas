@@ -46,6 +46,9 @@
 
     </head>
     <body>
+        <script type="text/javascript">                
+                location.href="../validarSesion.jsp";
+        </script>
         <!-- comienzo del header -->
         <div id="header" role="banner">
             <a id="menu-link" class="head-button-link menu-hide" href="#menu"><span>Menu</span></a>
@@ -67,7 +70,7 @@
             <ul class="profile-navigation">
               <li><a href="#"><i class="icon-user"></i> Mi perfil </a></li>
               <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
-              <li><a href="../"><i class="icon-off"></i> Salir</a></li>
+              <li><a href="../salir.jsp"><i class="icon-off"></i> Salir</a></li>
             </ul>
           </div>
         </div>
@@ -117,17 +120,20 @@
               <div class="clearfix"></div>   
               </div>
                  <div class="grid-content">   
-                    <form name="buscarPrueba" action="listadoPruebas.jsp">
+                                    
                         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
-                        <%session.removeAttribute("modulo");
-                          session.removeAttribute("sitio");
-                          session.removeAttribute("responsable");
-                          session.removeAttribute("numero_requerimiento");
-                          session.removeAttribute("nombre_prueba");
-                        %>                        
-                        <%=gestion.paginaBuscarPruebas()%>
-                        <input  class="btn btn-warning  metro"  type="submit" value="Buscar" name="buscar" />
-                    </form>    
+                        <form name="buscarPrueba" action="listadoPruebas.jsp">
+                            <%      
+                               session.removeAttribute("modulo");
+                               session.removeAttribute("sitio");
+                               session.removeAttribute("responsable");
+                               session.removeAttribute("numero_requerimiento");
+                               session.removeAttribute("nombre_prueba");
+                           %>                        
+                           <%=gestion.paginaBuscarPruebas()%> 
+
+                           <input  class="btn btn-warning  metro"  type="submit" value="Buscar" name="buscar" />
+                        </form>    
                 </div>  
              </div>
              <!-- fin grid -->  

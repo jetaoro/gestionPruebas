@@ -16,6 +16,12 @@ public class ResponsableDAO {
     public ResponsableDAO() {
     }
     
+    public boolean esValido(String usuario, String contrasena){
+        BaseDeDatos.conectar();
+        String sql = "select * from responsable where usuario like '"+usuario+"' and contrasena like '"+contrasena+"'";
+        ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
+        return (!consulta.isEmpty());
+    }    
     
     public TreeSet<ResponsableDTO> getResponsable(){
         BaseDeDatos.conectar();
@@ -23,12 +29,12 @@ public class ResponsableDAO {
         ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
         TreeSet<ResponsableDTO> rta=new TreeSet<ResponsableDTO>();
         BaseDeDatos.desconectar();
-        for(String dato:consulta)
-        {
-            String dd[]=dato.split("-");
-            ResponsableDTO nuevo=new ResponsableDTO(Integer.parseInt(dd[4]), dd[0], dd[1],dd[2],dd[3]);
-            rta.add(nuevo);
-
+        if (!consulta.isEmpty()){
+            for(String dato:consulta){
+                String dd[]=dato.split("-");
+                ResponsableDTO nuevo=new ResponsableDTO(Integer.parseInt(dd[4]), dd[0], dd[1],dd[2],dd[3]);
+                rta.add(nuevo);
+            }
         }
         return rta;    
     }

@@ -16,7 +16,11 @@ public class Responsable {
 
     public Responsable() {
     }
-        
+     
+    public boolean esValido(String usuario, String contrasena){
+        return new ResponsableDAO().esValido(usuario, contrasena);        
+    }
+    
     //Arroja un combo con todos los módulos de prueba que haya registrado en el sistema
     public String listadoResponsables(){
         TreeSet<ResponsableDTO> responsables = new ResponsableDAO().getResponsable();

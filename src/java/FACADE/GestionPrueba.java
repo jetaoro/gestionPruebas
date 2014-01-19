@@ -16,6 +16,10 @@ public class GestionPrueba {
     public GestionPrueba() {
     }
     
+    public boolean esValido(String usuario, String contrasena){
+        return (new Responsable().esValido(usuario, contrasena));
+    }
+    
     //Sección de Módulos
     public String getModulos() {
         return (new Modulo().getModulo());

@@ -75,15 +75,15 @@ public class PruebaDAO {
         if (nombre != null){
             if (!primero)
                 primero=true;
-            sql+="nombre like '%" + nombre + "%'";
+            sql+="nombre ilike '%" + nombre + "%'";
         }
         
         if (numero_requerimiento != null){
             if (!primero){
                 primero=true;
-                sql+="numero_requerimiento like '%" +numero_requerimiento + "%'";
+                sql+="numero_requerimiento ilike '%" +numero_requerimiento + "%'";
             }
-            else sql+="and numero_requerimiento like '%" +numero_requerimiento + "%'";
+            else sql+="and numero_requerimiento ilike '%" +numero_requerimiento + "%'";
         }
         
         if (modulo != 0){
