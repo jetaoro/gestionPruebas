@@ -4,6 +4,18 @@
     Author     : Jennifer
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession sesion = request.getSession();
+    boolean var = true;
+    if (sesion.getAttribute("valido") == null) {
+        var = false;
+    } else {
+        var = (Boolean) session.getAttribute("valido");
+    }
+    if (!var) {
+        response.sendRedirect("../index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -24,7 +36,7 @@
             <link rel="stylesheet" href="../css/icon/font-awesome.css">    
         <link rel="stylesheet" href="../css/bootstrap-responsive.css">
 
-         <script type="text/javascript" src="../js/validar.js"></script>
+        <script type="text/javascript" src="../js/validar.js"></script>
         <script type="text/javascript" >
             function envia(destino){
                 formulario.action=destino;
@@ -74,7 +86,7 @@
         <link rel="shortcut icon" href="../images/favicon.ico">
 
     </head>
-    <body>
+    <body>        
         <!-- comienzo del header -->
         <div id="header" role="banner">
             <a id="menu-link" class="head-button-link menu-hide" href="#menu"><span>Menu</span></a>

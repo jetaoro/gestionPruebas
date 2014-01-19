@@ -5,6 +5,18 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession sesion = request.getSession();
+    boolean var = true;
+    if (sesion.getAttribute("valido") == null) {
+        var = false;
+    } else {
+        var = (Boolean) session.getAttribute("valido");
+    }
+    if (!var) {
+        response.sendRedirect("../index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -46,9 +58,6 @@
 
     </head>
     <body>
-        <script type="text/javascript">                
-                location.href="../validarSesion.jsp";
-        </script>
         <!-- comienzo del header -->
         <div id="header" role="banner">
             <a id="menu-link" class="head-button-link menu-hide" href="#menu"><span>Menu</span></a>

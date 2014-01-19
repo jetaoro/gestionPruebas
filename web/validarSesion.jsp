@@ -12,6 +12,7 @@
         <title>Validar Sesión</title>
     </head>
     <body>
+        <%--
         <%
             HttpSession sesion = request.getSession();
             boolean var = true;
@@ -27,6 +28,24 @@
                 location.href="index.jsp";
             </script>
         <%
+            }
+        %>
+        --%>
+        <%
+            HttpSession sesion = request.getSession(true);
+            if (sesion.isNew()){
+                response.sendRedirect("index.jsp");
+                return;
+            }
+           
+            if(sesion == null){
+                response.sendRedirect("index.jsp");
+                return;
+            }else{
+                if(sesion.getAttribute("valido")==null){
+                    response.sendRedirect("index.jsp");
+                    return;
+                }
             }
         %>
     </body>
