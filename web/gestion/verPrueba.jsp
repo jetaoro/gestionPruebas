@@ -5,18 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    HttpSession sesion = request.getSession();
-    boolean var = true;
-    if (sesion.getAttribute("valido") == null) {
-        var = false;
-    } else {
-        var = (Boolean) session.getAttribute("valido");
-    }
-    if (!var) {
-        response.sendRedirect("../index.jsp");
-    }
-%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -56,7 +45,7 @@
             <%  String prueba=request.getParameter("prueba")==null?(String)session.getAttribute("prueba"):request.getParameter("prueba");
                 int idPrueba = 0;
                 if (prueba!="")
-                   idPrueba=Integer.parseInt(prueba); 
+                   idPrueba=Integer.parseInt(prueba);
                 session.setAttribute("prueba", prueba);
             %>
             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />

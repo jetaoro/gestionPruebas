@@ -5,6 +5,18 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession sesion = request.getSession();
+    boolean var = true;
+    if (sesion.getAttribute("valido") == null) {
+        var = false;
+    } else {
+        var = (Boolean) session.getAttribute("valido");
+    }
+    if (!var) {
+        response.sendRedirect("../index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
