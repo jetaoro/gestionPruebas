@@ -212,19 +212,23 @@
 		$(function(){
 			window.prettyPrint && prettyPrint();
 			
-			$('#dp6').datepicker();
+			$('#dp6').datepicker()
+                        .on('changeDate', function(ev){
+                            $('#dp6').datepicker('hide');
+                        });
                         var fechaInicio=document.getElementById("dp4").value;	
                         var fechaFin=document.getElementsByClassName("dp5").value;
 			
 			$('#dp4').datepicker()
 				.on('changeDate', function(ev){
+                                    $('#dp4').datepicker('hide');
 					if (ev.date.valueOf() > fechaFin.valueOf()){
 						$('#alert').show().find('strong').text('The start date can not be greater then the end date');
 					} else {
 						$('#alert').hide();
 						
 					}
-					$('#dp4').datepicker('hide');
+					
 				});
 			$('#dp5').datepicker()
 				.on('changeDate', function(ev){
