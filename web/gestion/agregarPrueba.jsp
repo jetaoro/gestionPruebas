@@ -91,7 +91,7 @@
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Buscar</li>
                      <li ><i class="icon-list"></i> Listar</li>
-                     <li class="active" ><a href="#"><i class="icon-add"></i> Agregar</a></li>
+                     <li class="active" ><a href="#"><i class="icon-plus-sign"></i> Agregar</a></li>
                      <li><i class="icon-edit"></i> Modificar </li>
                      <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
@@ -125,22 +125,23 @@
                 </div>
               <div class="clearfix"></div>   
               </div>
-                    
-                        <div class="alert alert-error" id="alert" >
+               <div class="grid-content">   
+                     <div class="alert alert-error" id="alert" >
                                  <button type="button" class="close" data-dismiss="alert">&times;</button>          
 				<strong>Algo falló!</strong>
 			   
-                                          </div>                   
-                  <form name="modificar" action="actualizarPrueba.jsp" method="post">
-                    <% int idPrueba=Integer.parseInt(request.getParameter("prueba")); %>         
-                    <jsp:useBean id="prueba" scope="page" class="DTO.PruebaDTO" />
-                    <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
-                    <%=gestion.getUnaPrueba(idPrueba)%>                   
-                    <input type="submit" name="registrar" value="Registrar">
+                                          </div>     
+                <form name="insertarPrueba" action="insertarPrueba.jsp" >
+                    <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
+                    <%=gestion.agregarPruebaFormulario()%>        
+                    <input class="btn btn-success" type="submit" value="Registrar" name="registrar" />
                 </form>
+
                 <form name="formulario" action="listadoPruebas.jsp">
-                    <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                </form>
+                    <input class="btn btn-warning" type="submit" value="Volver" name="volver" />
+                </form> 
+                </div>
+                    <!-- fin grid-content-->
              </div>
              <!-- fin grid -->  
             
@@ -251,30 +252,7 @@
     </body>
 </html>
 
-<%-- 
-    Document   : agregarPrueba
-    Created on : 2/01/2014, 04:14:38 PM
-    Author     : Jennifer
---%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
-        <title>Agregar Prueba</title>
-    </head>
-    <body>
-        <h1>Agregar Prueba</h1>
-        <form name="insertarPrueba" action="insertarPrueba.jsp" >
-            <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
-            <%=gestion.agregarPruebaFormulario()%>        
-            <input type="submit" value="Registrar" name="registrar" />
-        </form>
-            
-        <form name="formulario" action="listadoPruebas.jsp">
-            <input type="submit" value="Volver" name="volver" />
-        </form> 
-                     
-    </body>    
-</html>
+
+
+   

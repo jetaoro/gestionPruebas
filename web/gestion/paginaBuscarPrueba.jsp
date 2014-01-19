@@ -88,7 +88,7 @@
                 <ul class="additional-menu">
                     <li class="active"><a href="#"><i class="icon-search"></i> Buscar</a></li>
              <li><i class="icon-list"></i> Listar</li>
-             <li><i class="icon-add"></i> Agregar</a></li>
+             <li><i class="icon-plus-sign"></i> Agregar</a></li>
              <li><i class="icon-edit"></i> Modificar </li>
              <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
@@ -127,7 +127,7 @@
                           session.removeAttribute("nombre_prueba");
                         %>                        
                         <%=gestion.paginaBuscarPruebas()%>
-                        <input  class="btn btn-warning  metro"  type="submit" value="Buscar" name="buscar" />
+                        <input  class="btn btn-warning"  type="submit" value="Buscar" name="buscar" />
                     </form>    
                 </div>  
              </div>
