@@ -117,6 +117,7 @@
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Buscar</li>
                      <li class="active" ><a href="#"><i class="icon-list"></i> Listar</a></li>
+                     <li><i class="icon-plus-sign"></i> Agregar</a></li>
                      <li><i class="icon-edit"></i> Modificar </li>
                      <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>

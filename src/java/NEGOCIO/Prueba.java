@@ -163,20 +163,23 @@ public class Prueba {
     public String agregarPruebaFormulario(){
         String tabla = "Evidencias de las pruebas realizadas sobre el Módulo " + new Modulo().listadoModulos();
         tabla+=", de Gnosoft Académico, en el puerto " + new SitioPrueba().listadoSitiosPrueba();
-        tabla+="</br>"+"Fecha de Inicio: " + "<input type='text' size='30' maxlength='30' name='fecha_inicio' required>";
-        tabla+="</br>"+"Fecha de Terminación: " + "<input type='text' size='30' maxlength='30' name='fecha_fin' required>";
+        tabla+="</br>"+"Fecha de Inicio: " + "<input id='dp4' type='text' size='30' maxlength='30' name='fecha_inicio' required>";
+        tabla+="</br>"+"Fecha de Terminación: " + "<input type='text' id='dp5' size='30' maxlength='30' name='fecha_fin' required>";
         tabla+="</br>"+"Pruebas realizadas por: " + new Responsable().listadoResponsables();
-        tabla+="</br>"+"<table border='1'> <th><h3>REGISTRO DE EJECUCIÓN DE PRUEBA</h3></th>";
-        tabla+="<tr><th><h4>Descripción de las pruebas</h4></th></tr>";        
-        tabla+="<tr><th>Nombre de la prueba: </th>" + "<td><textarea rows='4' cols='40' name='nombre' required></textarea></td></tr>";
-        tabla+="<tr><th>Número de requerimiento: </th>" + "<td><input type='text' size='30' maxlength='30' name='numero_requerimiento' required></td></tr>";
-        tabla+="<tr><th>Fecha de Ejecución: </th>" + "<td><input type='text' size='30' maxlength='30' name='fecha_ejecucion' required></td></tr>";
-        tabla+="<tr><th>Elemento a probar: </th>" + "<td><input type='text' size='30' maxlength='30' name='elemento_prueba' required></td></tr>";
-        tabla+="<tr><th>Tipo de Prueba: </th>" + "<td>" + new TipoPrueba().listadoTiposPrueba() + "</td></tr>";
-        tabla+="<tr><th>Modo de Ejecución: </th>" + "<td>" + new ModoEjecucion().listadoModosEjecucion() + "</td></tr>";
-        tabla+="<tr><th>Descripción de la prueba: </th>" + "<td><textarea rows='4' cols='40' name='descripcion' required></textarea></td></tr>";
-        tabla+="<tr><th>Caso de Éxito: </th>" + "<td><textarea rows='4' cols='40' name='caso_exito' required></textarea></td></tr>";
-        tabla+="<tr><th>Caso de Fallo: </th>" + "<td><textarea rows='4' cols='40' name='caso_fallo' required></textarea></td></tr>";
+        tabla+="</br>"+"<table border='1'> <th><h4>REGISTRO DE EJECUCIÓN DE PRUEBA</h4></th>";
+        tabla+="<div class=\"formRow\">";
+        tabla+="<strong>Descripción de las pruebas</strong>"; 
+        tabla+="</div>";
+        tabla+="<div class='formRow'>";
+        tabla+="<label>Nombre de la prueba: </label>" + "<div class='formRight' <textarea rows='4' cols='40' name='nombre' required></textarea></div></div>";
+        tabla+="<div class='formRow'> <label>Número de requerimiento: </label>" + "<div class='formRight'><input type='text' size='30' maxlength='30' name='numero_requerimiento' required></div></div>";
+        tabla+="<div class='formRow'><label>Fecha de Ejecución: </label>" + "<div class='formRight'><input type='text' size='30' maxlength='30' name='fecha_ejecucion' required></div></div>";
+        tabla+="<div class='formRow'><label>Elemento a probar: </label>" + "<div class='formRight'><input type='text' size='30' maxlength='30' name='elemento_prueba' required></div></div>";
+        tabla+="<div class='formRow'><label>Tipo de Prueba: </label>" + "<div class='formRight'>" + new TipoPrueba().listadoTiposPrueba() + "</div></div>";
+        tabla+="<div class='formRow'><label>Modo de Ejecución: </label>" + "<div class='formRight'>" + new ModoEjecucion().listadoModosEjecucion() + "</div></div>";
+        tabla+="<div class='formRow'><label>Descripción de la prueba: </label>" + "<div class='formRight'><textarea rows='4' cols='40' name='descripcion' required></textarea></div></div>";
+        tabla+="<div class='formRow'><label>Caso de Éxito: </label>" + "<div class='formRight'><textarea rows='4' cols='40' name='caso_exito' required></textarea></div></div>";
+        tabla+="<div class='formRow'><label>Caso de Fallo: </label>" + "<div class='formRight'><textarea rows='4' cols='40' name='caso_fallo' required></textarea></div></div>";
         tabla+="</table>";
         return tabla;
     }

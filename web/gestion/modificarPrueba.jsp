@@ -91,6 +91,7 @@
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Buscar</li>
                      <li class="active" ><a href="#"><i class="icon-list"></i> Listar</a></li>
+                     <li><i class="icon-plus-sign"></i> Agregar</a></li>
                      <li><i class="icon-edit"></i> Modificar </li>
                      <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
@@ -135,7 +136,7 @@
                     <jsp:useBean id="prueba" scope="page" class="DTO.PruebaDTO" />
                     <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
                     <%=gestion.getUnaPrueba(idPrueba)%>                   
-                    <input type="submit" name="registrar" value="Registrar">
+                    <input class="btn btn-success" type="submit" name="registrar" value="Registrar">
                 </form>
                 <form name="formulario" action="listadoPruebas.jsp">
                     <input class="btn btn-warning" type="submit" name="volver" value="Volver">
