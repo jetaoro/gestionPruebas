@@ -58,17 +58,17 @@ public class CasoPrueba {
             tabla+="<table border=1><tr align='center'><td>Identificador</td></tr>";
             tabla+="<tr align='center'><td><input type='text' name='identificador' readonly='readonly' value='"+caso.getIdentificador()+"'></td></tr></table>";
             tabla += "<table border=1><tr align='center'><td>Descripción</td></tr>";
-            tabla += "<tr align='center'><td><input type='text' name='descripcion' value='"+caso.getDescripcion()+"' required></td></tr></table>";
+            tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='descripcion' required>"+caso.getDescripcion()+"</textarea></td></tr></table>";
             tabla += "<table border=1><tr align='center'><td>Datos de entrada</td></tr>";
-            tabla += "<tr align='center'><td><input type='text' name='datos_entrada' value='"+caso.getDatos_entrada()+"' required></td></tr></table>";
+            tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='datos_entrada' required>"+caso.getDatos_entrada()+"</textarea></td></tr></table>";
             tabla += "<table border=1><tr align='center'><td>Resultado Esperado</td></tr>";
-            tabla += "<tr align='center'><td><input type='text' name='resultado_esperado' value='"+caso.getResultado_esperado()+"' required></td></tr></table>";
+            tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='resultado_esperado' required>"+caso.getResultado_esperado()+"</textarea></td></tr></table>";
             tabla += "<table border=1><tr align='center'><td>Resultado Obtenido</td></tr>";
-            tabla += "<tr align='center'><td><input type='text' name='resultado_obtenido' value='"+caso.getResultado_obtenido()+"' required></td></tr></table>";
+            tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='resultado_obtenido' required>"+caso.getResultado_obtenido()+"</textarea></td></tr></table>";
             tabla += "<table border=1><tr align='center'><td>Tipo de Resultado</td></tr>";
-            tabla += "<tr align='center'><td><input type='text' name='tipo_resultado' value='"+caso.getTipo_resultado()+"' required></td></tr></table>";
+            tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='tipo_resultado' required>"+caso.getTipo_resultado()+"</textarea></td></tr></table>";
             tabla += "<table border=1><tr align='center'><td>Observación</td></tr>";
-            tabla += "<tr align='center'><td><input type='text' name='observacion' value='"+caso.getObservacion()+"'></td></tr></table>";
+            tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='observacion' required>"+caso.getObservacion()+"</textarea></td></tr></table>";
             tabla +="</table></br>";
         }
         return (tabla);
@@ -81,17 +81,17 @@ public class CasoPrueba {
         tabla += "<table border=1><tr align='center'><td>Identificador de la prueba</td></tr>";
         tabla += "<tr align='center'><td><input type='text' name='idPrueba' readonly='readonly' value='"+ idPrueba +"'></td></tr></table>";
         tabla += "<table border=1><tr align='center'><td>Descripción</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='descripcion' required></td></tr></table>";
+        tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='descripcion' required></textarea></td></tr></table>";
         tabla += "<table border=1><tr align='center'><td>Datos de entrada</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='datos_entrada' required></td></tr></table>";
+        tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='datos_entrada' required></textarea></td></tr></table>";
         tabla += "<table border=1><tr align='center'><td>Resultado Esperado</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='resultado_esperado' required></td></tr></table>";
+        tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='resultado_esperado' required></textarea></td></tr></table>";
         tabla += "<table border=1><tr align='center'><td>Resultado Obtenido</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='resultado_obtenido' required></td></tr></table>";
+        tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='resultado_obtenido' required></textarea></td></tr></table>";
         tabla += "<table border=1><tr align='center'><td>Tipo de Resultado</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='tipo_resultado' required></td></tr></table>";
+        tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='tipo_resultado' required></textarea></td></tr></table>";
         tabla += "<table border=1><tr align='center'><td>Observación</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='observacion' ></td></tr></table>";
+        tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='observacion' required></textarea></td></tr></table>";
         tabla += "</table></br>";
 
         return (tabla);

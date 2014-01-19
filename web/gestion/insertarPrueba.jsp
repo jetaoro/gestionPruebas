@@ -11,8 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Insertar Prueba</title>
     </head>
-    <body>
-        <h1>Insertar Prueba</h1>
+    <body>        
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
         <jsp:useBean id="prueba" scope="page" class="DTO.PruebaDTO" />
         <%
@@ -42,10 +41,24 @@
                 idResponsable2 = Integer.parseInt(idResponsable);
             if (idTipoPrueba!="")
                 idTipoPrueba2 = Integer.parseInt(idTipoPrueba);
+            
+            String resultado=gestion.insertarUnaPrueba(idModulo2, idSitio2, idResponsable2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, idTipoPrueba2, modosEjecucion, descripcion, casoExito, casoFallo);
+            if(resultado.equals("La inserción falló")){
+        %>
+        <script type="text/javascript">
+            alert("La inserción falló");
+            location.href="listadoPruebas.jsp";
+        </script>
+        <%
+            }
+            if(resultado.equals("La inserción fue exitosa")){
+        %>
+        <script type="text/javascript">
+            alert("La inserción fue exitosa");
+            location.href="listadoPruebas.jsp";
+        </script>
+        <%
+            }
         %>        
-        <%=gestion.insertarUnaPrueba(idModulo2, idSitio2, idResponsable2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, idTipoPrueba2, modosEjecucion, descripcion, casoExito, casoFallo)%>
-        <form name="listadoPruebas" action="listadoPruebas.jsp">
-            <input type="submit" value="Volver" name="volver" />
-        </form>
     </body>
 </html>
