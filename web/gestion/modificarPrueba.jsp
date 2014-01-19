@@ -24,7 +24,17 @@
 
             <link rel="stylesheet" href="../css/icon/font-awesome.css">    
         <link rel="stylesheet" href="../css/bootstrap-responsive.css">
-
+        
+        <link href="../css/datepicker.css" rel="stylesheet">
+	<style>
+	.container {
+		background: #fff;
+	}
+	#alert {
+		display: none;
+	}
+	</style>
+    <link href="../js/google-code-prettify/prettify.css" rel="stylesheet">
        
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -36,27 +46,8 @@
             </script>
 
         <!-- Le fav and touch icons -->
-        <link rel="shortcut icon" href="../images/favicon.ico">
-        
-        <script type="text/javascript">
-    var datefield=document.createElement("input")
-    datefield.setAttribute("type", "date")
-    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
-        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
-        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
-        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
-    }
-</script>
- 
-<script>
-if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-    jQuery(function($){ //on document.ready
-        $('#birthday').datepicker();
-    })
-}
-</script>
-
-    </head>
+       
+</head>
     <body>
         <!-- comienzo del header -->
         <div id="header" role="banner">
@@ -93,7 +84,7 @@ if (datefield.type!="date"){ //if browser doesn't support input type="date", ini
             <!--BEGIN SIDEBAR-->
             <div id="menu" role="navigation">  
                 <ul class="main-menu">
-                     <li class="active"><a href="#"><i class="components"></i> Pruebas</a></li>
+                     <li class="active"><a href="paginaBuscarPrueba.jsp"><i class="components"></i> Pruebas</a></li>
                      <li><a href="listadoModulos.jsp"><i class="modules"></i> Módulos</a></li>
                      <li><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
@@ -133,8 +124,13 @@ if (datefield.type!="date"){ //if browser doesn't support input type="date", ini
                 </div>
               <div class="clearfix"></div>   
               </div>
-           
-                    <form name="modificar" action="actualizarPrueba.jsp" method="post">
+                    
+                        <div class="alert alert-error" id="alert" >
+                                 <button type="button" class="close" data-dismiss="alert">&times;</button>          
+				<strong>Algo falló!</strong>
+			   
+                                          </div>                   
+                  <form name="modificar" action="actualizarPrueba.jsp" method="post">
                     <% int idPrueba=Integer.parseInt(request.getParameter("prueba")); %>         
                     <jsp:useBean id="prueba" scope="page" class="DTO.PruebaDTO" />
                     <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
@@ -169,7 +165,7 @@ if (datefield.type!="date"){ //if browser doesn't support input type="date", ini
    
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/google-code-prettify/prettify.js"></script>
- 
+    <script src="../js/fullcalendar.min.js"></script>
     <script src="../js/jquery.flot.orderBars.js"></script>
     <script src="../js/jquery.flot.resize.js"></script>
     <script src="../js/jquery.flot.categories.js"></script>
@@ -207,7 +203,45 @@ if (datefield.type!="date"){ //if browser doesn't support input type="date", ini
     ]);
     </script>
 	<script src="../js/application.js"></script>
+        <script src="../js/google-code-prettify/prettify.js"></script>
+    <script src="../js/bootstrap-datepicker.js"></script>
+		<script>
+	if (top.location != location) {
+    top.location.href = document.location.href ;
+  }
+		$(function(){
+			window.prettyPrint && prettyPrint();
+			
+			$('#dp6').datepicker();
+                        var fechaInicio=document.getElementById("dp4").value;	
+                        var fechaFin=document.getElementsByClassName("dp5").value;
+			
+			$('#dp4').datepicker()
+				.on('changeDate', function(ev){
+					if (ev.date.valueOf() > fechaFin.valueOf()){
+						$('#alert').show().find('strong').text('The start date can not be greater then the end date');
+					} else {
+						$('#alert').hide();
+						
+					}
+					$('#dp4').datepicker('hide');
+				});
+			$('#dp5').datepicker()
+				.on('changeDate', function(ev){
+					if (ev.date.valueOf() < fechaInicio.valueOf()){
+						$('#alert').show().find('strong').text('The end date can not be less then the start date');
+					} else {
+						$('#alert').hide();
+						
+					}
+					$('#dp5').datepicker('hide');
+				});
 
+        // disabling dates
+                  
+       
+		});
+	</script>
             
     </body>
 </html>

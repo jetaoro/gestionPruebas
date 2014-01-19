@@ -127,7 +127,7 @@ public class Modulo {
     //Arroja un combo con todos los módulos de prueba que haya registrado en el sistema
     public String listadoModulos(){
         TreeSet<ModuloDTO> modulos = new ModuloDAO().getModulo();
-        String listado = "<select name='modulo'>";
+        String listado = "<select class=\"chzn-select chosen_select\" name='modulo'>";
         listado+="<option>"+ "" +"</option>";
         for (ModuloDTO modulo : modulos) {
             listado+="<option value='"+modulo.getIdentificador()+"'>"+modulo.getNombre() +"</option>";

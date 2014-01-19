@@ -117,7 +117,7 @@ public class SitioPrueba {
     //Arroja un combo con todos los sitios de prueba que haya registrado en el sistema
     public String listadoSitiosPrueba(){
         TreeSet<SitioPruebaDTO> sitios = new SitioPruebaDAO().getSitioPrueba();
-        String listado = "<select name='sitio'>";
+        String listado = "<select class=\"chzn-select chosen_select\" name='sitio'>";
         listado+="<option>"+ "" +"</option>";
         for (SitioPruebaDTO sitio : sitios) {
             listado+="<option value='"+sitio.getIdentificador()+"'>"+sitio.getNumero_puerto()+" - "+ sitio.getNombre() +"</option>";

@@ -20,7 +20,7 @@ public class Responsable {
     //Arroja un combo con todos los módulos de prueba que haya registrado en el sistema
     public String listadoResponsables(){
         TreeSet<ResponsableDTO> responsables = new ResponsableDAO().getResponsable();
-        String listado = "<select name='responsable'>";
+        String listado = "<select class=\"chzn-select chosen_select\" name='responsable'>";
         listado+="<option>"+ "" +"</option>";
         for (ResponsableDTO responsable : responsables) {
             listado+="<option value='"+responsable.getIdentificador()+"'>"+responsable.getNombre() +"</option>";

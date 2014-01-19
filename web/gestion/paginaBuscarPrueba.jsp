@@ -116,7 +116,7 @@
                </div>
               <div class="clearfix"></div>   
               </div>
-                 <div class="grid-content overflow">   
+                 <div class="grid-content">   
                     <form name="buscarPrueba" action="listadoPruebas.jsp">
                         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
                         <%session.removeAttribute("modulo");

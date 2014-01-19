@@ -82,19 +82,19 @@ public class Prueba {
     public String getUnaPrueba(int idPrueba){
         PruebaDTO prueba = new PruebaDAO().getUnaPrueba(new PruebaDTO(idPrueba));
         DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        SimpleDateFormat format =new SimpleDateFormat("dd/mm/yyyy");
         String tabla = "<strong>Evidencia de las pruebas realizadas sobre el Módulo "+ prueba.getModulo().getNombre();
         tabla += ", en el puerto "+ prueba.getSitioPrueba().getNumero_puerto() + "</strong></br>";
-        tabla+= "Fecha de Inicio: "+ "<input type='date' name='fecha_inicio' value='" + df1.format(prueba.getFecha_inicio()) + "' required>";
-        tabla+= "</br>Fecha de Terminación: "+ "<input type='date' name='fecha_fin' value='" + df1.format(prueba.getFecha_inicio()) + "' required>";
+        tabla+= "Fecha de Inicio: "+ "<input type='text' id=\"dp4\"  data-date-format=\"dd/mm/yyyy\" name='fecha_inicio' value='" + format.format(prueba.getFecha_inicio()) + "' required>";
+        tabla+= "</br>Fecha de Terminación: "+ "<input  type='text' id=\"dp5\"  data-date-format=\"dd/mm/yyyy\" name='fecha_fin' value='" + format.format(prueba.getFecha_inicio()) + "' required>";
         tabla+= "</br>Pruebas realizadas por: "+ prueba.getResponsable().getNombre() + "</br>";
-        tabla+="<input type=\"date\" id=\"birthday\" name=\"birthday\" size=\"20\" value='28/06/1989'/>";
         tabla += "</br><table class=\"table table-bordered table-mod-2\">";           
         tabla += "\n<tr>"; 
         tabla += "\n<tr><th>Registro de Ejecución de Pruebas</th></tr>";
         tabla += "\n<tr><th>Identificador</th>" + "\n<td>" + "<input type='text' name='identificador' readonly='readonly' value='" + prueba.getIdentificador() + "'></td>";
         tabla += "\n<tr><th>Nombre</th>" + "\n<td>" + "<input type='text' name='nombre' value='" + prueba.getNombre() + "' required></td>";
          tabla += "\n<tr><th>Número de requerimiento</th>" + "\n<td>" + "<input type='text' name='numero_requerimiento' value='" + prueba.getNumero_requerimiento() + "' required></td>";
-        tabla += "\n<tr><th>Fecha Ejecuci&oacute;n</th>" + "\n<td>" + "<input type='text' name='fecha_ejecucion' value='" + df1.format(prueba.getFecha_ejecucion()) + "' required></td>";
+        tabla += "\n<tr><th>Fecha Ejecuci&oacute;n</th>" + "\n<td>" + "<input id=\"dp6\"  data-date-format=\"dd/mm/yyyy\" type='text' name='fecha_ejecucion' value='" + format.format(prueba.getFecha_ejecucion()) + "' required></td>";
         tabla += "\n<tr><th>Elemento a probar</th>" + "\n<td>" + "<input type='text' name='elemento_prueba' value='" + prueba.getElemento_prueba() + "' required></td>";
         tabla += "\n<tr><th>Tipo de Prueba</th>" + "\n<td>" + "<input type='text' name='tipo_prueba' readonly='readonly' value='" + prueba.getTipoPrueba().getDescripcion() + "' required></td>";
         tabla += "\n<tr><th>Modos de Ejecución</th>" + "\n<td>" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getModosEjecucion().toString() + "'></td>";
@@ -107,14 +107,20 @@ public class Prueba {
     }
     
     public String buscarPrueba(){
-        String tabla = "<table class=\"table table-bordered table-mod-2\" id=\"datatable_3\">";
+        String tabla = "<div class=\"formRow\">";
         
-        tabla+="<tr><th>Nombre prueba: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='nombre_prueba'></td>";
-        tabla+="<tr><th>Número de requerimiento: </th>"+"\n<td>"+"<input type='text' size='30' maxlength='30' name='numero_requerimiento'></td>";
-        tabla+="<tr><th>Módulo: </th>"+"\n<td>"+ new Modulo().listadoModulos() +"</td>";
-        tabla+="<tr><th>Responsable: </th>"+"\n<td>"+new Responsable().listadoResponsables() +"</td>";
-        tabla+="<tr><th>Sitio Prueba: </th>"+"\n<td>"+new SitioPrueba().listadoSitiosPrueba()+"</td>";
-        tabla+="</table>";
+        tabla+="<label>Nombre prueba: </label>"+"<div class=\"formRight\">" +"<input type='text' size='30' maxlength='30' name='nombre_prueba'></div></div>";
+        tabla+="<div class=\"formRow\"><label>Número de requerimiento: </label>"+"<div class=\"formRight\"><input type='text' size='30' maxlength='30' name='numero_requerimiento'></div></div>";
+        tabla+="<div class=\"formRow\">";
+        tabla+="<label>Módulo: </label>"+"<div class=\"formRight\">"+ new Modulo().listadoModulos()+"</div>";
+        tabla+="</div>";
+        tabla+="<div class=\"formRow\">";
+        tabla+="<label>Responsable: </label>"+"<div class=\"formRight\">"+new Responsable().listadoResponsables() +"</div>";
+        tabla+="</div>";
+        tabla+="<div class=\"formRow\">";
+        tabla+="<label>Sitio Prueba: </label>"+"<div class=\"formRight\">"+"<td>"+new SitioPrueba().listadoSitiosPrueba()+"</div>";
+        tabla+="</div>";
+        tabla+="</br></br></br>";
         return tabla;
     }
     

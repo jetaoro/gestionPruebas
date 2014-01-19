@@ -110,7 +110,7 @@
             <!--BEGIN SIDEBAR-->
             <div id="menu" role="navigation">  
                 <ul class="main-menu">
-                     <li class="active"><a href="#"><i class="components"></i> Pruebas</a></li>
+                     <li class="active"><a href="paginaBuscarPrueba.jsp"><i class="components"></i> Pruebas</a></li>
                      <li><a href="listadoModulos.jsp"><i class="modules"></i> Módulos</a></li>
                      <li><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
