@@ -12,12 +12,43 @@
         <title>Eliminar Prueba</title>
     </head>
     <body>
-        <h1>Eliminación de la Prueba</h1>
+        
         <% int idPrueba=Integer.parseInt(request.getParameter("prueba")); %>       
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
-        <%=gestion.eliminarPrueba(idPrueba)%>
-        <form name="listadoPruebas" action="listadoPruebas.jsp">
-            <input type="submit" value="Volver" name="volver" />
-        </form>
+        <%
+            String resultado=gestion.eliminarPrueba(idPrueba);
+            if(resultado.equals("La eliminación de la prueba falló")){
+        %>
+        <script type="text/javascript">
+            alert("La eliminación de la prueba falló");
+            location.href="listadoPruebas.jsp";
+        </script>
+        <%
+            }
+            if(resultado.equals("La eliminación de los casos de prueba de la prueba seleccionada, falló")){
+        %>
+        <script type="text/javascript">
+            alert("La eliminación de los casos de prueba de la prueba seleccionada, falló");
+            location.href="listadoPruebas.jsp";
+        </script>
+        <%
+            }
+            if(resultado.equals("La eliminación de los modos de ejecución de la prueba seleccionada, falló")){
+        %>
+        <script type="text/javascript">
+            alert("La eliminación de los modos de ejecución de la prueba seleccionada, falló");
+            location.href="listadoPruebas.jsp";
+        </script>
+        <%
+            }
+            if(resultado.equals("La eliminación de la prueba fue exitosa")){
+        %>
+        <script type="text/javascript">
+            alert("La eliminación de la prueba fue exitosa");
+            location.href="listadoPruebas.jsp";
+        </script>
+        <%
+            }
+        %>
     </body>
 </html>

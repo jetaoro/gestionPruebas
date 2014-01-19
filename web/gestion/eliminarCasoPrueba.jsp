@@ -12,12 +12,27 @@
         <title>Eliminar Caso de Prueba</title>
     </head>
     <body>
-        <h1>Eliminación del Caso de Prueba</h1>
+        
         <% int idCaso=Integer.parseInt(request.getParameter("casoPrueba")); %>       
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
-        <%=gestion.eliminarCasoPrueba(idCaso)%>
-        <form name="verPrueba" action="verPrueba.jsp">
-            <input type="submit" value="Volver" name="volver" />
-        </form>
+        <%
+            String resultado=gestion.eliminarCasoPrueba(idCaso);
+            if(resultado.equals("La eliminación falló")){
+        %>
+        <script type="text/javascript">
+            alert("La eliminación falló");
+            location.href="verPrueba.jsp";
+        </script>
+        <%
+            }
+            if(resultado.equals("La eliminación fue exitosa")){
+        %>
+        <script type="text/javascript">
+            alert("La eliminación fue exitosa");
+            location.href="verPrueba.jsp";
+        </script>
+        <%
+            }
+        %>       
     </body>
 </html>

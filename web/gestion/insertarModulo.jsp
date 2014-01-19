@@ -15,9 +15,24 @@
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
         <jsp:useBean id="modulo" scope="page" class="DTO.ModuloDTO" />
         <jsp:setProperty name="modulo" property="*" />
-        <%=gestion.insertarModulo(modulo)%>
-        <form name="listado" action="listadoModulos.jsp">
-            <input type="submit" value="Volver" name="volver" />
-        </form>
+        <%
+            String resultado=gestion.insertarModulo(modulo);
+            if(resultado.equals("La inserción falló")){
+        %>
+        <script type="text/javascript">
+            alert("La inserción falló");
+            location.href="listadoModulos.jsp";
+        </script>
+        <%
+            }
+            if(resultado.equals("La inserción fue exitosa")){
+        %>
+        <script type="text/javascript">
+            alert("La inserción fue exitosa");
+            location.href="listadoModulos.jsp";
+        </script>
+        <%
+            }
+        %>        
     </body>
 </html>

@@ -12,13 +12,28 @@
         <title>Actualizar Caso de Prueba</title>
     </head>
     <body>
-        <h1>Actualizar Caso de Prueba</h1>
+        
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
         <jsp:useBean id="casoPrueba" scope="page" class="DTO.CasoPruebaDTO" />
         <jsp:setProperty name="casoPrueba" property="*" />
-        <%=gestion.modificarCasoPrueba(casoPrueba)%>
-        <form name="verPrueba" action="verPrueba.jsp">
-            <input type="submit" value="Volver" name="volver" />
-        </form>
+        <%
+            String resultado=gestion.modificarCasoPrueba(casoPrueba);
+            if(resultado.equals("La actualización falló")){
+        %>
+        <script type="text/javascript">
+            alert("La actualización falló");
+            location.href="verPrueba.jsp";
+        </script>
+        <%
+            }
+            if(resultado.equals("La actualización fue exitosa")){
+        %>
+        <script type="text/javascript">
+            alert("La actualización fue exitosa");
+            location.href="verPrueba.jsp";
+        </script>
+        <%
+            }
+        %>         
     </body>
 </html>

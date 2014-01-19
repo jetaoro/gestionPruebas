@@ -12,7 +12,7 @@
         <title>Actualizar Prueba</title>
     </head>
     <body>
-        <h1>Actualizar Prueba</h1>
+        
         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
         <jsp:useBean id="prueba" scope="page" class="DTO.PruebaDTO" />
         <%
@@ -30,9 +30,24 @@
             if(idPrueba!=null)
                 idPrueba2 = Integer.parseInt(idPrueba);
         %>        
-        <%=gestion.modificarPrueba(idPrueba2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, descripcion, casoExito, casoFallo)%>
-        <form name="listadoPruebas" action="listadoPruebas.jsp">
-            <input type="submit" value="Volver" name="volver" />
-        </form>
+        <%
+            String resultado=gestion.modificarPrueba(idPrueba2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, descripcion, casoExito, casoFallo);
+            if(resultado.equals("La actualización falló")){
+        %>
+        <script type="text/javascript">
+            alert("La actualización falló");
+            location.href="listadoPruebas.jsp";
+        </script>
+        <%
+            }
+            if(resultado.equals("La actualización fue exitosa")){
+        %>
+        <script type="text/javascript">
+            alert("La actualización fue exitosa");
+            location.href="listadoPruebas.jsp";
+        </script>
+        <%
+            }
+        %>        
     </body>
 </html>

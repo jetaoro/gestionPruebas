@@ -192,11 +192,7 @@ public class Prueba {
     }
     
     public String insertarUnaPrueba(int idModulo, int idSitio, int idResponsable, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, int idTipoPrueba, String [] modosEjecucion, String descripcion, String casoExito, String casoFallo) throws ParseException{
-        String resultado = "La inserción falló";
-        if(idModulo==0){
-            resultado= "Debe seleccionar un Módulo";
-            return resultado;
-        }
+        String resultado = "La inserción falló";        
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaInicio2 = formato.parse(fechaInicio);
         Date fechaFin2 = formato.parse(fechaFin); 
