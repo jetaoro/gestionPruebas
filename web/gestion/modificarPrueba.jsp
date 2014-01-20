@@ -216,6 +216,7 @@
 			$('#dp6').datepicker()
                         .on('changeDate', function(ev){
                             $('#dp6').datepicker('hide');
+                            
                         });
                         var fechaInicio=document.getElementById("dp4").value;	
                         var fechaFin=document.getElementsByClassName("dp5").value;

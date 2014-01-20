@@ -119,7 +119,7 @@
                 </div>
                 <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda - Modificar Pruebas" data-content="Se debe seleccionar 
+                       title="Ayuda - Agregar Pruebas" data-content="Se debe seleccionar 
                        la prueba para poder realizar alguna de las acciones correspondientes">
                            <i class="icon-question-sign"></i></a></div>
                 </div>
@@ -129,17 +129,19 @@
                      <div class="alert alert-error" id="alert" >
                                  <button type="button" class="close" data-dismiss="alert">&times;</button>          
 				<strong>Algo falló!</strong>
-			   
-                                          </div>     
-                <form name="insertarPrueba" action="insertarPrueba.jsp" >
-                    <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
-                    <%=gestion.agregarPruebaFormulario()%>        
-                    <input class="btn btn-success" type="submit" value="Registrar" name="registrar" />
-                </form>
-
-                <form name="formulario" action="listadoPruebas.jsp">
-                    <input class="btn btn-warning" type="submit" value="Volver" name="volver" />
-                </form> 
+		     </div>     
+                        <form name="insertarPrueba" action="insertarPrueba.jsp" >
+                            <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
+                            <%=gestion.agregarPruebaFormulario()%>        
+                            <div class='formRow'>
+                            <input class="btn btn-success" type="submit" value="Registrar" name="registrar" />
+                            </div>
+                        </form>
+                        <div class='formRow'>
+                            <form name="formulario" action="listadoPruebas.jsp">
+                            <input class="btn btn-warning" type="submit" value="Volver" name="volver" />
+                            </form> 
+                        </div>
                 </div>
                     <!-- fin grid-content-->
              </div>

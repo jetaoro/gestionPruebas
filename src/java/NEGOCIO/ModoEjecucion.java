@@ -19,10 +19,15 @@ public class ModoEjecucion {
     
     public String listadoModosEjecucion(){
         TreeSet<ModoEjecucionDTO> modosEjecucion = new ModoEjecucionDAO().getModoEjecucion();
-        String listado = "";
+        String listado = "<div class=\"distance distance-2\">";
+        int n=modosEjecucion.size();
+        n++;
+        int i=1;
         for (ModoEjecucionDTO modo : modosEjecucion) {
-            listado+="<input type='checkbox' name='modoEjecucion' value='"+modo.getIdentificador()+"' checked>" + modo.getDescripcion() + " ";
-        }       
+            listado+="<p><input type='checkbox' id='c"+i+"' name='modoEjecucion' value='"+modo.getIdentificador()+"' />" +"<label for='c"+i+"'><span></span>"+ modo.getDescripcion() +"</label></p>";
+            i++;           
+        }
+        listado+="</div>";
         return listado;
     }
 }

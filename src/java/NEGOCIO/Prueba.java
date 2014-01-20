@@ -166,21 +166,21 @@ public class Prueba {
         tabla+="</br>"+"Fecha de Inicio: " + "<input id='dp4' type='text' size='30' maxlength='30' name='fecha_inicio' required>";
         tabla+="</br>"+"Fecha de Terminación: " + "<input type='text' id='dp5' size='30' maxlength='30' name='fecha_fin' required>";
         tabla+="</br>"+"Pruebas realizadas por: " + new Responsable().listadoResponsables();
-        tabla+="</br>"+"<table border='1'> <th><h4>REGISTRO DE EJECUCIÓN DE PRUEBA</h4></th>";
+        tabla+="</br>"+"<h4>REGISTRO DE EJECUCIÓN DE PRUEBA</h4>";
         tabla+="<div class=\"formRow\">";
         tabla+="<strong>Descripción de las pruebas</strong>"; 
         tabla+="</div>";
         tabla+="<div class='formRow'>";
-        tabla+="<label>Nombre de la prueba: </label>" + "<div class='formRight' <textarea rows='4' cols='40' name='nombre' required></textarea></div></div>";
+        tabla+="Fecha de Ejecución: " + "<input id='dp6' type='text' size='30' maxlength='30' name='fecha_ejecucion' required></br>";
+        tabla+="<label>Nombre de la prueba: </label>" + "<div class='formRight'> <textarea rows='4' cols='40' name='nombre' required></textarea></div></div>";
         tabla+="<div class='formRow'> <label>Número de requerimiento: </label>" + "<div class='formRight'><input type='text' size='30' maxlength='30' name='numero_requerimiento' required></div></div>";
-        tabla+="<div class='formRow'><label>Fecha de Ejecución: </label>" + "<div class='formRight'><input type='text' size='30' maxlength='30' name='fecha_ejecucion' required></div></div>";
         tabla+="<div class='formRow'><label>Elemento a probar: </label>" + "<div class='formRight'><input type='text' size='30' maxlength='30' name='elemento_prueba' required></div></div>";
         tabla+="<div class='formRow'><label>Tipo de Prueba: </label>" + "<div class='formRight'>" + new TipoPrueba().listadoTiposPrueba() + "</div></div>";
         tabla+="<div class='formRow'><label>Modo de Ejecución: </label>" + "<div class='formRight'>" + new ModoEjecucion().listadoModosEjecucion() + "</div></div>";
         tabla+="<div class='formRow'><label>Descripción de la prueba: </label>" + "<div class='formRight'><textarea rows='4' cols='40' name='descripcion' required></textarea></div></div>";
         tabla+="<div class='formRow'><label>Caso de Éxito: </label>" + "<div class='formRight'><textarea rows='4' cols='40' name='caso_exito' required></textarea></div></div>";
         tabla+="<div class='formRow'><label>Caso de Fallo: </label>" + "<div class='formRight'><textarea rows='4' cols='40' name='caso_fallo' required></textarea></div></div>";
-        tabla+="</table>";
+        
         return tabla;
     }
     
