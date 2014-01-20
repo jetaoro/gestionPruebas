@@ -232,8 +232,8 @@
                         .on('changeDate', function(ev){
                             $('#dp6').datepicker('hide');
                         });
-                        var fechaInicio=document.getElementById("dp4").value;	
-                        var fechaFin=document.getElementsByClassName("dp5").value;
+                        var fechaInicio=new Date(01/01/2013);	
+                        var fechaFin=new Date(document.getElementById("dp5"));
 			
 			$('#dp4').datepicker()
 				.on('changeDate', function(ev){
