@@ -163,7 +163,7 @@ public class Prueba {
     public String agregarPruebaFormulario(){
         String tabla = "Evidencias de las pruebas realizadas sobre el Módulo " + new Modulo().listadoModulos();
         tabla+=", de Gnosoft Académico, en el puerto " + new SitioPrueba().listadoSitiosPrueba();
-tabla+="</br>"+"Fecha de Inicio: " + "<input id='dp4' data-date-format=\"dd/mm/yyyy\" type='text' size='30' maxlength='30' name='fecha_inicio' required>";
+        tabla+="</br>"+"Fecha de Inicio: " + "<input id='dp4' type='text' data-date-format=\"dd/mm/yyyy\" size='30' maxlength='30' name='fecha_inicio' required>";
         tabla+="</br>"+"Fecha de Terminación: " + "<input type='text' data-date-format=\"dd/mm/yyyy\" id='dp5' size='30' maxlength='30' name='fecha_fin' required>";
         tabla+="</br>"+"Pruebas realizadas por: " + new Responsable().listadoResponsables();
         tabla+="</br>"+"<h4>REGISTRO DE EJECUCIÓN DE PRUEBA</h4>";
@@ -171,7 +171,7 @@ tabla+="</br>"+"Fecha de Inicio: " + "<input id='dp4' data-date-format=\"dd/mm/y
         tabla+="<strong>Descripción de las pruebas</strong>"; 
         tabla+="</div>";
         tabla+="<div class='formRow'>";
-        tabla+="Fecha de Ejecución: " + "<input data-date-format=\"dd/mm/yyyy\" id='dp6' type='text' size='30' maxlength='30' name='fecha_ejecucion' required></br>";
+        tabla+="Fecha de Ejecución: " + "<input id='dp6' type='text' data-date-format=\"dd/mm/yyyy\" size='30' maxlength='30' name='fecha_ejecucion' required></br>";
         tabla+="<label>Nombre de la prueba: </label>" + "<div class='formRight'> <textarea rows='4' cols='40' name='nombre' required></textarea></div></div>";
         tabla+="<div class='formRow'> <label>Número de requerimiento: </label>" + "<div class='formRight'><input type='text' size='30' maxlength='30' name='numero_requerimiento' required></div></div>";
         tabla+="<div class='formRow'><label>Elemento a probar: </label>" + "<div class='formRight'><input type='text' size='30' maxlength='30' name='elemento_prueba' required></div></div>";
