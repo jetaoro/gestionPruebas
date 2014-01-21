@@ -50,7 +50,6 @@ public class Prueba {
         return (tabla);
     }
     
-    //PENDIENTE POR TERMINAR
     public String getPrueba(int idPrueba){
         PruebaDTO prueba = new PruebaDAO().getUnaPrueba(new PruebaDTO(idPrueba));
         DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
@@ -252,11 +251,6 @@ public class Prueba {
         if (pruebaBorrada)
             resultado = "La eliminación de la prueba fue exitosa";        
         return (resultado);
-    }
-    
-    public String obtenerPruebaEjemplo(){
-        String result = new PruebaDAO().fechaInicio();
-        return result;
     }
     
 }

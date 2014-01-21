@@ -19,7 +19,7 @@ public class PruebaDAO {
     public PruebaDAO() {
     }
     
-    // Date en postgres aaaa/mm/dd
+    // Date en postgres dd/mm/yyyy
     //int identificador, String nombre, String numero_requerimiento, Date fecha_inicio, Date fecha_fin, 
     //Date fecha_ejecucion, String elemento_prueba, String descripcion, String caso_exito, String caso_fallo, 
     //int id_responsable, int id_modulo, int id_sitio, int id_tipo, int id_modo
@@ -261,19 +261,7 @@ public class PruebaDAO {
         return (BaseDeDatos.ejecutarActualizacionSQL(sql));
     }
     
-    //Metodo de ejemplo
-    public String fechaInicio(){
-        BaseDeDatos.conectar();
-        String sql = "select fecha_inicio from prueba where id_prueba = 7";
-        ArrayList<String> consulta=BaseDeDatos.getConsultaSQL(sql);
-        BaseDeDatos.desconectar();
-        if(consulta.isEmpty())
-            return null;
-        return (consulta.get(0));
-        
-    }
-    
-    public ArrayList<ModoEjecucionDTO> getModosEjecucion(PruebaDTO prueba){
+     public ArrayList<ModoEjecucionDTO> getModosEjecucion(PruebaDTO prueba){
         ArrayList<ModoEjecucionDTO> modos = new ArrayList<ModoEjecucionDTO>();
         BaseDeDatos.conectar();
         String sql = "select descripcion from modo_ejecucion join prueba_modo_ejecucion ON modo_ejecucion.id_modo = prueba_modo_ejecucion.id_modo and prueba_modo_ejecucion.id_prueba="+prueba.getIdentificador();

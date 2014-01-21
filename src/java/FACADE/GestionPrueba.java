@@ -151,15 +151,5 @@ public class GestionPrueba {
     
     public String eliminarPrueba(int idPrueba){
         return (new Prueba().eliminarPrueba(new PruebaDTO(idPrueba)));
-    } 
-   
-    //Prueba comprobacion
-    public String getFechaInicio(){
-        return (new Prueba().obtenerPruebaEjemplo());
-    }
-    
-    public static void main(String args[])
-    {
-        //System.out.println(new GestionPrueba().clone());
-    }
+    }    
 }
