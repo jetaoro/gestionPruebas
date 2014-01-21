@@ -56,16 +56,7 @@ public class Modulo {
         else
             tabla+="\n<table border='1'><td>No se encontraron módulos registrados.</td></table>";
         tabla+="</table></br>";
-        return (tabla); 
-        /*
-        String selec="<select name='id'>";
-        for(ModuloDTO modulo:modulos)
-        {
-            selec+="\n<option value='"+modulo.getIdentificador()+"'>"+modulo.getNombre()+"</option>";
-        }
-        selec+="</select>";
-        return (selec); 
-        * */
+        return (tabla);         
     }
     
     public String agregarModulo(){ 
@@ -109,7 +100,6 @@ public class Modulo {
     }
     
     
-    //Pendiente, se supone que se obtiene un módulo
     public String getUnModulo(int id_modulo){
         ModuloDTO modulo = new ModuloDAO().getUnModulo(new ModuloDTO(id_modulo));
         String tabla = "No se ha encontrado el módulo buscado";
