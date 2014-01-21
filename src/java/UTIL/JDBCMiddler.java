@@ -1,4 +1,4 @@
-package ufps.util;
+package UTIL;
 import java.sql.*;
 import java.util.Iterator;
 import javax.naming.*;

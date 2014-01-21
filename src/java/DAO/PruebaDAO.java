@@ -3,12 +3,12 @@
  * and open the template in the editor.
  */
 package DAO;
+import UTIL.BaseDeDatos;
 import java.util.*;
 import DTO.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import ufps.util.*;
 
 /**
  *

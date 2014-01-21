@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.util;
+package UTIL;
 import java.sql.*; 
 
 

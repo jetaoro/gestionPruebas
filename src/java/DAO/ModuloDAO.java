@@ -6,7 +6,7 @@ package DAO;
 
 import DTO.*;
 import java.util.*;
-import ufps.util.BaseDeDatos;
+import UTIL.BaseDeDatos;
 
 /**
  *
