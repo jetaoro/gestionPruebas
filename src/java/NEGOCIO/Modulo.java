@@ -37,17 +37,20 @@ public class Modulo {
     //Tabla con el listado de módulos, con los radios de selección
     public String getListadoModulos(){
         TreeSet<ModuloDTO> modulos = new ModuloDAO().getModulo();
-        String tabla = "<table border = '1'>"+
-                "\n<tr>"+
-                "\n<th></th>"+
-                "\n<th>Nombre</th>"+
-                "\n</tr>";
+        String tabla = "<table class=\"table table-bordered table-mod-2\" id=\"datatable_3\">"+
+                "<thead>"+
+                "<tr>"+
+                "<th></th>"+
+                "<th>Nombre</th>"+
+                "</tr>"+
+                "</thead>"+
+                "<tbody>";
         if(!modulos.isEmpty()){
             for (ModuloDTO modulo : modulos) {
-                tabla+="\n<tr>";
-                tabla+="\n<td>"+"<input type = 'radio' name = 'modulo' value = '"+modulo.getIdentificador()+"' >" + "</td>";
-                tabla+="\n<td>"+ modulo.getNombre()+"</td>";           
-                tabla+="\n</tr>";
+                tabla+="<tr>";
+                tabla+="<td class=\"t_center\">"+"<input type = 'radio' name = 'modulo' id='"+modulo.getIdentificador()+"' value = '"+modulo.getIdentificador()+"' />"  + "<label for='"+modulo.getIdentificador()+"'><span></span></label>"+ "</td>";
+                tabla+="<td>"+ modulo.getNombre()+"</td>";           
+                tabla+="</tr>";
             }
         }
         else
