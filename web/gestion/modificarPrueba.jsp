@@ -45,7 +45,7 @@
             if(Firefox) document.write("<link rel='stylesheet' href='../css/moz.css' type='text/css'>"); 
             </script>
 
-        <!-- Le fav and touch icons -->
+     <link rel="shortcut icon" href="../images/favicon.ico">
        
 </head>
     <body>
