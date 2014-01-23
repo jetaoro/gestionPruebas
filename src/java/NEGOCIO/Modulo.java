@@ -48,13 +48,13 @@ public class Modulo {
         if(!modulos.isEmpty()){
             for (ModuloDTO modulo : modulos) {
                 tabla+="<tr>";
-                tabla+="<td class=\"t_center\">"+"<input type = 'radio' name = 'modulo' id='"+modulo.getIdentificador()+"' value = '"+modulo.getIdentificador()+"' />"  + "<label for='"+modulo.getIdentificador()+"'><span></span></label>"+ "</td>";
+                tabla+="<td width='5%' class=\"t_center\">"+"<input type = 'radio' name = 'modulo' id='"+modulo.getIdentificador()+"' value = '"+modulo.getIdentificador()+"' />"  + "<label for='"+modulo.getIdentificador()+"'><span></span></label>"+ "</td>";
                 tabla+="<td>"+ modulo.getNombre()+"</td>";           
                 tabla+="</tr>";
             }
         }
         else
-            tabla+="\n<table border='1'><td>No se encontraron módulos registrados.</td></table>";
+            tabla+="";
         tabla+="</table></br>";
         return (tabla);         
     }
@@ -102,10 +102,13 @@ public class Modulo {
     
     public String getUnModulo(int id_modulo){
         ModuloDTO modulo = new ModuloDAO().getUnModulo(new ModuloDTO(id_modulo));
-        String tabla = "No se ha encontrado el módulo buscado";
+        String tabla = " <div class=\"alert alert-error\" id=\"alert\" >\n" +
+"                                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>          \n" +
+"				<strong>Algo falló!</strong>\n" +
+"			   \n" + "No se encontrarón registros de Módulos para modificar"
+"                                          </div>   ";
         if (modulo!=null){
             tabla="<table border=1>";            
-            tabla+="<tr><td align='center'>Modificar M&oacute;dulo</td></tr></table>";
             tabla+="<table border=1><tr align='center'><td>Identificador</td></tr>";
             tabla+="<tr align='center'><td><input type='text' name='identificador' readonly='readonly' value='"+modulo.getIdentificador()+"'></td></tr></table>";
             tabla+="<table border=1><tr align='center'><td>Nombre</td></tr>";

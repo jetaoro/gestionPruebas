@@ -84,6 +84,14 @@
 
         <!-- Le fav and touch icons -->
         <link rel="shortcut icon" href="../images/favicon.ico">
+        <style>
+	.container {
+		background: #fff;
+	}
+	#alert {
+		display: none;
+	}
+	</style>
 
     </head>
     <body>        

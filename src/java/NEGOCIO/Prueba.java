@@ -154,7 +154,7 @@ public class Prueba {
             }
         }
         else 
-            tabla+="\n<table  class=\"table table-bordered table-mod-2\"><td>No se encontraron pruebas registradas.</td></table>";
+            tabla+="";
         tabla+="</tbody></table></br>";
         return (tabla);
     }
