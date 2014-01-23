@@ -102,11 +102,7 @@ public class Modulo {
     
     public String getUnModulo(int id_modulo){
         ModuloDTO modulo = new ModuloDAO().getUnModulo(new ModuloDTO(id_modulo));
-        String tabla = " <div class=\"alert alert-error\" id=\"alert\" >\n" +
-"                                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>          \n" +
-"				<strong>Algo falló!</strong>\n" +
-"			   \n" + "No se encontrarón registros de Módulos para modificar"
-"                                          </div>   ";
+        String tabla = "No se encontraron registro de Módulos  ";
         if (modulo!=null){
             tabla="<table border=1>";            
             tabla+="<table border=1><tr align='center'><td>Identificador</td></tr>";
