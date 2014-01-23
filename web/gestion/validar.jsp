@@ -24,14 +24,14 @@
         %>
             <script type="text/javascript">
                 alert("Usuario o contraseña inválida.");
-                location.href="index.jsp";
+                location.href="../index.jsp";
             </script>            
         <%
             }
             else {
         %>
             <script type="text/javascript">                
-                location.href="gestion/paginaBuscarPrueba.jsp";
+                location.href="paginaBuscarPrueba.jsp";
             </script>
         <%
             }

@@ -34,7 +34,7 @@
     <body>
         <div id="wrapper">
          <div id="login" class="animate form position">
-            <form action="validar.jsp" method="post">
+            <form action="gestion/validar.jsp" method="post">
                 <img src="images/logoindex.png">
                  <div class="content-login">
                   <div class="header">Inicio de Sesión</div>

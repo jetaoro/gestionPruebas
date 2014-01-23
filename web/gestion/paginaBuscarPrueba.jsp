@@ -79,7 +79,7 @@
             <ul class="profile-navigation">
               <li><a href="#"><i class="icon-user"></i> Mi perfil </a></li>
               <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
-              <li><a href="../salir.jsp"><i class="icon-off"></i> Salir</a></li>
+              <li><a href="salir.jsp"><i class="icon-off"></i> Salir</a></li>
             </ul>
           </div>
         </div>
