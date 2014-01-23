@@ -13,9 +13,9 @@
     </head>
     <body>
         <%
-            request.getSession().removeAttribute("valido");
-            session.invalidate();
-            response.sendRedirect("index.jsp");
-        %>
+         request.getSession().removeAttribute("valido");
+         session.invalidate();
+         response.sendRedirect("../index.jsp");
+        %>  
     </body>
 </html>

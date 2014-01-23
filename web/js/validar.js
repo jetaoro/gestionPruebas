@@ -1,6 +1,6 @@
 
 /**
-Función que indica si una cadena es vacia
+Funciï¿½n que indica si una cadena es vacia
 */
 function esVacio(val){
         val = trim(val);
@@ -8,7 +8,7 @@ function esVacio(val){
 }
 
 /**
- Función que hace un limpia espacios al inicio y al final de una cadena
+ Funciï¿½n que hace un limpia espacios al inicio y al final de una cadena
  */
 function trim(cadena) {
     if (cadena != null) {
@@ -28,7 +28,7 @@ function printString(cadena, defecto) {
 }
 
 /**
-Función que indica cuantos elementos checkbox
+Funciï¿½n que indica cuantos elementos checkbox
 del formulario 'form' con el nombre 'nombre' 
 fueron seleccionados
 */
@@ -52,7 +52,7 @@ function validarCheck(form, nombre) {
 }
 
 /**
-Función que indica si un elemntto radioButton
+Funciï¿½n que indica si un elemntto radioButton
 del formulario 'form' con el nombre 'nombre' fue seleccionado
 */
 function validarRadio(nfrm, nombre) {
@@ -75,7 +75,7 @@ function validarRadio(nfrm, nombre) {
 }
 
 /**
-Función que chequea elementos checkbox 
+Funciï¿½n que chequea elementos checkbox 
 del formulario 'form' con el nombre 'nombre'
 */
 function chequearTodos(form, nombre, checked) {
@@ -94,16 +94,16 @@ function chequearTodos(form, nombre, checked) {
 }
 
 /**
-Función que indica si la cadena indicada 
-corresponde a un número entero
+Funciï¿½n que indica si la cadena indicada 
+corresponde a un nï¿½mero entero
 */
 function esEntero(cad) {
 	return parseInt(cad, 10) == cad;
 }
 
 /**
-Función que indica si la cadena indicada
-corresponde a un número de punto flotante
+Funciï¿½n que indica si la cadena indicada
+corresponde a un nï¿½mero de punto flotante
 */
 function esDecimal(cad) {
 	return parseFloat(cad) == cad;
@@ -111,8 +111,8 @@ function esDecimal(cad) {
 
 
 var digitos = '0123456789';
-var mayusculas = 'ABCDEFGHIJKLMNéOPQRSTUVWXYZ';
-var minusculas = 'abcdefghijklmnéopqrstuvwxyz '; //ojo esta línea incluye el espacio en blanco como letra
+var mayusculas = 'ABCDEFGHIJKLMNï¿½OPQRSTUVWXYZ';
+var minusculas = 'abcdefghijklmnï¿½opqrstuvwxyz '; //ojo esta lï¿½nea incluye el espacio en blanco como letra
 
 /**
 Funcion que indica si un caracter es un digito
@@ -137,7 +137,7 @@ function esLetra(cad) {
 }
 
 /**
-Función que indica si un texto es alfabético
+Funciï¿½n que indica si un texto es alfabï¿½tico
 el espacio lo tienen en cuenta como letra
 */
 function esAlfabetico(cad) {
@@ -151,7 +151,7 @@ function esAlfabetico(cad) {
 }
 
 /**
-Función que indica si una texto es alfabético-numérico
+Funciï¿½n que indica si una texto es alfabï¿½tico-numï¿½rico
 el espacio lo tienen en cuenta como letra
 */
 function esAlfanumerico(cad) {
@@ -169,7 +169,7 @@ function esAlfanumerico(cad) {
 /**
 Funcion que indica si una cadena
 contiene la sintaxis correcta de una
-dirección de email
+direcciï¿½n de email
 */
 function esEmail(cad) {
 	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( cad ) )
@@ -179,9 +179,9 @@ function esEmail(cad) {
 }
 
 /**
-Método que verifica que una cadena tenga un formato de fecha válido
+Mï¿½todo que verifica que una cadena tenga un formato de fecha vï¿½lido
 @param fecha fecha en formato dd-MM-yyyy
-@param si la fecha tiene un formato válido, false en caso contrario
+@param si la fecha tiene un formato vï¿½lido, false en caso contrario
 */
 function validarFecha(fecha) {
     if (fecha == null || fecha.length != 10)
@@ -192,7 +192,7 @@ function validarFecha(fecha) {
 }
 
 /**
-Función que indica si una fecha es válida
+Funciï¿½n que indica si una fecha es vï¿½lida
 */
 function validarFechaDMY(dia, mes, ano){
         if (!esEntero(dia))
@@ -214,13 +214,13 @@ function validarFechaDMY(dia, mes, ano){
 			else if (nDia == 29 && nAno % 4 == 0)
 				valida = true;
 			break;
-		case 4: //meses de 30 déas
+		case 4: //meses de 30 dï¿½as
 		case 6:
 		case 9:
 		case 11:
 			valida = nDia <= 30;
 			break;
-		case 1: //meses de 31 déa
+		case 1: //meses de 31 dï¿½a
 		case 3:
 		case 5:
 		case 7:
@@ -234,7 +234,7 @@ function validarFechaDMY(dia, mes, ano){
 }
 
 /**
-  *Método que dada una fecha en formato DD-MM-YYYY
+  *Mï¿½todo que dada una fecha en formato DD-MM-YYYY
   *la convierte al formato YYYY-MM-DD
   *@param fecha fecha en formato DD-MM-YYYY
   *@return la fecha en formato YYYY-MM-DD, vacio si el la fecha no tiene formato DD-MM-YYYY
@@ -252,7 +252,7 @@ function invertirFecha(fecha) {
 }
 
 /**
-  *Método que dada una fecha en formato DD-MM-YYYY
+  *Mï¿½todo que dada una fecha en formato DD-MM-YYYY
   *la convierte al formato YYYY-MM-DD
   *@param fechaHora fecha en formato DD-MM-YYYY HH:MM
   *@return la fecha en formato YYYY-MM-DD, vacio si el la fecha no tiene formato DD-MM-YYYY
@@ -269,9 +269,9 @@ function invertirFechaHora(fechaHora) {
 }
 
 /**
-Método que valida si una hora es válida
+Mï¿½todo que valida si una hora es vï¿½lida
 @param hora hora en formato HH:mm
-@return true si tiene un formato de hora válido, false en caso contrario
+@return true si tiene un formato de hora vï¿½lido, false en caso contrario
 */
 function validarHora(hora) {
     if (hora == null || hora.length != 5)
@@ -281,10 +281,10 @@ function validarHora(hora) {
 }
 
 /**
-Método que valida si una hora es válida
+Mï¿½todo que valida si una hora es vï¿½lida
 @param hora hora
 @param min minutos
-@return true si hora y minutos son válidos
+@return true si hora y minutos son vï¿½lidos
 */
 function validarHoraHM(hora, min) {
     if (!esEntero(hora))
@@ -303,9 +303,9 @@ function validarHoraHM(hora, min) {
 }
 
 /**
-Método que verifica que una fecha tenga formato de fecha hora válido
+Mï¿½todo que verifica que una fecha tenga formato de fecha hora vï¿½lido
 @param fechaHora cadena con la fecha y la hora en formato dd-MM-yyyy HH:mm
-@return true si tiene un formato de fecha válido, false en caso contrario
+@return true si tiene un formato de fecha vï¿½lido, false en caso contrario
 */
 function validarFechaHora(fechaHora) {
     if (fechaHora == null || fechaHora.length != 16 || fechaHora.charAt(10) != ' ')
@@ -317,7 +317,7 @@ function validarFechaHora(fechaHora) {
 
 
 /**
-Método que permite obtener los elementos de un formulario
+Mï¿½todo que permite obtener los elementos de un formulario
 retornando siempre un array
 @param frm formulario al cual se le van a obenter los elementos
 @param nombre nombre de los elementos a obtener
@@ -328,7 +328,7 @@ function obtenerElementos(frm, nombre) {
     if (objs == null)
         return null;
 
-    //si existe sélo un elemento
+    //si existe sï¿½lo un elemento
     if (!esVacio(objs.length))
         return objs;
 
@@ -338,10 +338,10 @@ function obtenerElementos(frm, nombre) {
 }
 
 /**
-Método que valida que un nombre de archivo tenga una extención acorde con un patrón
+Mï¿½todo que valida que un nombre de archivo tenga una extenciï¿½n acorde con un patrï¿½n
 @param archivo nombre del archivo
-@param patron patron para la extención del archivo
-@return true si el nombre del archivo tiene una extención acorde con patrón, false en caso contrario
+@param patron patron para la extenciï¿½n del archivo
+@return true si el nombre del archivo tiene una extenciï¿½n acorde con patrï¿½n, false en caso contrario
 */
 function validarExtension(nombre, patron) {
     nombre = nombre.replace("\\", "/");
@@ -351,7 +351,7 @@ function validarExtension(nombre, patron) {
 //----------------------VISIBILIDAD DE ELEMENTOS POR ID--------------------
 
 /**
- *Método que establece la visibilidad de un elemento
+ *Mï¿½todo que establece la visibilidad de un elemento
  *@param id identificador del elemento
  *@param visible indica si el elemento debe ser o no visible (true|false)
  */
@@ -371,7 +371,7 @@ function setVisible(id, visible) {
 //-------------------------------FUNCIONES COMBOS--------------------------
 
 /**
- *Método que selecciona en un combo el valor indicado
+ *Mï¿½todo que selecciona en un combo el valor indicado
  */
 function seleccionarCombo(cmb, val){
     for (var i = 0; i < cmb.length; i++) {
@@ -383,7 +383,7 @@ function seleccionarCombo(cmb, val){
 //--------------------FUNCIONES PARA VALIDACIONES DEL TECLADO-------------------
 
 /**
-*Método que retorna el código de la tecla digitada
+*Mï¿½todo que retorna el cï¿½digo de la tecla digitada
 */
 function obtenerCodigoTecla(e){
     var digito = -1;
@@ -399,7 +399,7 @@ function obtenerCodigoTecla(e){
 }
 
 /**
-*Restringe la entrada solo a digitos 0-9, sólo para enteros
+*Restringe la entrada solo a digitos 0-9, sï¿½lo para enteros
 */
 function valorEntero(e) {
     var digito = obtenerCodigoTecla(e);
@@ -407,7 +407,7 @@ function valorEntero(e) {
 }
 
 /**
-*Restringe la entrada a los caracteres 0-9 y '.', sólo para decimales
+*Restringe la entrada a los caracteres 0-9 y '.', sï¿½lo para decimales
 */
 function valorDecimal(e) {
     var digito = obtenerCodigoTecla(e);
@@ -415,7 +415,7 @@ function valorDecimal(e) {
 }
 
 /**
-*Restringe la entrada a los caracteres A-Z y a-z y ' ', sólo para cadenas alfabeticas
+*Restringe la entrada a los caracteres A-Z y a-z y ' ', sï¿½lo para cadenas alfabeticas
 */
 function valorAlfabetico(e) {
     var digito = obtenerCodigoTecla(e);
@@ -423,7 +423,7 @@ function valorAlfabetico(e) {
 }
 
 /**
-*Restringe la entrada a los caracteres A-z, a-z, 0-9 y ' ', sólo para cadenas alfanuméricas
+*Restringe la entrada a los caracteres A-z, a-z, 0-9 y ' ', sï¿½lo para cadenas alfanumï¿½ricas
 */
 function valorAlfanumerico(e) {
     var digito = obtenerCodigoTecla(e);
@@ -431,7 +431,7 @@ function valorAlfanumerico(e) {
 }
 
 /**
-*Método para dar formato de moneda a los números
+*Mï¿½todo para dar formato de moneda a los nï¿½meros
 */
 function formatoMoneda(strValue) {
     strValue = strValue.toString().replace(/\$|\,/g, '');
