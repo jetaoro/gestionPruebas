@@ -99,7 +99,7 @@
             <ul class="profile-navigation">
               <li><a href="#"><i class="icon-user"></i> Mi perfil </a></li>
               <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
-              <li><a href="../"><i class="icon-off"></i> Salir</a></li>
+              <li><a href="salir.jsp"><i class="icon-off"></i> Salir</a></li>
             </ul>
           </div>
         </div>
@@ -160,9 +160,9 @@
                     <form name="formulario" method="post"> 
                         <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
                         <%=gestion.getListadoModulos()%>
-                        <input type="button" value="Agregar" name="agregar" onClick="envia('agregarModulo.jsp')" />
-                        <input type="button" value="Modificar" name="modificar" onClick="modifica('modificarModulo.jsp')" />            
-                        <input type="button" value="Eliminar" name="eliminar" onClick="elimina('eliminarModulo.jsp')" />
+                        <input class="btn btn-warning" type="button" value="Agregar" name="agregar" onClick="envia('agregarModulo.jsp')" />
+                        <input class="btn btn-warning" type="button" value="Modificar" name="modificar" onClick="modifica('modificarModulo.jsp')" />            
+                        <input class="btn btn-warning" type="button" value="Eliminar" name="eliminar" onClick="elimina('eliminarModulo.jsp')" />
                     </form>   
 
                 </div>  

@@ -37,34 +37,34 @@ public class Modulo {
     //Tabla con el listado de módulos, con los radios de selección
     public String getListadoModulos(){
         TreeSet<ModuloDTO> modulos = new ModuloDAO().getModulo();
-        String tabla = "<table border = '1'>"+
-                "\n<tr>"+
-                "\n<th></th>"+
-                "\n<th>Nombre</th>"+
-                "\n</tr>";
+        String tabla = "<table class=\"table table-bordered table-mod-2\" id=\"datatable_3\">"+
+                "<thead>"+
+                "<tr>"+
+                "<th></th>"+
+                "<th>Nombre</th>"+
+                "</tr>"+
+                "</thead>"+
+                "<tbody>";
         if(!modulos.isEmpty()){
             for (ModuloDTO modulo : modulos) {
-                tabla+="\n<tr>";
-                tabla+="\n<td>"+"<input type = 'radio' name = 'modulo' value = '"+modulo.getIdentificador()+"' >" + "</td>";
-                tabla+="\n<td>"+ modulo.getNombre()+"</td>";           
-                tabla+="\n</tr>";
+                tabla+="<tr>";
+                tabla+="<td width='5%' class=\"t_center\">"+"<input type = 'radio' name = 'modulo' id='"+modulo.getIdentificador()+"' value = '"+modulo.getIdentificador()+"' />"  + "<label for='"+modulo.getIdentificador()+"'><span></span></label>"+ "</td>";
+                tabla+="<td>"+ modulo.getNombre()+"</td>";           
+                tabla+="</tr>";
             }
         }
         else
-            tabla+="\n<table border='1'><td>No se encontraron módulos registrados.</td></table>";
+            tabla+="";
         tabla+="</table></br>";
         return (tabla);         
     }
     
     public String agregarModulo(){ 
-        String tabla = "<table border=1>";
-        tabla += "<table border=1>";
-        tabla += "<tr><td align='center'>Agregar M&oacute;dulo</td></tr></table>";
-        tabla += "<table border=1><tr align='center'><td>Nombre</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='nombre' required></td></tr></table>";
-        tabla += "<table border=1><tr align='center'><td>Descripci&oacute;n</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='descripcion' required></td></tr></table>";
-        tabla += "</table></br>";
+        String tabla ="<div class='formRow'>";
+        tabla += "<label><td>Nombre</label>";
+        tabla += "<div class='formRight'><input type='text' name='nombre' required></div></div>";
+        tabla += "<div class='formRow'><label>Descripci&oacute;n</label>";
+        tabla += "<div class='formRight'><textarea name='descripcion' required></textarea></div></div></br></br></br></br></br></br>";
 
         return (tabla);
     }
@@ -99,17 +99,14 @@ public class Modulo {
     
     public String getUnModulo(int id_modulo){
         ModuloDTO modulo = new ModuloDAO().getUnModulo(new ModuloDTO(id_modulo));
-        String tabla = "No se ha encontrado el módulo buscado";
+        String tabla = "No se encontraron registro de Módulos  ";
         if (modulo!=null){
-            tabla="<table border=1>";            
-            tabla+="<tr><td align='center'>Modificar M&oacute;dulo</td></tr></table>";
-            tabla+="<table border=1><tr align='center'><td>Identificador</td></tr>";
-            tabla+="<tr align='center'><td><input type='text' name='identificador' readonly='readonly' value='"+modulo.getIdentificador()+"'></td></tr></table>";
-            tabla+="<table border=1><tr align='center'><td>Nombre</td></tr>";
-            tabla+="<tr align='center'><td><input type='text' name='nombre' required value='"+modulo.getNombre()+"'></td></tr></table>";
-            tabla+="<table border=1><tr align='center'><td>Descripci&oacute;n</td></tr>";
-            tabla+="<tr align='center'><td><input type='text' name='descripcion' required value='"+modulo.getDescripcion()+"'></td></tr></table>";
-            tabla+="</table></br>";
+            tabla="<div class='formRow'><label>Identificador: </label><div class='formRight'><input type='text' size='30' name='identificador' readonly='readonly' value='"+modulo.getIdentificador()+"'></div></div>";
+            tabla+="<div class=\"formRow\"><label>Nombre: </label>";
+            tabla+="<div class=\"formRight\"><input type='text' name='nombre' required value='"+modulo.getNombre()+"'></div></div>";
+            tabla+="<div class=\"formRow\"><label>Descripci&oacute;n:</label>";
+            tabla+="<div class=\"formRight\"><input type='text' name='descripcion' required value='"+modulo.getDescripcion()+"'></div></div></br></br>";
+           
         }
         return (tabla);
     }

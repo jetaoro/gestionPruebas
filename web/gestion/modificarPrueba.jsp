@@ -45,7 +45,7 @@
             if(Firefox) document.write("<link rel='stylesheet' href='../css/moz.css' type='text/css'>"); 
             </script>
 
-        <!-- Le fav and touch icons -->
+     <link rel="shortcut icon" href="../images/favicon.ico">
        
 </head>
     <body>
@@ -136,7 +136,7 @@
                     <jsp:useBean id="prueba" scope="page" class="DTO.PruebaDTO" />
                     <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
                     <%=gestion.getUnaPrueba(idPrueba)%>                   
-                    <input class="btn btn-success" type="submit" name="registrar" value="Registrar">
+                    <input class="btn btn-warning" type="submit" name="registrar" value="Registrar">
                 </form>
                 <form name="formulario" action="listadoPruebas.jsp">
                     <input class="btn btn-warning" type="submit" name="volver" value="Volver">

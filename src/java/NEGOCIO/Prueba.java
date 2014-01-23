@@ -107,7 +107,7 @@ public class Prueba {
     public String buscarPrueba(){
         String tabla = "<div class=\"formRow\">";
         
-        tabla+="<label>Nombre prueba: </label>"+"<div class=\"formRight\">" +"<input type='text' size='30' maxlength='30' name='nombre_prueba'></div></div>";
+        tabla+="<label>Nombre prueba: </label><div class=\"formRight\">" +"<input type='text' size='30' maxlength='30' name='nombre_prueba'></div></div>";
         tabla+="<div class=\"formRow\"><label>Número de requerimiento: </label>"+"<div class=\"formRight\"><input type='text' size='30' maxlength='30' name='numero_requerimiento'></div></div>";
         tabla+="<div class=\"formRow\">";
         tabla+="<label>Módulo: </label>"+"<div class=\"formRight\">"+ new Modulo().listadoModulos()+"</div>";
@@ -154,7 +154,7 @@ public class Prueba {
             }
         }
         else 
-            tabla+="\n<table  class=\"table table-bordered table-mod-2\"><td>No se encontraron pruebas registradas.</td></table>";
+            tabla+="";
         tabla+="</tbody></table></br>";
         return (tabla);
     }

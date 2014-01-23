@@ -1,5 +1,5 @@
 <%-- 
-    Document   : modificarPrueba
+    Document   : agregarPrueba
     Created on : 4/01/2014, 05:45:10 PM
     Author     : Jennifer
 --%>
@@ -58,6 +58,7 @@
             </script>
 
         <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
        
 </head>
     <body>
@@ -82,7 +83,7 @@
             <ul class="profile-navigation">
               <li><a href="#"><i class="icon-user"></i> Mi perfil </a></li>
               <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
-              <li><a href="../"><i class="icon-off"></i> Salir</a></li>
+              <li><a href="salir.jsp"><i class="icon-off"></i> Salir</a></li>
             </ul>
           </div>
         </div>
@@ -146,7 +147,7 @@
                             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
                             <%=gestion.agregarPruebaFormulario()%>        
                             <div class='formRow'>
-                            <input class="btn btn-success" type="submit" value="Registrar" name="registrar" />
+                            <input class="btn btn-warning" type="submit" value="Registrar" name="registrar" />
                             </div>
                         </form>
                         <div class='formRow'>
