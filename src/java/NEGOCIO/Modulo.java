@@ -60,14 +60,11 @@ public class Modulo {
     }
     
     public String agregarModulo(){ 
-        String tabla = "<table border=1>";
-        tabla += "<table border=1>";
-        tabla += "<tr><td align='center'>Agregar M&oacute;dulo</td></tr></table>";
-        tabla += "<table border=1><tr align='center'><td>Nombre</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='nombre' required></td></tr></table>";
-        tabla += "<table border=1><tr align='center'><td>Descripci&oacute;n</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='descripcion' required></td></tr></table>";
-        tabla += "</table></br>";
+        String tabla ="<div class='formRow'>";
+        tabla += "<label><td>Nombre</label>";
+        tabla += "<div class='formRight'><input type='text' name='nombre' required></div></div>";
+        tabla += "<div class='formRow'><label>Descripci&oacute;n</label>";
+        tabla += "<div class='formRight'><textarea name='descripcion' required></textarea></div></div></br></br></br></br></br></br>";
 
         return (tabla);
     }
@@ -104,14 +101,12 @@ public class Modulo {
         ModuloDTO modulo = new ModuloDAO().getUnModulo(new ModuloDTO(id_modulo));
         String tabla = "No se encontraron registro de Módulos  ";
         if (modulo!=null){
-            tabla="<table border=1>";            
-            tabla+="<table border=1><tr align='center'><td>Identificador</td></tr>";
-            tabla+="<tr align='center'><td><input type='text' name='identificador' readonly='readonly' value='"+modulo.getIdentificador()+"'></td></tr></table>";
-            tabla+="<table border=1><tr align='center'><td>Nombre</td></tr>";
-            tabla+="<tr align='center'><td><input type='text' name='nombre' required value='"+modulo.getNombre()+"'></td></tr></table>";
-            tabla+="<table border=1><tr align='center'><td>Descripci&oacute;n</td></tr>";
-            tabla+="<tr align='center'><td><input type='text' name='descripcion' required value='"+modulo.getDescripcion()+"'></td></tr></table>";
-            tabla+="</table></br>";
+            tabla="<div class='formRow'><label>Identificador: </label><div class='formRight'><input type='text' size='30' name='identificador' readonly='readonly' value='"+modulo.getIdentificador()+"'></div></div>";
+            tabla+="<div class=\"formRow\"><label>Nombre: </label>";
+            tabla+="<div class=\"formRight\"><input type='text' name='nombre' required value='"+modulo.getNombre()+"'></div></div>";
+            tabla+="<div class=\"formRow\"><label>Descripci&oacute;n:</label>";
+            tabla+="<div class=\"formRight\"><input type='text' name='descripcion' required value='"+modulo.getDescripcion()+"'></div></div></br></br>";
+           
         }
         return (tabla);
     }

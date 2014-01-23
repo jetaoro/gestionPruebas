@@ -4,12 +4,12 @@
     Author     : Jennifer
 --%>
 
-%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Modificaci髇 de M骴ulos</title>
+        <title>Modificaci贸n de M贸dulos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Le styles -->
         <link href="../css/style.css" rel="stylesheet">
@@ -46,6 +46,7 @@
             </script>
 
         <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
        
 </head>
     <body>
@@ -70,7 +71,7 @@
             <ul class="profile-navigation">
               <li><a href="#"><i class="icon-user"></i> Mi perfil </a></li>
               <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
-              <li><a href="../"><i class="icon-off"></i> Salir</a></li>
+              <li><a href="salir.jsp"><i class="icon-off"></i> Salir</a></li>
             </ul>
           </div>
         </div>
@@ -85,14 +86,14 @@
             <div id="menu" role="navigation">  
                 <ul class="main-menu">
                      <li class="active"><a href="paginaBuscarPrueba.jsp"><i class="components"></i> Pruebas</a></li>
-                     <li><a href="listadoModulos.jsp"><i class="modules"></i> M骴ulos</a></li>
+                     <li><a href="listadoModulos.jsp"><i class="modules"></i> M贸dulos</a></li>
                      <li><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Buscar</li>
-                     <li class="active" ><i class="icon-list"></i> Listar</a></li>
+                     <li><i class="icon-list"></i> Listar</a></li>
                      <li><i class="icon-plus-sign"></i> Agregar</a></li>
-                     <li><i class="icon-edit"></i><a href="#"> Modificar </a></li>
+                     <li class="active" ><i class="icon-edit"></i><a href="#"> Modificar </a></li>
                      <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
           
@@ -104,7 +105,7 @@
               
               <!--comienzo del titulo-->    
               <div class="pagetitle">
-                <h1>Modificar M骴ulos</h1>
+                <h1>Modificar M贸dulos</h1>
               </div>
               
               
@@ -114,7 +115,7 @@
                <div class="grid-title">
                 <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  <span>Pruebas registradas</span>
+                  <span>M贸dulos registrados</span>
                   <div class="clearfix"></div>
                 </div>
                 <div class="pull-right"> 
@@ -125,7 +126,7 @@
                 </div>
               <div class="clearfix"></div>   
               </div>
-                              
+                  <div class="grid-content">             
                         <form name="modificar" action="actualizarModulo.jsp" method="post">
                             <% int idModulo=Integer.parseInt(request.getParameter("modulo")); %>         
                             <jsp:useBean id="modulo" scope="page" class="DTO.ModuloDTO" />
@@ -136,6 +137,7 @@
                         <form name="volver" action="listadoModulos.jsp">
                             <input  class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </form>  
+                  </div>           
              </div>
              <!-- fin grid -->  
             
@@ -203,10 +205,3 @@
             
     </body>
 </html>
-
-
-
-
-
-
-       

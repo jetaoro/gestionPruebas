@@ -136,7 +136,7 @@
                     <jsp:useBean id="prueba" scope="page" class="DTO.PruebaDTO" />
                     <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />        
                     <%=gestion.getUnaPrueba(idPrueba)%>                   
-                    <input class="btn btn-success" type="submit" name="registrar" value="Registrar">
+                    <input class="btn btn-warning" type="submit" name="registrar" value="Registrar">
                 </form>
                 <form name="formulario" action="listadoPruebas.jsp">
                     <input class="btn btn-warning" type="submit" name="volver" value="Volver">

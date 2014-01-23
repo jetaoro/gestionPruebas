@@ -93,7 +93,7 @@
             <!--BEGIN SIDEBAR-->
             <div id="menu" role="navigation">  
                 <ul class="main-menu">
-                    <li class="active"><a href="paginasBuscarPrueba.jsp"><i class="components"></i> Pruebas</a></li>
+                    <li class="active"><a href="#"><i class="components"></i> Pruebas</a></li>
                      <li><a href="listadoModulos.jsp"><i class="modules"></i> Módulos</a></li>
                      <li><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
@@ -141,7 +141,7 @@
                                session.removeAttribute("nombre_prueba");
                            %>                        
                            <%=gestion.paginaBuscarPruebas()%>
-                           <input  class="btn btn-warning  metro"  type="submit" value="Buscar" name="buscar" />
+                           <input  class="btn btn-warning"  type="submit" value="Buscar" name="buscar" />
                         </form>    
                 </div>  
              </div>
