@@ -35,16 +35,17 @@ public class SitioPrueba {
     
     public String getListadoSitios(){
         TreeSet<SitioPruebaDTO> sitios = new SitioPruebaDAO().getSitioPrueba();
-        String tabla = "<table border = '1'>"+
+        String tabla = "<table class=\"table table-bordered table-mod-2\" id=\"datatable_3\">"+
+                 "<thead>"+
                 "\n<tr>"+
                 "\n<th></th>"+
                 "\n<th>Número de puerto</th>"+
                 "\n<th>Nombre</th>"+
-                "\n</tr>";
+                 "</thead>";
         if(!sitios.isEmpty()){
             for (SitioPruebaDTO sitio : sitios) {
                 tabla+="\n<tr>";
-                tabla+="\n<td>"+"<input type = 'radio' name = 'sitio_prueba' value = '"+sitio.getIdentificador()+"' >" + "</td>";
+                tabla+="<td width='5%' class=\"t_center\">"+"<input type = 'radio' name = 'sitio_prueba' id='"+sitio.getIdentificador()+"' value = '"+sitio.getIdentificador()+"' />"  + "<label for='"+sitio.getIdentificador()+"'><span></span></label>"+ "</td>"; 
                 tabla+="\n<td>"+ sitio.getNumero_puerto()+"</td>";
                 tabla+="\n<td>"+ sitio.getNombre()+"</td>";
                 tabla+="\n</tr>";
@@ -52,19 +53,16 @@ public class SitioPrueba {
         }
         else
             tabla+="\n<table border='1'><td>No se encontraron sitios de prueba registrados.</td></table>";
-        tabla+="</table></br>";
+        tabla+="<tbody></table></br></br>";
         return (tabla);        
     }
     
     public String agregarSitioPrueba(){ 
-        String tabla = "<table border=1>";
-        tabla += "<table border=1>";
-        tabla += "<tr><td align='center'>Agregar Sitio de Prueba</td></tr></table>";
-        tabla += "<table border=1><tr align='center'><td>Número de Puerto</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='numero_puerto' required></td></tr></table>";
-        tabla += "<table border=1><tr align='center'><td>Nombre</td></tr>";
-        tabla += "<tr align='center'><td><input type='text' name='nombre' required></td></tr></table>";
-        tabla += "</table>";
+        String tabla = "<div class='formRow'>";
+        tabla += "<label>   Número de Puerto</label>";
+        tabla += "<div class='formRight'><input type='text' name='numero_puerto' required></div></div>";
+        tabla += "<div class='formRow'><label>Nombre</label>";
+        tabla += "<div class='formRight'><input type='text' name='nombre' required></div></div></br></br></br>";
 
         return (tabla);
     }
