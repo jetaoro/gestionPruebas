@@ -106,8 +106,8 @@
             <div id="menu" role="navigation">  
                 <ul class="main-menu">
                      <li><a href="paginaBuscarPrueba.jsp"><i class="components"></i> Pruebas</a></li>
-                     <li class="active"><a href="listadoModulos.jsp"><i class="modules"></i> Módulos</a></li>
-                     <li><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
+                     <li><a href="listadoModulos.jsp"><i class="modules"></i> Módulos</a></li>
+                     <li class="active"><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Buscar</li>

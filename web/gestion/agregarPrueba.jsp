@@ -55,7 +55,12 @@
          <script language="JavaScript">
             Firefox = navigator.userAgent.indexOf("Firefox") >= 0;
             if(Firefox) document.write("<link rel='stylesheet' href='../css/moz.css' type='text/css'>"); 
-            </script>
+            function confirmarSalir(){
+                if (confirm("¿Está seguro que desea salir?")) { 
+                    location.href="../gestion/salir.jsp";        
+                }
+            }
+         </script>
 
         <!-- Le fav and touch icons -->
         <link rel="shortcut icon" href="../images/favicon.ico">
@@ -83,7 +88,7 @@
             <ul class="profile-navigation">
               <li><a href="#"><i class="icon-user"></i> Mi perfil </a></li>
               <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
-              <li><a href="salir.jsp"><i class="icon-off"></i> Salir</a></li>
+              <li><a href="Javascript: confirmarSalir();"><i class="icon-off"></i> Salir</a></li>
             </ul>
           </div>
         </div>

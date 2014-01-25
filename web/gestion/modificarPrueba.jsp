@@ -43,7 +43,12 @@
          <script language="JavaScript">
             Firefox = navigator.userAgent.indexOf("Firefox") >= 0;
             if(Firefox) document.write("<link rel='stylesheet' href='../css/moz.css' type='text/css'>"); 
-            </script>
+             function confirmarSalir(){
+                if (confirm("¿Está seguro que desea salir?")) { 
+                    location.href="../gestion/salir.jsp";        
+                }
+            }
+         </script>
 
      <link rel="shortcut icon" href="../images/favicon.ico">
        
@@ -70,7 +75,7 @@
             <ul class="profile-navigation">
               <li><a href="#"><i class="icon-user"></i> Mi perfil </a></li>
               <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
-              <li><a href="../"><i class="icon-off"></i> Salir</a></li>
+              <li><a href="Javascript: confirmarSalir();"><i class="icon-off"></i> Salir</a></li>
             </ul>
           </div>
         </div>
@@ -90,9 +95,9 @@
                 </ul>
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Buscar</li>
-                     <li class="active" ><a href="#"><i class="icon-list"></i> Listar</a></li>
-                     <li><i class="icon-plus-sign"></i> Agregar</a></li>
-                     <li><i class="icon-edit"></i> Modificar </li>
+                     <li  ><i class="icon-list"></i> Listar</a></li>
+                     <li><i class="icon-plus-sign"></i> Agregar</li>
+                     <li class="active"><a href="#"><i class="icon-edit"></i> Modificar</a> </li>
                      <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
           

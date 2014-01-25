@@ -53,8 +53,8 @@ public class Prueba {
     public String getPrueba(int idPrueba){
         PruebaDTO prueba = new PruebaDAO().getUnaPrueba(new PruebaDTO(idPrueba));
         DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
-        String tabla = "Evidencia de las pruebas realizadas sobre el Módulo "+ prueba.getModulo().getNombre();
-        tabla += ", en el puerto "+ prueba.getSitioPrueba().getNumero_puerto() + "</br>";
+        String tabla = "Evidencia de las pruebas realizadas sobre el Módulo <strong>"+ prueba.getModulo().getNombre();
+        tabla += "</strong>, en el puerto <strong>"+ prueba.getSitioPrueba().getNumero_puerto() + "</strong></br>";
         tabla+= "Fecha de Inicio: "+ df1.format(prueba.getFecha_inicio());
         tabla+= "</br>Fecha de Terminación: "+ df1.format(prueba.getFecha_fin());
         tabla+= "</br>Pruebas realizadas por: "+ prueba.getResponsable().getNombre() + "</br>";

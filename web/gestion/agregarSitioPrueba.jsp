@@ -55,7 +55,12 @@
          <script language="JavaScript">
             Firefox = navigator.userAgent.indexOf("Firefox") >= 0;
             if(Firefox) document.write("<link rel='stylesheet' href='../css/moz.css' type='text/css'>"); 
-            </script>
+            function confirmarSalir(){
+                if (confirm("¿Está seguro que desea salir?")) { 
+                    location.href="../gestion/salir.jsp";        
+                }
+            }
+         </script>
 
      <!-- Le fav and touch icons -->
         <link rel="shortcut icon" href="../images/favicon.ico">
@@ -83,7 +88,7 @@
             <ul class="profile-navigation">
               <li><a href="#"><i class="icon-user"></i> Mi perfil </a></li>
               <li><a href="#"><i class="icon-info-sign"></i> Ayuda</a></li>
-              <li><a href="salir.jsp"><i class="icon-off"></i> Salir</a></li>
+              <li><a href="Javascript: confirmarSalir();"><i class="icon-off"></i> Salir</a></li>
             </ul>
           </div>
         </div>
@@ -97,9 +102,9 @@
             <!--BEGIN SIDEBAR-->
             <div id="menu" role="navigation">  
                 <ul class="main-menu">
-                     <li class="active"><a href="paginaBuscarPrueba.jsp"><i class="components"></i> Pruebas</a></li>
+                     <li><a href="paginaBuscarPrueba.jsp"><i class="components"></i> Pruebas</a></li>
                      <li><a href="listadoModulos.jsp"><i class="modules"></i> Módulos</a></li>
-                     <li><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
+                     <li class="active"><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Buscar</li>
