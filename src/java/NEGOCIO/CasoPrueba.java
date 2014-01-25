@@ -42,8 +42,9 @@ public class CasoPrueba {
                 tabla+="\n<td>"+caso.getResultado_obtenido()+"</td>";
                 tabla+="\n<td>"+caso.getTipo_resultado()+"</td>";
                 tabla+="\n<td>"+caso.getObservacion()+"</td>";
-                tabla+="\n</tr></tbody></table>";
+                tabla+="\n</tr>";
             }
+            tabla+="</tbody></table>";
          }
          else
              tabla+="\n<table border='1'><td>No se encontraron casos de prueba registrados, para la prueba seleccionada.</td></table>";
