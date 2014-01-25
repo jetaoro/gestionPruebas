@@ -52,11 +52,9 @@ public class CasoPrueba {
     
     public String getUnCasoPrueba(int id_caso){
         CasoPruebaDTO caso = new CasoPruebaDAO().getUnCasoPrueba(new CasoPruebaDTO(id_caso));
-        String tabla = "No se ha encontrado el módulo buscado";
-        if (caso!=null){
-            tabla="<table border=1>";
-            tabla+="<tr><td align='center'>Modificar Caso de Prueba</td></tr></table>";
-            tabla+="<table border=1><tr align='center'><td>Identificador</td></tr>";
+        String tabla = "";
+        if (caso!=null){            
+            tabla="<table border=1><tr align='center'><td>Identificador</td></tr>";
             tabla+="<tr align='center'><td><input type='text' name='identificador' readonly='readonly' value='"+caso.getIdentificador()+"'></td></tr></table>";
             tabla += "<table border=1><tr align='center'><td>Descripción</td></tr>";
             tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='descripcion' required>"+caso.getDescripcion()+"</textarea></td></tr></table>";

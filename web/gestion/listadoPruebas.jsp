@@ -171,8 +171,10 @@
                 </div>
                 <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda Listar Pruebas" data-content="Se debe seleccionar 
-                       la prueba para poder realizar alguna de las acciones correspondientes">
+                       title="Ayuda Listado de Pruebas" data-content="Esta página muestra el listado de las pruebas que
+                       corresponden con los criterios de búsqueda de la página anterior. Para poder Ver, Modificar o Eliminar
+                       una prueba, se debe seleccionar del listado y presionar el botón correspondiente. En esta página también
+                       es posible agregar nuevas pruebas, presionando el botón Agregar.">
                            <i class="icon-question-sign"></i></a></div>
                 </div>
               <div class="clearfix"></div>   
