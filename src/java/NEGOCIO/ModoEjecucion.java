@@ -24,7 +24,7 @@ public class ModoEjecucion {
         n++;
         int i=1;
         for (ModoEjecucionDTO modo : modosEjecucion) {
-            listado+="<p><input type='checkbox' id='c"+i+"' name='modoEjecucion' value='"+modo.getIdentificador()+"' />" +"<label for='c"+i+"'><span></span>"+ modo.getDescripcion() +"</label></p>";
+            listado+="<p><input type='checkbox' id='c"+i+"' name='modoEjecucion' value='"+modo.getIdentificador()+"' checked />" +"<label for='c"+i+"'><span></span>"+ modo.getDescripcion() +"</label></p>";
             i++;           
         }
         listado+="</div>";

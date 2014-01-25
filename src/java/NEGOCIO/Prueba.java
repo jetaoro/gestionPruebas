@@ -162,8 +162,8 @@ public class Prueba {
     public String agregarPruebaFormulario(){
         String tabla = "Evidencias de las pruebas realizadas sobre el Módulo " + new Modulo().listadoModulos();
         tabla+=", de Gnosoft Académico, en el puerto " + new SitioPrueba().listadoSitiosPrueba();
-        tabla+="</br>"+"Fecha de Inicio: " + "<input id='dp4' type='text' data-date-format=\"dd/mm/yyyy\" size='30' maxlength='30' name='fecha_inicio' required>";
-        tabla+="</br>"+"Fecha de Terminación: " + "<input type='text' data-date-format=\"dd/mm/yyyy\" id='dp5' size='30' maxlength='30' name='fecha_fin' required>";
+        tabla+="</br>"+"Fecha de Inicio: " + "<input id='dp4' type='text' data-date-format='dd/mm/yyyy' size='30' maxlength='30' name='fecha_inicio' required>";
+        tabla+="</br>"+"Fecha de Terminación: " + "<input type='text' data-date-format='dd/mm/yyyy' id='dp5' size='30' maxlength='30' name='fecha_fin' required>";
         tabla+="</br>"+"Pruebas realizadas por: " + new Responsable().listadoResponsables();
         tabla+="</br>"+"<h4>REGISTRO DE EJECUCIÓN DE PRUEBA</h4>";
         tabla+="<div class=\"formRow\">";
