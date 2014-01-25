@@ -15,9 +15,9 @@ import java.sql.*;
 public class BaseDeDatos {
     
     private static  String bd = "gestion_pruebas";
-    private static  String login = "postgres";//"ufps_42";
-    private static  String password = "890329";//"ufps_hj";
-    private static  String url = "jdbc:postgresql://localhost/"+bd;//"jdbc:postgresql://sandbox2.ufps.edu.co/"+bd;
+    private static  String login = "ufps_42";//"postgres";
+    private static  String password = "ufps_hj";//"890329";
+    private static  String url = "jdbc:postgresql://sandbox2.ufps.edu.co/"+bd;//"jdbc:postgresql://localhost/"+bd;
     private static  String controlador="org.postgresql.Driver";
     private static   JDBCMiddler jdbc;
     
