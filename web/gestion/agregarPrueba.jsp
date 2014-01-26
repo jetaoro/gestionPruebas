@@ -132,7 +132,7 @@
                <div class="grid-title">
                 <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  <span>Pruebas registradas</span>
+                  <span>Prueba</span>
                   <div class="clearfix"></div>
                 </div>
                 <div class="pull-right"> 

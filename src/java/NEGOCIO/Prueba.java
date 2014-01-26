@@ -89,16 +89,16 @@ public class Prueba {
         tabla+= "</br>Pruebas realizadas por: "+ prueba.getResponsable().getNombre() + "</br>";
         tabla += "</br><table class=\"table table-bordered\">";           
         tabla += "\n<tr><th>Registro de Ejecución de Pruebas</th></tr>";
-        tabla += "\n<tr><th>Identificador</th>" + "\n<td>" + "<input type='text' name='identificador' readonly='readonly' value='" + prueba.getIdentificador() + "'></td></tr>";
-        tabla += "\n<tr><th>Nombre</th>" + "\n<td>" + "<input type='text' name='nombre' value='" + prueba.getNombre() + "' required></td></tr>";
+        tabla += "\n<tr><th></th>" + "\n<td>" + "<input type='hidden' name='identificador' readonly='readonly' value='" + prueba.getIdentificador() + "'></td></tr>";
+        tabla += "\n<tr><th>Nombre</th>" + "\n<td>" + "<textarea type='text' name='nombre' required>" + prueba.getNombre() + "</textarea></td></tr>";
          tabla += "\n<tr><th>Número de requerimiento</th>" + "<td>" + "<input type='text' name='numero_requerimiento' value='" + prueba.getNumero_requerimiento() + "' required></td></tr>";
        
         tabla += "\n<tr><th>Elemento a probar</th>" + "<td>" + "<input type='text' name='elemento_prueba' value='" + prueba.getElemento_prueba() + "' required></td></tr>";
         tabla += "\n<tr><th>Tipo de Prueba</th>" + "<td>" + "<input type='text' name='tipo_prueba' readonly='readonly' value='" + prueba.getTipoPrueba().getDescripcion() + "' required></td></tr>";
         tabla += "\n<tr><th>Modos de Ejecución</th>" + "<td>" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getNombreModosEjecucion() + "'></td></tr>";
-        tabla += "\n<tr><th>Descripción de la Prueba</th>" + "<td>" + "<input type='text' name='descripcion' value='" + prueba.getDescripcion() + "' required></td></tr>";
-        tabla += "\n<tr><th>Caso de éxito</th>" + "<td>" + "<input type='text' name='caso_exito' value='" + prueba.getCaso_exito() + "' required></td></tr>";
-        tabla += "\n<tr><th>Caso de Fallo</th>" + "<td>" + "<input type='text' name='caso_fallo' value='" + prueba.getCaso_fallo() + "' required></td></tr>";
+        tabla += "\n<tr><th>Descripción de la Prueba</th>" + "<td>" + "<textarea type='text' name='descripcion' required>" + prueba.getDescripcion() + "</textarea></td></tr>";
+        tabla += "\n<tr><th>Caso de éxito</th>" + "<td>" + "<textarea type='text' name='caso_exito' required>" + prueba.getCaso_exito() + "</textarea></td></tr>";
+        tabla += "\n<tr><th>Caso de Fallo</th>" + "<td>" + "<textarea type='text' name='caso_fallo' required>" + prueba.getCaso_fallo() + "</textarea></td></tr>";
         tabla += "</table></br>";
         
         return (tabla);

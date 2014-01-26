@@ -53,8 +53,8 @@ public class CasoPrueba {
         CasoPruebaDTO caso = new CasoPruebaDAO().getUnCasoPrueba(new CasoPruebaDTO(id_caso));
         String tabla = "";
         if (caso!=null){            
-            tabla="<table border=1><tr align='center'><td>Identificador</td></tr>";
-            tabla+="<tr align='center'><td><input type='text' name='identificador' readonly='readonly' value='"+caso.getIdentificador()+"'></td></tr></table>";
+            tabla="<table border=1><tr align='center'><td></td></tr>";
+            tabla+="<tr align='center'><td><input type='hidden' name='identificador' readonly='readonly' value='"+caso.getIdentificador()+"'></td></tr></table>";
             tabla += "<table border=1><tr align='center'><td>Descripción</td></tr>";
             tabla += "<tr align='center'><td><textarea rows='4' cols='40' name='descripcion' required>"+caso.getDescripcion()+"</textarea></td></tr></table>";
             tabla += "<table border=1><tr align='center'><td>Datos de entrada</td></tr>";
