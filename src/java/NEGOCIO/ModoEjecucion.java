@@ -19,7 +19,7 @@ public class ModoEjecucion {
     
     public String listadoModosEjecucion(){
         TreeSet<ModoEjecucionDTO> modosEjecucion = new ModoEjecucionDAO().getModoEjecucion();
-        String listado = "<div class=\"distance distance-2\">";
+        String listado = "<div class=\"distance distance-1\">";
         int n=modosEjecucion.size();
         n++;
         int i=1;
