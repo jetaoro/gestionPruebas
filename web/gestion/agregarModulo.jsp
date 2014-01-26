@@ -122,7 +122,7 @@
               
               <!--comienzo del titulo-->    
               <div class="pagetitle">
-                <h1>Agregar Módulos</h1>
+                <h1>Agregar Módulo</h1>
               </div>
               
               
@@ -132,7 +132,7 @@
                <div class="grid-title">
                 <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  <span></span>
+                  <span>Agregar Módulo</span>
                   <div class="clearfix"></div>
                 </div>
                 <div class="pull-right"> 
@@ -155,7 +155,7 @@
             <input class="btn btn-warning" type="submit" value="Agregar" name="agregar" />
             
         </form>
-        <iorm name="listado" action="listadoModulos.jsp">
+        <form name="listado" action="listadoModulos.jsp">
             <input class="btn btn-warning" type="submit" value="Volver" name="volver" />
         </form>
                 </div>

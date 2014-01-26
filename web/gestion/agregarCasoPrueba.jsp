@@ -123,7 +123,7 @@
               
               <!--comienzo del titulo-->    
               <div class="pagetitle">
-                <h1>Agregar Sitios de Prueba</h1>
+                <h1>Agregar Caso de Prueba</h1>
               </div>
               
               
@@ -135,7 +135,7 @@
 
     <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  <span></span>
+                  <span>Caso de Prueba</span>
                   <div class="clearfix"></div>
                 </div>
                 <div class="pull-right"> 

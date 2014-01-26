@@ -64,7 +64,7 @@ public class Modulo {
         tabla += "<label><td>Nombre</label>";
         tabla += "<div class='formRight'><input type='text' name='nombre' required></div></div>";
         tabla += "<div class='formRow'><label>Descripci&oacute;n</label>";
-        tabla += "<div class='formRight'><textarea name='descripcion' required></textarea></div></div></br></br></br></br></br></br>";
+        tabla += "<div class='formRight'><textarea name='descripcion' required></textarea></div></div></br></br></br></br>";
 
         return (tabla);
     }
@@ -101,7 +101,7 @@ public class Modulo {
         ModuloDTO modulo = new ModuloDAO().getUnModulo(new ModuloDTO(id_modulo));
         String tabla = "No se encontraron registro de Módulos  ";
         if (modulo!=null){
-            tabla="<div class='formRow'><label>Identificador: </label><div class='formRight'><input type='text' size='30' name='identificador' readonly='readonly' value='"+modulo.getIdentificador()+"'></div></div>";
+            tabla="<div class='formRow'><label></label><div class='formRight'><input type='hidden' size='30' name='identificador' readonly='readonly' value='"+modulo.getIdentificador()+"'></div></div>";
             tabla+="<div class=\"formRow\"><label>Nombre: </label>";
             tabla+="<div class=\"formRight\"><input type='text' name='nombre' required value='"+modulo.getNombre()+"'></div></div>";
             tabla+="<div class=\"formRow\"><label>Descripci&oacute;n:</label>";
