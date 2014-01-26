@@ -67,7 +67,7 @@ public class Prueba {
         tabla += "\n<tr><th>Fecha Ejecuci&oacute;n</th>" + "\n<td>" + "<input type='text' name='fecha_ejecucion' readonly='readonly' value='" + df1.format(prueba.getFecha_ejecucion()) + "'></td>";
         tabla += "\n<tr><th>Elemento a probar</th>" + "\n<td>" + "<input type='text' name='elemento_prueba' readonly='readonly' value='" + prueba.getElemento_prueba() + "'></td>";
         tabla += "\n<tr><th>Tipo de Prueba</th>" + "\n<td>" + "<input type='text' name='tipo_prueba' readonly='readonly' value='" + prueba.getTipoPrueba().getDescripcion() + "'></td>";
-        tabla += "\n<tr><th>Modos de Ejecución</th>" + "\n<td>" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getModosEjecucion().toString() + "'></td>";
+        tabla += "\n<tr><th>Modos de Ejecución</th>" + "\n<td>" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getNombreModosEjecucion() + "'></td>";
         tabla += "\n<tr><th>Descripción de la Prueba</th>" + "\n<td>" + "<input type='text' name='descripcion' readonly='readonly' value='" + prueba.getDescripcion() + "'></td>";
         tabla += "\n<tr><th>Caso de éxito</th>" + "\n<td>" + "<input type='text' name='caso_exito' readonly='readonly' value='" + prueba.getCaso_exito() + "'></td>";
         tabla += "\n<tr><th>Caso de Fallo</th>" + "\n<td>" + "<input type='text' name='caso_fallo' readonly='readonly' value='" + prueba.getCaso_fallo() + "'></td>";        
@@ -95,7 +95,7 @@ public class Prueba {
        
         tabla += "\n<tr><th>Elemento a probar</th>" + "<td>" + "<input type='text' name='elemento_prueba' value='" + prueba.getElemento_prueba() + "' required></td></tr>";
         tabla += "\n<tr><th>Tipo de Prueba</th>" + "<td>" + "<input type='text' name='tipo_prueba' readonly='readonly' value='" + prueba.getTipoPrueba().getDescripcion() + "' required></td></tr>";
-        tabla += "\n<tr><th>Modos de Ejecución</th>" + "<td>" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getModosEjecucion().toString() + "'></td></tr>";
+        tabla += "\n<tr><th>Modos de Ejecución</th>" + "<td>" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getNombreModosEjecucion() + "'></td></tr>";
         tabla += "\n<tr><th>Descripción de la Prueba</th>" + "<td>" + "<input type='text' name='descripcion' value='" + prueba.getDescripcion() + "' required></td></tr>";
         tabla += "\n<tr><th>Caso de éxito</th>" + "<td>" + "<input type='text' name='caso_exito' value='" + prueba.getCaso_exito() + "' required></td></tr>";
         tabla += "\n<tr><th>Caso de Fallo</th>" + "<td>" + "<input type='text' name='caso_fallo' value='" + prueba.getCaso_fallo() + "' required></td></tr>";

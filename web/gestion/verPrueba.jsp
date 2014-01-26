@@ -146,7 +146,7 @@
           <div class="block">
    		  <div class="clearfix"></div>
                <div class="pagetitle">
-                <h1>Ver Pruebas</h1>
+                <h1>Ver Prueba</h1>
                </div>
                <div class="grid">
                    

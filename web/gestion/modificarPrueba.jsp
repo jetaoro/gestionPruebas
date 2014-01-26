@@ -109,7 +109,7 @@
               
               <!--comienzo del titulo-->    
               <div class="pagetitle">
-                <h1>Listado de Pruebas</h1>
+                <h1>Modificar Pruebas</h1>
               </div>
               
               
@@ -124,8 +124,8 @@
                 </div>
                 <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda - Modificar Pruebas" data-content="Se debe seleccionar 
-                       la prueba para poder realizar alguna de las acciones correspondientes">
+                       title="Ayuda Modificar Pruebas" data-content="Esta página permite actualizar la información de 
+                       la prueba. Basta con hacer los cambios correspondientes y presionar el botón Registrar.">
                            <i class="icon-question-sign"></i></a></div>
                 </div>
               <div class="clearfix"></div>   

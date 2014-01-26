@@ -137,8 +137,9 @@
                 </div>
                 <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda - Agregar Pruebas" data-content="Se debe seleccionar 
-                       la prueba para poder realizar alguna de las acciones correspondientes">
+                       title="Ayuda Agregar Pruebas" data-content="Esta página permite crear nuevas pruebas. 
+                       Se debe diligenciar la información necesaria para la inserción de la prueba y presionar
+                       el botón Registrar">
                            <i class="icon-question-sign"></i></a></div>
                 </div>
               <div class="clearfix"></div>   
