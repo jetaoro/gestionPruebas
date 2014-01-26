@@ -9,7 +9,7 @@
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Modificación de Módulos</title>
+        <title>Modificación de Casos de Prueba</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Le styles -->
         <link href="../css/style.css" rel="stylesheet">
@@ -114,11 +114,11 @@
                <div class="grid-title">
                 <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  <span></span>
+                  <span>Caso de Prueba</span>
                   <div class="clearfix"></div>
                 </div>
                 <div class="pull-right"> 
-                   <div class="icon-title"><a class="popover-left">  
+                   <div class="icon-title"><a class="popover-left"  
                        title="Ayuda Modificar Caso de Prueba" data-content="Esta página permite actualizar la información 
                        de un caso de prueba existente. Cuando se tenga diligenciada la información correspondiente, 
                        basta con presionar el botón Registrar.">
