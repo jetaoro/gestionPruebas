@@ -121,7 +121,7 @@
               
               <!--comienzo del titulo-->    
               <div class="pagetitle">
-                <h1>Agregar Módulos</h1>
+                <h1>Agregar Sitios de Prueba</h1>
               </div>
               
               
@@ -131,13 +131,14 @@
                <div class="grid-title">
                 <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  <span></span>
+                  <span>Sitio de Prueba</span>
                   <div class="clearfix"></div>
                 </div>
                 <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda - Agregar Pruebas" data-content="Se debe seleccionar 
-                       la prueba para poder realizar alguna de las acciones correspondientes">
+                       title="Ayuda Agregar Sitio de Prueba" data-content="Esta página permite crear nuevos sitios de prueba. 
+                       Se debe diligenciar la información necesaria para la inserción de los sitios de prueba y presionar
+                       el botón Registrar">
                            <i class="icon-question-sign"></i></a></div>
                 </div>
               <div class="clearfix"></div>   

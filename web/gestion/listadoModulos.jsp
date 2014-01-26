@@ -139,7 +139,7 @@
               
               <!--comienzo del titulo-->    
               <div class="pagetitle">
-                <h1>Listado de Pruebas</h1>
+                <h1>Listado de Módulos</h1>
               </div>
               
               
@@ -154,8 +154,10 @@
                 </div>
                 <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda Listar Pruebas" data-content="Se debe seleccionar 
-                       la prueba para poder realizar alguna de las acciones correspondientes">
+                       title="Ayuda Listado de Módulos" data-content="Esta página muestra el listado de los 
+                       módulos que se encuentran registrados en el sistema. Para poder Modificar o Eliminar
+                       un módulo, se debe seleccionar del listado y presionar el botón correspondiente. En esta página también
+                       es posible agregar nuevos módulos, presionando el botón Agregar.">
                            <i class="icon-question-sign"></i></a></div>
                 </div>
               <div class="clearfix"></div>   

@@ -45,9 +45,7 @@ public class CasoPrueba {
                 tabla+="\n</tr>";
             }
             tabla+="</tbody></table>";
-         }
-         else
-             tabla+="\n<table border='1'><td>No se encontraron casos de prueba registrados, para la prueba seleccionada.</td></table>";
+         }         
         return (tabla);
     }
     
@@ -76,8 +74,8 @@ public class CasoPrueba {
     
     public String agregarCasoPrueba(int idPrueba){ 
         String tabla = "<div class='formRow'>";
-        tabla += "<label>Identificador de la prueba</label>";
-        tabla += "<div class='formRight'><input type='text' name='idPrueba' readonly='readonly' value='"+ idPrueba +"'></div></div>";
+        tabla += "<label></label>";
+        tabla += "<div class='formRight'><input type='hidden' name='idPrueba' readonly='readonly' value='"+ idPrueba +"'></div></div>";
         tabla += "<div class='formRow'><label>Descripción</label>";
         tabla += "<div class='formRight'><textarea rows='4' cols='40' name='descripcion' required></textarea></div></div>";
         tabla += "<div class='formRow'><label>Datos de entrada</label>";
@@ -89,7 +87,7 @@ public class CasoPrueba {
         tabla += "<div class='formRow'><label>Tipo de Resultado</label>";
         tabla += "<div class='formRight'><textarea rows='4' cols='40' name='tipo_resultado' required></textarea></div></div>";
         tabla += "<div class='formRow'><label>Observación</label>";
-        tabla += "<div class='formRight'><textarea rows='4' cols='40' name='observacion' required></textarea></div></div></br></br></br></br></br></br>";
+        tabla += "<div class='formRight'><textarea rows='4' cols='40' name='observacion' required></textarea></div></div></br></br></br></br></br>";
         
         return (tabla);
     }

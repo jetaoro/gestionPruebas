@@ -90,8 +90,8 @@
                 </ul>
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Buscar</li>
-                     <li><i class="icon-list"></i> Listar</a></li>
-                     <li><i class="icon-plus-sign"></i> Agregar</a></li>
+                     <li><i class="icon-list"></i> Listar</li>
+                     <li><i class="icon-plus-sign"></i> Agregar</li>
                      <li class="active" ><i class="icon-edit"></i><a href="#"> Modificar </a></li>
                      <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
@@ -118,7 +118,7 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="pull-right"> 
-                   <div class="icon-title"><a class="popover-left"  
+                   <div class="icon-title"><a class="popover-left">  
                        title="Ayuda Modificar Caso de Prueba" data-content="Esta página permite actualizar la información 
                        de un caso de prueba existente. Cuando se tenga diligenciada la información correspondiente, 
                        basta con presionar el botón Registrar.">

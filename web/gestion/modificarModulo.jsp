@@ -109,7 +109,7 @@
               
               <!--comienzo del titulo-->    
               <div class="pagetitle">
-                <h1>Modificar Módulos</h1>
+                <h1>Modificar Módulo</h1>
               </div>
               
               
@@ -119,7 +119,7 @@
                <div class="grid-title">
                 <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  <span>Módulos registrados</span>
+                  <span>Módulo registrado</span>
                   <div class="clearfix"></div>
                 </div>
                 <div class="pull-right"> 
