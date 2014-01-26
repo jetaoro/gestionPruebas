@@ -153,7 +153,7 @@
               <div class="grid-title">
                <div class="pull-left">
                   <div class="icon-title"><i class="icon-search"></i></div>
-                  <span>Términos de búsqueda</span> 
+                  <span></span> 
                   <div class="clearfix"></div>
                </div>
                <div class="pull-right"> 

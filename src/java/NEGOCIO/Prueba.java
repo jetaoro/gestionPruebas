@@ -60,18 +60,18 @@ public class Prueba {
         tabla+= "</br>Pruebas realizadas por: "+ prueba.getResponsable().getNombre() + "</br>";
         tabla += "</br><table border='1'>";           
         tabla += "\n<tr>"; 
-        tabla += "\n<tr><th>Registro de Ejecución de Pruebas</th></tr>";
-        tabla += "\n<tr><th>Identificador</th>" + "\n<td>" + "<input type='text' name='idPrueba' readonly='readonly' value='" + prueba.getIdentificador() + "'></td>";
-        tabla += "\n<tr><th>Número de requerimiento</th>" + "\n<td>" + "<input type='text' name='numero_requerimiento' readonly='readonly' value='" + prueba.getNumero_requerimiento() + "'></td>";
-        tabla += "\n<tr><th>Nombre</th>" + "\n<td>" + "<input type='text' name='nombre' readonly='readonly' value='" + prueba.getNombre() + "'></td>";
-        tabla += "\n<tr><th>Fecha Ejecuci&oacute;n</th>" + "\n<td>" + "<input type='text' name='fecha_ejecucion' readonly='readonly' value='" + df1.format(prueba.getFecha_ejecucion()) + "'></td>";
-        tabla += "\n<tr><th>Elemento a probar</th>" + "\n<td>" + "<input type='text' name='elemento_prueba' readonly='readonly' value='" + prueba.getElemento_prueba() + "'></td>";
-        tabla += "\n<tr><th>Tipo de Prueba</th>" + "\n<td>" + "<input type='text' name='tipo_prueba' readonly='readonly' value='" + prueba.getTipoPrueba().getDescripcion() + "'></td>";
-        tabla += "\n<tr><th>Modos de Ejecución</th>" + "\n<td>" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getModosEjecucion().toString() + "'></td>";
-        tabla += "\n<tr><th>Descripción de la Prueba</th>" + "\n<td>" + "<input type='text' name='descripcion' readonly='readonly' value='" + prueba.getDescripcion() + "'></td>";
-        tabla += "\n<tr><th>Caso de éxito</th>" + "\n<td>" + "<input type='text' name='caso_exito' readonly='readonly' value='" + prueba.getCaso_exito() + "'></td>";
-        tabla += "\n<tr><th>Caso de Fallo</th>" + "\n<td>" + "<input type='text' name='caso_fallo' readonly='readonly' value='" + prueba.getCaso_fallo() + "'></td>";        
-        tabla+="\n<tr><th>Casos de Prueba"+"</th></tr>";
+        tabla += "\n<div class=\"formRow\"><h4 class='t_center'>Registro de Ejecución de Pruebas</h4></div>";
+        tabla += "<div class=\"formRow\"><label>Identificador</label>" + "\n<div class='formRight'>" + "<input type='text' name='idPrueba' readonly='readonly' value='" + prueba.getIdentificador() + "'></div></div>";
+        tabla += "\n<div class=\"formRow\"><label>Número de requerimiento</label>" + "\n<div class='formRight'>" + "<input type='text' name='numero_requerimiento' readonly='readonly' value='" + prueba.getNumero_requerimiento() + "'></div></div>";
+        tabla += "\n<div class=\"formRow\"><label>Nombre</label>" + "\n<div class=\"formRight\">" + "<input type='text' name='nombre' readonly='readonly' value='" + prueba.getNombre() + "'></div></div>";
+        tabla += "\n<div class=\"formRow\"><label>Fecha Ejecuci&oacute;n</label>" + "\n<div class=\"formRight\">" + "<input type='text' name='fecha_ejecucion' readonly='readonly' value='" + df1.format(prueba.getFecha_ejecucion()) + "'></div></div>";
+        tabla += "\n<div class=\"formRow\"><label>Elemento a probar</label>" + "\n<div class=\"formRight\">" + "<input type='text' name='elemento_prueba' readonly='readonly' value='" + prueba.getElemento_prueba() + "'></div></div>";
+        tabla += "\n<div class=\"formRow\"><label>Tipo de Prueba</label>" + "\n<div class=\"formRight\">" + "<input type='text' name='tipo_prueba' readonly='readonly' value='" + prueba.getTipoPrueba().getDescripcion() + "'></div></div>";
+        tabla += "\n<div class=\"formRow\"><label>Modos de Ejecución</label>" + "\n<div class=\"formRight\">" + "<input type='text' name='modo_ejecucion' readonly='readonly' value='" + prueba.getModosEjecucion().toString() + "'></div></div>";
+        tabla += "\n<div class=\"formRow\"><label>Descripción de la Prueba</label>" + "\n<div class=\"formRight\">" + "<input type='text' name='descripcion' readonly='readonly' value='" + prueba.getDescripcion() + "'></div></div>";
+        tabla += "\n<div class=\"formRow\"><label>Caso de éxito</label>" + "\n<div class=\"formRight\">" + "<input type='text' name='caso_exito' readonly='readonly' value='" + prueba.getCaso_exito() + "'></div></div>";
+        tabla += "\n<div class=\"formRow\"><label>Caso de Fallo</label>" + "\n<div class=\"formRight\">" + "<input type='text' name='caso_fallo' readonly='readonly' value='" + prueba.getCaso_fallo() + "'></div></div>";        
+        tabla+="\n<div class=\"formRow\"><h4 class='t_center'>Casos de Prueba"+"</h4></div>";
         tabla+= new CasoPrueba().getCasosPrueba(prueba);
         tabla += "\n</tr></table></br>";
         
@@ -193,12 +193,12 @@ public class Prueba {
     }
     
     public String insertarUnaPrueba(int idModulo, int idSitio, int idResponsable, String fechaInicio, String fechaFin, String nombre, String numero_requerimiento, String fechaEjecucion, String elementoPrueba, int idTipoPrueba, String [] modosEjecucion, String descripcion, String casoExito, String casoFallo) throws ParseException{
-        String resultado = "La inserción falló";        
+        String resultado = "La inserción falló";
+   
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaInicio2 = formato.parse(fechaInicio);
         Date fechaFin2 = formato.parse(fechaFin); 
         Date fechaEjecucion2 = formato.parse(fechaEjecucion);      
-        
         int idModo2;
         ArrayList<ModoEjecucionDTO> modos = new ArrayList<ModoEjecucionDTO>();
         if (modosEjecucion!=null){
