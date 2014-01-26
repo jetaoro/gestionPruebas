@@ -6,7 +6,6 @@ package DAO;
 import UTIL.BaseDeDatos;
 import java.util.*;
 import DTO.*;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -33,7 +32,7 @@ public class PruebaDAO {
         for(String datos:lista){
             String vdatos[]=datos.split("-");
             String nombre = vdatos[0];
-            SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
             Date fechaInicio = null;
             try {
                 fechaInicio = formato.parse(vdatos[1]);
@@ -173,7 +172,7 @@ public class PruebaDAO {
             return null;
         String vdatos[] = consulta.get(0).split("-");
         String nombre = vdatos[0];
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaInicio = null;
         try {
             fechaInicio = formato.parse(vdatos[1]);
@@ -204,7 +203,7 @@ public class PruebaDAO {
     
     public boolean insertar(PruebaDTO nuevo){
         //insert into  responsable values('1','marco adarme','madarme','1235')
-        DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yyyy");
         String sql="insert into prueba values ('@', '€', '§', '«', '#', 'ƒ', 'æ', 'Ø', µ, ¶, ¥, ©, '¤')";
         sql=sql.replaceAll("@", nuevo.getNombre());
         sql=sql.replaceAll("€", df1.format(nuevo.getFecha_inicio()));
@@ -244,7 +243,7 @@ public class PruebaDAO {
     
     public boolean modificar(PruebaDTO nuevo){
         //update prueba set nombre ='Nombre de prueba cambiado', fecha_inicio = '20/04/2013',  fecha_fin = '21/04/2013', fecha_ejecucion = '20/04/2013', elemento_prueba = 'Otro elemento', descripcion = 'Otra descripción', caso_exito = 'Otro caso exito', caso_fallo = 'Otro caso fallo' where id_prueba = 31;
-        DateFormat df1 = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yyyy");
         String sql="update prueba set nombre ='@', fecha_inicio ='€',  fecha_fin ='§', fecha_ejecucion ='«', elemento_prueba ='#', descripcion ='ƒ', caso_exito = 'æ', caso_fallo = 'Ø', numero_requerimiento ='¤' where id_prueba = µ";        
         sql=sql.replaceAll("@", nuevo.getNombre());
         sql=sql.replaceAll("€", df1.format(nuevo.getFecha_inicio()));

@@ -45,6 +45,7 @@
             String resultado=gestion.insertarUnaPrueba(idModulo2, idSitio2, idResponsable2, fechaInicio, fechaFin, nombre, numero_requerimiento, fechaEjecucion, elementoPrueba, idTipoPrueba2, modosEjecucion, descripcion, casoExito, casoFallo);
             if(resultado.equals("La inserción falló")){
         %>
+        
         <script type="text/javascript">
             alert("La inserción falló");
             location.href="listadoPruebas.jsp";
@@ -59,6 +60,7 @@
         </script>
         <%
             }
-        %>        
+        %>
+
     </body>
 </html>

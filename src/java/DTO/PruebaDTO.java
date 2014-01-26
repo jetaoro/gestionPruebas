@@ -126,6 +126,16 @@ public class PruebaDTO implements Comparable{
     public ArrayList<ModoEjecucionDTO> getModosEjecucion() {
         return modosEjecucion;
     }
+    
+    public String getNombreModosEjecucion(){
+        String resultado = "";
+        if(!this.modosEjecucion.isEmpty()){
+            for (ModoEjecucionDTO modo : this.modosEjecucion) {
+                resultado+=modo.getDescripcion();
+            }
+        }
+        return resultado;
+    }
 
     public TreeSet<CasoPruebaDTO> getCasosPrueba() {
         return casosPrueba;

@@ -146,7 +146,7 @@
           <div class="block">
    		  <div class="clearfix"></div>
                <div class="pagetitle">
-                <h1>Ver Pruebas</h1>
+                <h1>Ver Prueba</h1>
                </div>
                <div class="grid">
                    
@@ -158,8 +158,9 @@
                </div>
                <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda Buscar" data-content="Puede Buscar por Cualquiera 
-                       de los términos o puede dejarlos en blanco y dar clic en buscar para listar todas las pruebas">
+                       title="Ayuda Ver Prueba" data-content="Esta página muestra la información completa de la prueba,
+                       junto con los casos de prueba asociados a ella, si los tiene. Aquí es posible Agregar, Modificar y
+                       Eliminar Casos de Prueba.">
                            <i class="icon-question-sign"></i></a></div>
                </div>
               <div class="clearfix"></div>   

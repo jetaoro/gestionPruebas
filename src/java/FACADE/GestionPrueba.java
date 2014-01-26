@@ -120,8 +120,7 @@ public class GestionPrueba {
         return new Prueba().buscarPrueba(nombre, numero_requerimiento, modulo, responsable, sitio_prueba);
     }
     
-    public String agregarPruebaFormulario(){
-        
+    public String agregarPruebaFormulario(){        
         return (new Prueba().agregarPruebaFormulario());
     }
     

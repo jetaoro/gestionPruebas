@@ -129,9 +129,11 @@
                   <div class="clearfix"></div>
                </div>
                <div class="pull-right"> 
-                   <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda Buscar" data-content="Puede Buscar por Cualquiera 
-                       de los términos o puede dejarlos en blanco y dar clic en buscar para listar todas las pruebas">
+                   <div class="icon-title"><a class="popover-left" title="Ayuda Buscar Prueba" 
+                       data-content="Esta página permite realizar búsquedas por cualquiera de los términos mostrados. 
+                       Para realizar la búsqueda, basta con seleccionar o ingresar los datos necesarios y presionar
+                       el botón Buscar. Si se quieren listar todas las pruebas registradas en el sistema, basta
+                       con dejar todo en blanco y presionar el botón Buscar.">
                            <i class="icon-question-sign"></i></a></div>
                </div>
               <div class="clearfix"></div>   
