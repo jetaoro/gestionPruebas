@@ -7,7 +7,7 @@
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listado de Módulos </title>
+        <title>Listado de Sitios de Prueba </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Le styles -->
         <link href="../css/style.css" rel="stylesheet">
@@ -112,7 +112,7 @@
                 <ul class="additional-menu">
                      <li><i class="icon-search"></i> Buscar</li>
                      <li class="active" ><a href="#"><i class="icon-list"></i> Listar</a></li>
-                     <li><i class="icon-plus-sign"></i> Agregar</a></li>
+                     <li><i class="icon-plus-sign"></i> Agregar</li>
                      <li><i class="icon-edit"></i> Modificar </li>
                      <li><i class="icon-remove"></i> Eliminar</li>
                 </ul>
@@ -125,7 +125,7 @@
               
               <!--comienzo del titulo-->    
               <div class="pagetitle">
-                <h1>Listado Sitios de Prueba</h1>
+                <h1>Listado de Sitios de Prueba</h1>
               </div>
               
               
@@ -135,13 +135,15 @@
                <div class="grid-title">
                 <div class="pull-left">
                   <div class="icon-title"><i class="icon-list"></i></div>
-                  <span></span>
+                  <span>Sitios de Prueba</span>
                   <div class="clearfix"></div>
                 </div>
                 <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda Listar Pruebas" data-content="Se debe seleccionar 
-                       la prueba para poder realizar alguna de las acciones correspondientes">
+                       title="Ayuda Listado de Sitios de Pruebas" data-content="Esta página muestra el listado de los sitios de
+                       prueba que se encuentran registrados en el sistema. Para poder Modificar o Eliminar
+                       un sitio de prueba, se debe seleccionar del listado y presionar el botón correspondiente. En esta página también
+                       es posible agregar nuevos sitios de prueba, presionando el botón Agregar.">
                            <i class="icon-question-sign"></i></a></div>
                 </div>
               <div class="clearfix"></div>   
