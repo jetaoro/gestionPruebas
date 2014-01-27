@@ -74,6 +74,13 @@ function validarRadio(nfrm, nombre) {
 	return false;
 }
 
+function validarSelect(nfrm, nombre){      
+        if (document.forms.nfrm.nombre.length==0){             
+            return false 
+        } 
+        return true         
+}
+
 /**
 Funci�n que chequea elementos checkbox 
 del formulario 'form' con el nombre 'nombre'

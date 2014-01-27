@@ -1,4 +1,3 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
     Document   : insertarSitioPrueba
     Created on : 28/11/2013, 05:55:53 AM

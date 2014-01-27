@@ -148,7 +148,7 @@
                                  <button type="button" class="close" data-dismiss="alert">&times;</button>          
 				<strong>Algo falló!</strong>
 		     </div>     
-                        <form name="insertarPrueba" action="insertarPrueba.jsp" >
+                        <form name="insertarPrueba" action="insertarPrueba.jsp">
                             <jsp:useBean id="gestion" scope="page" class="FACADE.GestionPrueba" />
                             <%=gestion.agregarPruebaFormulario()%>        
                             <div class='formRow'>

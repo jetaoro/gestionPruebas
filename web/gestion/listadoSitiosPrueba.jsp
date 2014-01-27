@@ -4,6 +4,19 @@
     Author     : Jennifer
 --%>
 <!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession sesion = request.getSession();
+    boolean var = true;
+    if (sesion.getAttribute("valido") == null) {
+        var = false;
+    } else {
+        var = (Boolean) session.getAttribute("valido");
+    }
+    if (!var) {
+        response.sendRedirect("../index.jsp");
+    }
+%>
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -59,7 +72,7 @@
             if(Firefox) document.write("<link rel='stylesheet' href='../css/moz.css' type='text/css'>"); 
          
            function confirmarSalir(){
-                if (confirm("¿Está seguro que desea salir?")) { 
+                if (confirm("Â¿EstÃ¡ seguro que desea salir?")) { 
                     location.href="../gestion/salir.jsp";        
                 }
             }
@@ -105,7 +118,7 @@
             <div id="menu" role="navigation">  
                 <ul class="main-menu">
                      <li><a href="paginaBuscarPrueba.jsp"><i class="components"></i> Pruebas</a></li>
-                     <li><a href="listadoModulos.jsp"><i class="modules"></i> Módulos</a></li>
+                     <li><a href="listadoModulos.jsp"><i class="modules"></i> MÃ³dulos</a></li>
                      <li class="active"><a href="listadoSitiosPrueba.jsp"><i class="general"></i> Sitio Prueba</a></li>
                 </ul>
                 <ul class="additional-menu">
@@ -139,10 +152,10 @@
                 </div>
                 <div class="pull-right"> 
                    <div class="icon-title"><a class="popover-left"  
-                       title="Ayuda Listado de Sitios de Pruebas" data-content="Esta página muestra el listado de los sitios de
+                       title="Ayuda Listado de Sitios de Pruebas" data-content="Esta pÃ¡gina muestra el listado de los sitios de
                        prueba que se encuentran registrados en el sistema. Para poder Modificar o Eliminar
-                       un sitio de prueba, se debe seleccionar del listado y presionar el botón correspondiente. En esta página también
-                       es posible agregar nuevos sitios de prueba, presionando el botón Agregar.">
+                       un sitio de prueba, se debe seleccionar del listado y presionar el botÃ³n correspondiente. En esta pÃ¡gina tambiÃ©n
+                       es posible agregar nuevos sitios de prueba, presionando el botÃ³n Agregar.">
                            <i class="icon-question-sign"></i></a></div>
                 </div>
               <div class="clearfix"></div>   

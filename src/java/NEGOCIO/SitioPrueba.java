@@ -51,8 +51,6 @@ public class SitioPrueba {
                 tabla+="\n</tr>";
             }
         }
-        else
-            tabla+="\n<table border='1'><td>No se encontraron sitios de prueba registrados.</td></table>";
         tabla+="<tbody></table></br></br>";
         return (tabla);        
     }
@@ -62,7 +60,7 @@ public class SitioPrueba {
         tabla += "<label>   Número de Puerto</label>";
         tabla += "<div class='formRight'><input type='text' name='numero_puerto' required></div></div>";
         tabla += "<div class='formRow'><label>Nombre</label>";
-        tabla += "<div class='formRight'><input type='text' name='nombre' required></div></div></br></br></br>";
+        tabla += "<div class='formRight'><textarea type='text' name='nombre' required></textarea></div></div></br></br></br>";
 
         return (tabla);
     }
@@ -101,7 +99,7 @@ public class SitioPrueba {
         if (sitio!=null){
             tabla+="<div class='formRow'><label></label><div class='formRight'><input type='hidden' name='identificador' readonly='readonly' value='"+sitio.getIdentificador()+"'></div></div>";
             tabla+="<div class='formRow'><label>Número de Puerto</label><div class='formRight'><input type='text' name='numero_puerto' required value='"+sitio.getNumero_puerto()+"'></div></div>";
-            tabla+="<div class='formRow'><label>Nombre</label><div class='formRight'><input type='text' name='nombre' required value='"+sitio.getNombre()+"'></div></div></br></br>";
+            tabla+="<div class='formRow'><label>Nombre</label><div class='formRight'><textarea type='text' name='nombre' required >"+sitio.getNombre()+"</textarea></div></div></br></br></br></br>";
             
         }
         return (tabla);
@@ -109,6 +107,18 @@ public class SitioPrueba {
     
     //Arroja un combo con todos los sitios de prueba que haya registrado en el sistema
     public String listadoSitiosPrueba(){
+        TreeSet<SitioPruebaDTO> sitios = new SitioPruebaDAO().getSitioPrueba();
+        String listado = "<select style='width: 40%;' class=\"chzn-select chosen_select\" name='sitio'>";
+        listado+="<option>"+ "" +"</option>";
+        for (SitioPruebaDTO sitio : sitios) {
+            listado+="<option value='"+sitio.getIdentificador()+"' selected>"+sitio.getNumero_puerto()+" - "+ sitio.getNombre() +"</option>";
+
+        }
+        listado+="</select>";
+        return listado;
+    }
+    
+    public String listadoSitiosPrueba2(){
         TreeSet<SitioPruebaDTO> sitios = new SitioPruebaDAO().getSitioPrueba();
         String listado = "<select class=\"chzn-select chosen_select\" name='sitio'>";
         listado+="<option>"+ "" +"</option>";

@@ -19,10 +19,10 @@ public class TipoPrueba {
     
     public String listadoTiposPrueba(){
         TreeSet<TipoPruebaDTO> tiposPrueba = new TipoPruebaDAO().getTipoPrueba();
-        String listado = "<select class=\"chzn-select chosen_select\" name='tipoPrueba'>";
+        String listado = "<select style='width: 40%;' class=\"chzn-select chosen_select\" name='tipoPrueba'>";
         listado+="<option>"+ "" +"</option>";
         for (TipoPruebaDTO tipo : tiposPrueba) {
-            listado+="<option value='"+tipo.getIdentificador()+"'>"+tipo.getDescripcion() +"</option>";
+            listado+="<option value='"+tipo.getIdentificador()+"' selected>"+tipo.getDescripcion() +"</option>";
 
         }
         listado+="</select>";
