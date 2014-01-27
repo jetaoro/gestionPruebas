@@ -105,7 +105,7 @@ public class Modulo {
             tabla+="<div class=\"formRow\"><label>Nombre: </label>";
             tabla+="<div class=\"formRight\"><input type='text' name='nombre' required value='"+modulo.getNombre()+"'></div></div>";
             tabla+="<div class=\"formRow\"><label>Descripci&oacute;n:</label>";
-            tabla+="<div class=\"formRight\"><input type='text' name='descripcion' required value='"+modulo.getDescripcion()+"'></div></div></br></br>";
+            tabla+="<div class=\"formRight\"><textarea type='text' name='descripcion' required >"+modulo.getDescripcion()+"</textarea></div></div></br></br></br>";
            
         }
         return (tabla);
